@@ -6,6 +6,23 @@
     { href: "#contact-us", label: "Contact Us" },
 ]; */
 
+export const ejemplos = [
+    {
+        before: '/public/antes1.png',
+        after: '/public/despues1.png',
+        title: 'Transformación de Juan'
+    },
+    {
+        before: '/images/antes2.png',
+        after: '/images/despues2.png',
+        title: 'Resultados de María'
+    },
+    {
+        before: '/images/antes1.png',
+        after: '/images/despues1.png',
+        title: 'Cambio de Carlos'
+    }
+];
 
 export const programas = [
     {

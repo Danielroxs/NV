@@ -1,15 +1,20 @@
+import { Box, Heading, Text, Button } from "@chakra-ui/react";
+
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 text-white py-20">
-      <div className="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center">
+    <section className="relative bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white">
+      <div className="relative container z-10 max-w-7xl mx-auto py-2 px-6 flex flex-col-reverse md:flex-row items-center">
         <div className="w-full md:w-1/2 text-center md:text-left">
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
+          <Heading
+            as="h1"
+            className="text-4xl md:text-6xl font-extrabold leading-tight mb-4"
+          >
             Transforma tu vida con un enfoque integral
-          </h1>
-          <p className="text-lg md:text-xl mb-6">
+          </Heading>
+          <Text className="text-sm md:text-xl mb-6 text-gray-100">
             Nutricion y Entrenamiento personalizado para ayudarte a alcanzar tus
-            objetivos de salud de manera holística.
-          </p>
+            objetivos de salud de manera holística
+          </Text>
           <a
             href="#contact"
             className="bg-white text-blue-500 font-bold py-3 px-6 rounded-full shadow-lg hover:bg-gray-100 transition duration-300"

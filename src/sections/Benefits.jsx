@@ -2,7 +2,7 @@ import { beneficios } from "../constants";
 
 const Benefits = () => {
   return (
-    <section className="bg-gray-100 py-16">
+    <section className="bg-gray-100 text-slate-700 py-16">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-12">
           Beneficios combinados

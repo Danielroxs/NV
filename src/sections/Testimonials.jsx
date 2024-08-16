@@ -1,26 +1,39 @@
 import { testimonials } from "../constants";
+import { Box, Stack, Heading, Text, Image, Flex } from "@chakra-ui/react";
 
-const Testimonials = () => {
+const TestimonialSection = () => {
   return (
-    <section className="bg-slate-500 py-16">
-      <div className="container mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12">Testimonios</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {testimonials.map((test, id) => (
-            <div key={id} className="bg-gray-100 p-6 rounded-lg shadow-md">
-              <img
-                src={test.image}
-                alt={test.title}
-                className="w-24 h-24 rounded-full mx-auto mb-4"
+    <Box className="bg-gray-100 text-slate-700 py-16">
+      <Box className="max-w-7xl mx-auto px-6">
+        <Heading as="h2" className="text-3xl font-semibold text-center mb-12">
+          Clientes Satisfechos
+        </Heading>
+        <Flex wrap="wrap" justify="center" gap="8">
+          {testimonials.map((testimonial, id) => (
+            <Box
+              key={id}
+              className="bg-white shadow-lg rounded-lg overflow-hidden max-w-xs p-6"
+            >
+              <Image
+                src={testimonial.image}
+                alt={testimonial.name}
+                className="w-16 h-16 rounded-full mx-auto"
               />
-              <h3 className="text-2xl font-semibold mb-2">{test.name}</h3>
-              <p className="text-gray-600 italic">{test.quote}</p>
-            </div>
+              <Heading
+                as="h3"
+                className="text-xl font-semibold text-center mt-4"
+              >
+                {testimonial.name}
+              </Heading>
+              <Text className="text-gray-600 text-center mt-2">
+                {testimonial.quote}
+              </Text>
+            </Box>
           ))}
-        </div>
-      </div>
-    </section>
+        </Flex>
+      </Box>
+    </Box>
   );
 };
 
-export default Testimonials;
+export default TestimonialSection;

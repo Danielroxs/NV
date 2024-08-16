@@ -1,3 +1,4 @@
+import CustomCard from "./components/Card";
 import {
   AboutUs,
   Hero,
@@ -8,30 +9,32 @@ import {
   Maps,
   Programas,
 } from "./sections";
+import * as React from "react";
+import { Card } from "@chakra-ui/react";
 
 const App = () => (
   <main className="relative">
-    <section className="xl:padding-1 wide:padding-r padding-b">
+    <section className="">
       <Hero />
     </section>
 
-    <section className="padding">
+    <section className="">
       <Benefits />
     </section>
 
-    <section className="padding">
+    <section className="">
       <Testimonials />
     </section>
 
-    <section className="padding-x py-10">
+    <section className="padding-x ">
       <Maps />
     </section>
 
-    <section className="padding-x py-10">
+    <section className="padding-x justify-center">
       <Services />
     </section>
 
-    <section className="padding-x py-10">
+    <section className="padding-x ">
       <Programas />
     </section>
 

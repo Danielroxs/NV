@@ -20,7 +20,7 @@ const Programas = () => {
               </ul>
               <a
                 href="#contact"
-                className="bg-blue-500 justify-content:center text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-blue-600 transition duration-300"
+                className="bg-blue-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-blue-600 transition duration-300"
               >
                 Inscribete Ahora
               </a>

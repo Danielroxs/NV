@@ -9,6 +9,7 @@ import Testimonials from './Testimonials'
 import Benefits from "./Benefits";
 import Maps from "./Maps";
 import Programas from "./Programas";
+import Suscribe from './Suscribe'
 
 export {
     AboutUs,
@@ -22,4 +23,5 @@ export {
     Benefits,
     Maps,
     Programas,
+    Suscribe,
 }
