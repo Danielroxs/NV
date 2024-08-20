@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = ({ imageSrc, cedula, className }) => {
   return (
-    <div className="max-w-lg sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto border rounded-lg shadow-lg overflow-hidden">
+    <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto border rounded-xl shadow-lg overflow-hidden">
       {/* Imagen a la izquierda */}
       <div className="flex flex-col md:flex-row items-center ">
         <div className="flex-shrink-0 mt-4 md:mb-4 md:ml-4 xl:ml-10 w-32 h-32 md:w-48 md:h-48 ">
