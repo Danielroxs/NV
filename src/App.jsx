@@ -41,7 +41,7 @@ const App = () => (
       <Programas />
     </section>
 
-    <section className="padding">
+    <section className="">
       <Footer />
     </section>
   </main>

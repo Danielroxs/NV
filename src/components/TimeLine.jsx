@@ -11,6 +11,7 @@ import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 import HotelIcon from "@mui/icons-material/Hotel";
 import RepeatIcon from "@mui/icons-material/Repeat";
 import Typography from "@mui/material/Typography";
+import { FitnessCenter, RestaurantMenu } from "@mui/icons-material";
 
 export default function CustomizedTimeline() {
   return (
@@ -27,7 +28,7 @@ export default function CustomizedTimeline() {
         <TimelineSeparator>
           <TimelineConnector />
           <TimelineDot>
-            <FastfoodIcon />
+            <RestaurantMenu />
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
@@ -38,6 +39,7 @@ export default function CustomizedTimeline() {
           <Typography>Cuida tú cuerpo!</Typography>
         </TimelineContent>
       </TimelineItem>
+
       <TimelineItem>
         <TimelineOppositeContent
           sx={{ m: "auto 0" }}
@@ -60,21 +62,23 @@ export default function CustomizedTimeline() {
           <Typography>Con energia!</Typography>
         </TimelineContent>
       </TimelineItem>
+
       <TimelineItem>
         <TimelineSeparator>
           <TimelineConnector />
           <TimelineDot color="primary" variant="outlined">
-            <HotelIcon />
+            <FitnessCenter />
           </TimelineDot>
           <TimelineConnector sx={{ bgcolor: "secondary.main" }} />
         </TimelineSeparator>
         <TimelineContent sx={{ py: "12px", px: 2 }}>
           <Typography variant="h6" component="span">
-            Descansa
+            Entrena!
           </Typography>
-          <Typography>Sueño reparador!</Typography>
+          <Typography>Vuelvete fuerte!</Typography>
         </TimelineContent>
       </TimelineItem>
+
       <TimelineItem>
         <TimelineSeparator>
           <TimelineConnector sx={{ bgcolor: "secondary.main" }} />

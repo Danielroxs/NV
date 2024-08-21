@@ -6,6 +6,9 @@ import CustomizedTimeline from "../components/TimeLine";
 const AboutUs = () => {
   return (
     <section className="bg-gray-100 py-16">
+      <div className="text-center text-2xl font-extrabold font-palanquin">
+        <h1>NUTRICION Y ENTRENAMIENTO</h1>
+      </div>
       <div id="#about-us" className="">
         <div className="p-8 flex flex-col bg-gray-100 md:flex-row justify-around items-center md:mb-10">
           <div className="w-full md:w-1/2 lg:w-1/2 mb-8 md:mb-0">
