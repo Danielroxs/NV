@@ -10,6 +10,7 @@ import {
 } from "./sections";
 import * as React from "react";
 import { Card } from "@chakra-ui/react";
+import Contact from "./components/Contact";
 
 const App = () => (
   <main className="relative">
@@ -39,6 +40,10 @@ const App = () => (
 
     <section className="padding-x ">
       <Programas />
+    </section>
+
+    <section className="padding-x ">
+      <Contact />
     </section>
 
     <section className="">
