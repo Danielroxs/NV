@@ -11,6 +11,7 @@ import {
 import * as React from "react";
 import { Card } from "@chakra-ui/react";
 import Contact from "./components/Contact";
+import Testimonial from "./sections/Testimonial";
 
 const App = () => (
   <main className="relative">
@@ -22,20 +23,24 @@ const App = () => (
       <AboutUs />
     </section>
 
+    <section>
+      <Services />
+    </section>
+
     <section className="">
       <Benefits />
     </section>
 
-    <section className="">
-      <Testimonials />
+    <section>
+      <Testimonial />
     </section>
+
+    {/* <section className="">
+      <Testimonials />
+    </section> */}
 
     <section className="padding-x ">
       <Maps />
-    </section>
-
-    <section className="padding-x justify-center">
-      <Services />
     </section>
 
     <section className="padding-x ">

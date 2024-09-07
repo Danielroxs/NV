@@ -100,6 +100,7 @@ export const testimonials = [
         name: "Carlos Villafaña",
         title: "Gimnasio Muscle Machine",
         image: '/public/test1.png',
+        rating: 5,
     },
     {
         id: 2,
@@ -108,6 +109,7 @@ export const testimonials = [
         name: "Ana Luisa Gómez",
         title: "Clínica de Salud Vital",
         image: '/public/test2.png',
+        rating: 5,
     },
     {
         id: 3,
@@ -116,6 +118,7 @@ export const testimonials = [
         name: "Lucio Perez",
         title: "Carpintería y Madereria LP",
         image: '/public/test3.png',
+        rating: 5,
     },
     {
         id: 4,
@@ -124,6 +127,7 @@ export const testimonials = [
         name: "Neri Villeda",
         title: "Consultorio Nutrición",
         image: '/public/test4.png',
+        rating: 5,
     },
     {
         id: 5,
@@ -132,6 +136,7 @@ export const testimonials = [
         name: "Luis V.",
         title: "Academia Inglés Griffin English",
         image: '/public/test5.png',
+        rating: 5,
     },
 ];
 

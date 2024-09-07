@@ -99,3 +99,30 @@
     opacity: 1;
   }
 }
+
+.icon-hover {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-hover:hover {
+  transform: scale(1.2);
+  color: #ff5733;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+
+  border: 5px solid #fffc;
+  border-top-color: #09f;
+  border-radius: 100%;
+
+  animation: spin 1s infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

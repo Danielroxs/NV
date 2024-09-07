@@ -1,39 +1,69 @@
-import React from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import Card from "../components/NeriCard";
-import neri from "../images/neri.png"; // Asegúrate de que la ruta sea correcta
+import neri from "../images/neri.webp"; // Asegúrate de que la ruta sea correcta
 import CustomizedTimeline from "../components/TimeLine";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import Spinner from "../components/Spinner";
+const InstagramWidget = React.lazy(() =>
+  import("../components/InstagramWidget")
+);
 
 const AboutUs = () => {
-  return (
-    <section className="bg-gray-100 py-16">
-      <div className="text-center text-2xl font-extrabold font-palanquin ">
-        <h1>NUTRICION Y ENTRENAMIENTO</h1>
-      </div>
-      <div id="#about-us" className="">
-        <div className="p-8 flex flex-col bg-gray-100 md:flex-row justify-around items-center md:mb-10">
-          <div className="w-full md:w-1/2 lg:w-1/2 mb-8 md:mb-0">
-            <CustomizedTimeline />
-          </div>
-          <div className="w-full md:w-1/2 lg:w-1/2">
-            <Card
-              imageSrc={neri}
-              cedula={"#89504689"}
-              className="rounded-full "
-            />
-          </div>
-        </div>
+  const sectionRef = useRef(null); // Referencia a la sección
+  const [isVisible, setIsVisible] = useState(false); // Estado para manejar la visibilidad
 
-        <div className="w-full max-w-2xl text-center md:text-left p-6 shadow-lg">
-          <h1 className="text-4xl font-bold font-palanquin text-gray-900 mb-4">
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true); // Cambia el estado a visible si la sección está en vista
+            observer.disconnect(); // Detiene la observación para evitar múltiples llamadas
+          }
+        });
+      },
+      {
+        root: null, // Observa respecto al viewport
+        rootMargin: "0px",
+        threshold: 0.1, // El 10% de la sección debe estar visible para que se active
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current); // Comienza a observar la referencia
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current); // Limpia el observer cuando el componente se desmonte
+      }
+    };
+  }, []);
+
+  return (
+    <section className="bg-gray-100 py-16 shadow-lg">
+      <div className="text-center text-4xl font-bold font-palanquin">
+        <h2>Sobre Nosotros</h2>
+      </div>
+
+      <div
+        id="#about-us"
+        className="p-2 flex flex-col bg-gray-100 md:flex-row justify-around items-center md:mb-6"
+      >
+        <div className="w-full text-start md:w-1/3 lg:w-1/3 mb-8 md:mb-0">
+          <h2 className="text-4xl font-palanquin text-gray-900 mb-4">
             Hola! Soy Neri Villeda,
             <br />
             Soy Nutriólogo y Entrenador Personal.
-          </h1>
+          </h2>
           <p className="text-lg text-gray-600 mb-6">
-            Estoy especializado en nutrición deportiva y entrenamiento
-            personalizado en Muscle Machine. Me apasiona ayudar a las personas a
-            alcanzar sus objetivos de salud y bienestar a través de un enfoque
-            integral.
+            En nuestro consultorio, creemos que la salud es un equilibrio entre
+            nutrición y ejercicio. Nuestro enfoque combina planes alimenticios
+            personalizados con programas de entrenamiento diseñados para cada
+            individuo. Trabajamos contigo para alcanzar tus metas, ya sea
+            mejorar tu rendimiento, perder peso o simplemente sentirte mejor.
+            ¡Nos comprometemos a acompañarte en cada paso del camino!
           </p>
           <p className="text-lg text-gray-600 mb-6">
             {" "}
@@ -41,58 +71,56 @@ const AboutUs = () => {
             asegurando que cada persona reciba un tratamiento único y
             personalizado.
           </p>
-          <div className="flex justify-center md:justify-start space-x-4">
-            <a href="#" className="text-gray-900 hover:text-gray-500">
-              Instagram
+          <div className="flex justify-center mt-6 md:justify-start space-x-4">
+            <a
+              href="https://www.instagram.com/stories/nerii_villeda.fit/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 hover:text-gray-900 icon-hover"
+            >
+              <InstagramIcon style={{ fontSize: 40, color: "#E1306C" }} />
             </a>
-            <a href="#" className="text-gray-900 hover:text-gray-500">
-              Facebook
-            </a>
-            <a href="#" className="text-gray-900 hover:text-gray-500">
-              Mail
+            <a
+              href="https://www.facebook.com/gymmusclemachine"
+              target="_blank"
+              className="text-gray-900 hover:text-gray-500 icon-hover"
+            >
+              <FacebookIcon style={{ fontSize: 40, color: "#4267B2" }} />
             </a>
           </div>
         </div>
+        <div className="w-full md:w-1/2 lg:w-1/2">
+          <Card
+            imageSrc={neri}
+            cedula={"#89504689"}
+            className="rounded-full "
+          />
 
-        {/* <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden">
-            <div className="p-6 md:flex md:items-center ">
-              <img
-                className="w-full md:w-1/2 h-80 object-cover rounded-full shadow-md"
-                src={neri}
-                alt="Neri Villeda"
-              />
-              <div className="md:ml-8 mt-6 md:mt-0">
-                <h2 className="text-3xl font-bold text-gray-800 mb-4">
-                  ¿Quién es Neri Villeda?
-                </h2>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  Soy Neri Villeda, un profesional en nutrición y entrenamiento
-                  físico con años de experiencia en ayudar a mis clientes a
-                  alcanzar sus objetivos de salud y bienestar. Mi enfoque se
-                  basa en un programa integral que combina asesoría nutricional
-                  y entrenamiento personalizado.
-                </p>
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-                  Servicios Ofrecidos
-                </h3>
-                <ul className="list-disc list-inside text-gray-600 space-y-2">
-                  <li>Consultas Nutricionales Personalizadas</li>
-                  <li>Planes de Comida Adaptados a tus Necesidades</li>
-                  <li>Entrenamiento Físico Personalizado</li>
-                  <li>Evaluaciones de Progreso y Ajustes de Plan</li>
-                </ul>
-                <p className="text-gray-600 mt-6">
-                  Mi misión es ofrecer un enfoque holístico para ayudarte a
-                  transformar tu vida, mejorando tu salud, energía y rendimiento
-                  físico. Estoy aquí para guiarte en cada paso del camino hacia
-                  tus metas.
-                </p>
-              </div>
-            </div>
+          <div ref={sectionRef} className="mt-2 flex justify-center">
+            {isVisible && (
+              <Suspense fallback={<Spinner />}>
+                <InstagramWidget />
+              </Suspense>
+            )}
           </div>
-        </div> */}
+        </div>
       </div>
+
+      {/* <div ref={sectionRef} className="flex justify-center">
+        {isVisible && (
+          <Suspense fallback={<Spinner />}>
+            <InstagramWidget />
+          </Suspense>
+        )}
+      </div> */}
+
+      {/* <div id="#" className="">
+        <div className="p-8 flex flex-col bg-gray-100 md:flex-row justify-around items-center md:mb-10">
+          <div className="w-full md:w-1/2 lg:w-1/2 mb-8 md:mb-0">
+            <CustomizedTimeline />
+          </div>
+        </div>
+      </div> */}
     </section>
   );
 };
