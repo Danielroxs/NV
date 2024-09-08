@@ -37,7 +37,7 @@ const Testimonial = () => {
                   </h3>
                   <p>{testimonial.quote}</p>
 
-                  <div className="flex text-yellow-500">
+                  <div className="flex md:mt-2 md:justify-start m-2 justify-center text-yellow-500">
                     {Array(testimonial.rating)
                       .fill(0)
                       .map((_, i) => (

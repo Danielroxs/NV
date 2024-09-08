@@ -123,7 +123,7 @@ export const testimonials = [
     {
         id: 4,
         quote:
-            "La colaboración con Daniel para el sitio web de nuestro consultorio de nutrición ha sido increíble. Su capacidad para crear un diseño claro y funcional ha facilitado a nuestros clientes encontrar información relevante y programar citas. Su profesionalismo y compromiso con el proyecto fueron evidentes en cada etapa. Lo recomendaría sin dudarlo.",
+            "La colaboración con Daniel para el sitio web de nuestro consultorio de nutrición ha sido increíble. Su capacidad para crear un diseño claro y funcional ha facilitado a nuestros clientes encontrar información relevante y programar citas. Su profesionalismo y compromiso con el proyecto fueron evidentes en cada etapa. Lo recomendaría sin dudarlo, los resultados habland por si solos.",
         name: "Neri Villeda",
         title: "Consultorio Nutrición",
         image: '/public/test4.png',

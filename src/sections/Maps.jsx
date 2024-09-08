@@ -1,4 +1,10 @@
+import Button from "../components/Button";
+
 const Maps = () => {
+  const openInGoogleMaps = () => {
+    window.open("https://www.google.com/maps?q=GYM+MUSCLE+MACHINE", "_blank");
+  };
+
   return (
     <section className="py-16">
       <div className="container mx-auto px-6 text-center">
@@ -16,6 +22,10 @@ const Maps = () => {
             referrerPolicy="no-referrer-when-downgrade"
           />
         </div>
+
+        <Button onClick={openInGoogleMaps} className="mt-4">
+          Abrir en Google Maps
+        </Button>
       </div>
     </section>
   );
