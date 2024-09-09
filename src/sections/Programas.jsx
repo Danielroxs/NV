@@ -2,7 +2,7 @@ import { programas } from "../constants";
 
 const Programas = () => {
   return (
-    <section className="py-16 bg-gray-100">
+    <section className="py-16 ">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-12 ">
           Nuestros Programas Combinados

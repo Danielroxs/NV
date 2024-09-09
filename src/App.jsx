@@ -9,54 +9,55 @@ import {
   Programas,
 } from "./sections";
 import * as React from "react";
-import { Card } from "@chakra-ui/react";
 import Contact from "./components/Contact";
 import Testimonial from "./sections/Testimonial";
-import Hero1 from "./sections/Hero1";
+import LandingPage from "./sections/PruebaContainer";
 
 const App = () => (
   <main className="relative">
-    <section className="">
+    {/* Hero Section - Fuera del contenedor blanco */}
+    <section>
       <Hero />
     </section>
 
-    {/* <section>
-      <Hero1 />
-    </section> */}
+    {/* Contenedor blanco que se superpone al Hero */}
+    <section className="relative -mt-16 bg-gray-100 shadow-lg rounded-lg z-10 p-8 w-11/12 mx-auto">
+      {/* Contenido de la landing page sobre el lienzo blanco */}
 
-    <section className="">
-      <AboutUs />
+      <section className="mb-12">
+        <AboutUs />
+      </section>
+
+      <section className="mb-12">
+        <Services />
+      </section>
+
+      <section className="mb-12">
+        <Benefits />
+      </section>
+
+      <section className="mb-12">
+        <Testimonial />
+      </section>
+
+      <section className="mb-12">
+        <Maps />
+      </section>
+
+      <section className="mb-12">
+        <Contact />
+      </section>
+
+      <section className="mb-12">
+        <Programas />
+      </section>
+
+      {/* <section className="mb-12">
+        <LandingPage />
+      </section> */}
     </section>
 
     <section>
-      <Services />
-    </section>
-
-    <section className="">
-      <Benefits />
-    </section>
-
-    <section>
-      <Testimonial />
-    </section>
-
-    {/* <section className="">
-      <Testimonials />
-    </section> */}
-
-    <section className="padding-x ">
-      <Maps />
-    </section>
-
-    <section className="padding-x ">
-      <Programas />
-    </section>
-
-    <section className="padding-x ">
-      <Contact />
-    </section>
-
-    <section className="">
       <Footer />
     </section>
   </main>

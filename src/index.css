@@ -121,6 +121,10 @@
   animation: spin 1s infinite;
 }
 
+body {
+  background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);

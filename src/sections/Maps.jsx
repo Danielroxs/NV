@@ -6,10 +6,10 @@ const Maps = () => {
   };
 
   return (
-    <section className="py-16 vh-100">
+    <section className="py-10 bg-gray-100">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="text-white text-3xl md:text-4xl font-medium mb-8">
-          Encuentranos
+        <h2 className="text-white text-2xl md:text-4xl font-medium mb-2">
+          Maps
         </h2>
         <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg">
           <iframe
@@ -23,7 +23,7 @@ const Maps = () => {
           />
         </div>
 
-        <Button onClick={openInGoogleMaps} className="mt-4">
+        <Button onClick={openInGoogleMaps} className="mt-2">
           Abrir en Google Maps
         </Button>
       </div>

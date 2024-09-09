@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="container">
         {/* Animación del texto principal: Viene desde la izquierda */}
         <motion.h1
-          className="display-4 text-start"
+          className="display-4 text-start text-4xl font-extrabold font-palanquin text-white"
           initial={{ x: "-100vw", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ type: "spring", stiffness: 50, duration: 3 }}
@@ -17,7 +17,7 @@ const Hero = () => {
 
         {/* Animación del subtítulo: Viene desde la derecha */}
         <motion.p
-          className="lead text-start"
+          className="lead text-start text-sm md:text-xl mb-6 text-gray-100"
           initial={{ x: "40vw", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
