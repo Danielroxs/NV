@@ -12,12 +12,17 @@ import * as React from "react";
 import { Card } from "@chakra-ui/react";
 import Contact from "./components/Contact";
 import Testimonial from "./sections/Testimonial";
+import Hero1 from "./sections/Hero1";
 
 const App = () => (
   <main className="relative">
     <section className="">
       <Hero />
     </section>
+
+    {/* <section>
+      <Hero1 />
+    </section> */}
 
     <section className="">
       <AboutUs />
