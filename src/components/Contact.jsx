@@ -44,44 +44,50 @@ const ContactForm = () => {
   return (
     <section className="">
       <div className="max-w-md mx-auto bg-white p-4 m-6 shadow-lg rounded-lg">
-        <h2 className="text-2xl mb-6 text-center">Contact</h2>
+        <h2 className="text-2xl mb-6 text-center">Contacto</h2>
         <form onSubmit={sendEmail}>
           <div className="grid grid-cols-1 gap-6">
-            <input
-              type="text"
-              name="name" // Esto debe coincidir con {{name}} en la plantilla
-              placeholder="Name"
-              value={formData.name}
-              onChange={handleChange}
-              className="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-            />
+            <div class="input-wrapper">
+              <input
+                type="text"
+                name="name" // Esto debe coincidir con {{name}} en la plantilla
+                placeholder="Nombre"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+              <span class="underline"></span>
+            </div>
 
-            <input
-              type="tel"
-              name="phone" // Esto debe coincidir con {{phone}} en la plantilla
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="Phone"
-              className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+            <div class="input-wrapper">
+              <input
+                type="tel"
+                name="phone" // Esto debe coincidir con {{phone}} en la plantilla
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Telefono"
+                required
+              />
+              <span class="underline"></span>
+            </div>
 
-            <input
-              type="email"
-              name="email" // Esto debe coincidir con {{email}} en la plantilla
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
-              className="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              required
-            />
+            <div class="input-wrapper">
+              <input
+                type="email"
+                name="email" // Esto debe coincidir con {{email}} en la plantilla
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <span class="underline"></span>
+            </div>
 
             <textarea
               name="message" // Esto debe coincidir con {{message}} en la plantilla
-              placeholder="Your message..."
+              placeholder="Tú mensaje..."
               value={formData.message}
               onChange={handleChange}
-              className="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>

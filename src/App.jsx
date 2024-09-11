@@ -12,6 +12,7 @@ import * as React from "react";
 import Contact from "./components/Contact";
 import Testimonial from "./sections/Testimonial";
 import LandingPage from "./sections/PruebaContainer";
+import Contact1 from "./components/Contact1";
 
 const App = () => (
   <main className="relative">
@@ -46,6 +47,9 @@ const App = () => (
 
       <section className="mb-12">
         <Contact />
+      </section>
+      <section className="mb-12">
+        <Contact1 />
       </section>
 
       <section className="mb-12">

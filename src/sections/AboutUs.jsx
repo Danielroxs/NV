@@ -90,11 +90,7 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="w-full md:w-1/2 lg:w-1/2">
-          <Card
-            imageSrc={neri}
-            cedula={"#89504689"}
-            className="rounded-full "
-          />
+          <Card imageSrc={neri} cedula={"#89504689"} className="rounded-full" />
 
           <div ref={sectionRef} className="mt-2 flex justify-center">
             {isVisible && (
