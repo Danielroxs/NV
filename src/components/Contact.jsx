@@ -47,7 +47,7 @@ const ContactForm = () => {
         <h2 className="text-2xl mb-6 text-center">Contacto</h2>
         <form onSubmit={sendEmail}>
           <div className="grid grid-cols-1 gap-6">
-            <div class="input-wrapper">
+            <div className="input-wrapper">
               <input
                 type="text"
                 name="name" // Esto debe coincidir con {{name}} en la plantilla
@@ -56,10 +56,10 @@ const ContactForm = () => {
                 onChange={handleChange}
                 required
               />
-              <span class="underline"></span>
+              <span className="underline"></span>
             </div>
 
-            <div class="input-wrapper">
+            <div className="input-wrapper">
               <input
                 type="tel"
                 name="phone" // Esto debe coincidir con {{phone}} en la plantilla
@@ -68,10 +68,10 @@ const ContactForm = () => {
                 placeholder="Telefono"
                 required
               />
-              <span class="underline"></span>
+              <span className="underline"></span>
             </div>
 
-            <div class="input-wrapper">
+            <div className="input-wrapper">
               <input
                 type="email"
                 name="email" // Esto debe coincidir con {{email}} en la plantilla
@@ -80,7 +80,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 required
               />
-              <span class="underline"></span>
+              <span className="underline"></span>
             </div>
 
             <textarea

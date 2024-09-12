@@ -23,8 +23,8 @@ const Testimonial = () => {
           autoplay={{ delay: 5000 }}
           className="mySwiper"
         >
-          {testimonials.map((testimonial, id) => (
-            <SwiperSlide key={id}>
+          {testimonials.map((testimonial, i) => (
+            <SwiperSlide key={i}>
               <div className="flex flex-col md:flex-row items-center bg-white shadow-lg rounded-lg p-6">
                 <img
                   src={testimonial.image}
@@ -41,7 +41,7 @@ const Testimonial = () => {
                     {Array(testimonial.rating)
                       .fill(0)
                       .map((_, i) => (
-                        <FaStar key={id} />
+                        <FaStar key={i} />
                       ))}
                   </div>
                 </div>

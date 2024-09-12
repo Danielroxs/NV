@@ -11,8 +11,7 @@ import {
 import * as React from "react";
 import Contact from "./components/Contact";
 import Testimonial from "./sections/Testimonial";
-import LandingPage from "./sections/PruebaContainer";
-import Contact1 from "./components/Contact1";
+import ImageProfile from "./components/ImageProfile";
 
 const App = () => (
   <main className="relative">
@@ -27,6 +26,10 @@ const App = () => (
 
       <section className="mb-12">
         <AboutUs />
+      </section>
+
+      <section>
+        <ImageProfile />
       </section>
 
       <section className="mb-12">
@@ -48,17 +51,10 @@ const App = () => (
       <section className="mb-12">
         <Contact />
       </section>
-      <section className="mb-12">
-        <Contact1 />
-      </section>
 
       <section className="mb-12">
         <Programas />
       </section>
-
-      {/* <section className="mb-12">
-        <LandingPage />
-      </section> */}
     </section>
 
     <section>
