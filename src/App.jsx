@@ -11,7 +11,9 @@ import {
 import * as React from "react";
 import Contact from "./components/Contact";
 import Testimonial from "./sections/Testimonial";
-import ImageProfile from "./components/ImageProfile";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import Navbar from "./components/Navbar";
 
 const App = () => (
   <main className="relative">
@@ -28,12 +30,12 @@ const App = () => (
         <AboutUs />
       </section>
 
-      <section>
-        <ImageProfile />
-      </section>
-
       <section className="mb-12">
         <Services />
+      </section>
+
+      <section>
+        <Navbar />
       </section>
 
       <section className="mb-12">

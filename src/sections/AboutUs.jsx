@@ -90,7 +90,13 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="w-full md:w-1/2 lg:w-1/2">
-          <Card imageSrc={neri} cedula={"#89504689"} className="rounded-full" />
+          <div className="">
+            <Card
+              imageSrc={neri}
+              cedula={"#89504689"}
+              className="rounded-full h-32 w-32"
+            />
+          </div>
 
           <div ref={sectionRef} className="mt-2 flex justify-center">
             {isVisible && (
@@ -101,22 +107,6 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-
-      {/* <div ref={sectionRef} className="flex justify-center">
-        {isVisible && (
-          <Suspense fallback={<Spinner />}>
-            <InstagramWidget />
-          </Suspense>
-        )}
-      </div> */}
-
-      {/* <div id="#" className="">
-        <div className="p-8 flex flex-col bg-gray-100 md:flex-row justify-around items-center md:mb-10">
-          <div className="w-full md:w-1/2 lg:w-1/2 mb-8 md:mb-0">
-            <CustomizedTimeline />
-          </div>
-        </div>
-      </div> */}
     </section>
   );
 };

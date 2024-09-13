@@ -21,12 +21,16 @@ const Card = ({ imageSrc, cedula, className }) => {
       {/* Imagen a la izquierda */}
 
       <div className="flex flex-col md:flex-row items-center ">
-        <div className="flex-shrink-0 mt-4 md:mb-4 md:ml-4 xl:ml-10 w-32 h-32 md:w-48 md:h-48 ">
-          <img
-            src={imageSrc}
-            alt="Profile"
-            className={`w-full h-full object-cover  ${className}`}
-          />
+        <div className="flex justify-center items-center">
+          <div className="relative">
+            <div className="p-1 bg-gradient-to-b from-yellow-400 via-pink-500 to-purple-600 rounded-full">
+              <img
+                src={imageSrc}
+                alt="profile"
+                className="h-44 w-44 rounded-full border-4 border-white"
+              />
+            </div>
+          </div>
         </div>
 
         {/* Contenido a la derecha */}

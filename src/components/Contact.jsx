@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import Button from "../components/Button";
+import { FaUser, FaEnvelope, FaPhoneAlt, FaCommentDots } from "react-icons/fa";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -47,7 +48,8 @@ const ContactForm = () => {
         <h2 className="text-2xl mb-6 text-center">Contacto</h2>
         <form onSubmit={sendEmail}>
           <div className="grid grid-cols-1 gap-6">
-            <div className="input-wrapper">
+            <div className="input-wrapper flex items-center ">
+              <FaUser className="mr-3 text-gray-600" />
               <input
                 type="text"
                 name="name" // Esto debe coincidir con {{name}} en la plantilla
@@ -59,7 +61,8 @@ const ContactForm = () => {
               <span className="underline"></span>
             </div>
 
-            <div className="input-wrapper">
+            <div className="input-wrapper flex items-center">
+              <FaPhoneAlt className="mr-3 text-gray-600" />
               <input
                 type="tel"
                 name="phone" // Esto debe coincidir con {{phone}} en la plantilla
@@ -71,7 +74,8 @@ const ContactForm = () => {
               <span className="underline"></span>
             </div>
 
-            <div className="input-wrapper">
+            <div className="input-wrapper flex items-center">
+              <FaEnvelope className="mr-3 text-gray-600" />
               <input
                 type="email"
                 name="email" // Esto debe coincidir con {{email}} en la plantilla
@@ -88,15 +92,10 @@ const ContactForm = () => {
               placeholder="Tú mensaje..."
               value={formData.message}
               onChange={handleChange}
+              className="appearance-none bg-transparent border-none w-full text-gray-700  py-1 px-2 leading-tight focus:outline-none resize-none"
               required
             />
           </div>
-          {/* <button
-          type="submit"
-          className="w-full bg-black text-white font-bold py-3 mt-6 rounded-md hover:bg-gray-800 transition duration-200"
-        >
-          Submit
-        </button> */}
 
           <Button type="submit" className="w-full mt-6">
             Submit

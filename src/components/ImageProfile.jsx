@@ -12,7 +12,6 @@ const ImageProfile = () => {
             className="h-48 w-48 rounded-full border-4 border-white"
           />
         </div>
-        <div className="absolute bottom-2 right-2 bg-green-400 h-6 w-6 border-2 border-white rounded-full"></div>
       </div>
     </div>
   );

@@ -1,12 +1,12 @@
 import { FaAppleAlt, FaDumbbell } from "react-icons/fa";
-import nutrigym from "../images/nutrigym.webp";
+import services from "../images/services.webp";
 
 const Services = () => {
   return (
     <section
       className="py-16 bg-cover bg-center"
       style={{
-        backgroundImage: `url(${nutrigym})`,
+        backgroundImage: `url(${services})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
