@@ -11,50 +11,47 @@ import {
 import * as React from "react";
 import Contact from "./components/Contact";
 import Testimonial from "./sections/Testimonial";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
 import Navbar from "./components/Navbar";
 
 const App = () => (
-  <main className="relative">
+  <main className="relative bg-city-lights ">
+    {/* Navbar fijo en la parte superior */}
+    <Navbar />
+
     {/* Hero Section - Fuera del contenedor blanco */}
     <section>
       <Hero />
     </section>
 
     {/* Contenedor blanco que se superpone al Hero */}
-    <section className="relative -mt-16 bg-gray-100 shadow-lg rounded-lg z-10 p-8 w-11/12 mx-auto">
+    <section className="relative -mt-16 bg-anti-flash-white shadow-lg rounded-lg z-10 p-8 w-11/12 mx-auto">
       {/* Contenido de la landing page sobre el lienzo blanco */}
 
-      <section className="mb-12">
+      <section>
         <AboutUs />
       </section>
 
-      <section className="mb-12">
+      <section>
         <Services />
       </section>
 
       <section>
-        <Navbar />
-      </section>
-
-      <section className="mb-12">
         <Benefits />
       </section>
 
-      <section className="mb-12">
+      <section>
         <Testimonial />
       </section>
 
-      <section className="mb-12">
+      <section>
         <Maps />
       </section>
 
-      <section className="mb-12">
+      <section>
         <Contact />
       </section>
 
-      <section className="mb-12">
+      <section>
         <Programas />
       </section>
     </section>

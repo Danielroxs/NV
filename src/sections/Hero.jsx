@@ -1,5 +1,3 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
-import hero1 from "../images/hero1.png";
 import Button from "../components/Button";
 import { motion } from "framer-motion";
 import bg from "../images/bg.webp";
@@ -19,7 +17,7 @@ const Hero = () => {
 
   return (
     <section
-      className="relative bg-cover bg-center min-h-[80vh] flex items-center justify-center"
+      className="relative bg-cover bg-center min-h-[80vh] flex items-center justify-center z-[1]"
       style={{
         backgroundImage: `url(${bg})`,
         backgroundAttachment: "fixed",
@@ -35,7 +33,7 @@ const Hero = () => {
         }}
       >
         <motion.h1
-          className="text-4xl font-extrabold font-palanquin text-white"
+          className="text-4xl font-extrabold font-palanquin text-white pb-4"
           initial={{ x: "-100vw", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
@@ -49,7 +47,7 @@ const Hero = () => {
         </motion.h1>
 
         <motion.p
-          className="text-sm md:text-xl mb-6 text-gray-100"
+          className="text-sm md:text-xl mb-6 text-gray-100 pb-4"
           initial={{ x: "40vw", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
@@ -60,7 +58,8 @@ const Hero = () => {
             duration: 1.5,
           }}
         >
-          Transforma tu vida hoy mismo con nuestros planes adaptados a ti.
+          "Desafía tus límites y transforma tu cuerpo con un enfoque único.
+          Logra resultados reales y sostenibles, ¡tu mejor versión te espera!"
         </motion.p>
 
         <motion.div
