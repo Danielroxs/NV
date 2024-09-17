@@ -25,7 +25,7 @@ const App = () => (
     </section>
 
     {/* Contenedor blanco que se superpone al Hero */}
-    <section className="relative -mt-16 bg-anti-flash-white shadow-lg rounded-lg z-10 p-8 w-11/12 mx-auto">
+    <section className="relative -mt-16 bg-city-lights shadow-lg rounded-lg z-10 p-8 w-full mx-auto">
       {/* Contenido de la landing page sobre el lienzo blanco */}
 
       <section>

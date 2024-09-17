@@ -4,7 +4,7 @@ import services from "../images/services.webp";
 const Services = () => {
   return (
     <section
-      className="py-16 bg-cover bg-center"
+      className="py-16 bg-cover bg-center rounded-xl"
       style={{
         backgroundImage: `url(${services})`,
         backgroundPosition: "center",

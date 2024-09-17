@@ -6,7 +6,7 @@ const Maps = () => {
   };
 
   return (
-    <section className="py-10 bg-gray-100">
+    <section className="py-10">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-white text-2xl md:text-4xl font-medium mb-2">
           Maps

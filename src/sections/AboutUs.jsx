@@ -42,14 +42,14 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <section className="bg-gray-100 py-16 shadow-lg ">
+    <section className="bg-city-lights py-16  ">
       <div className="text-center text-4xl font-bold font-palanquin">
         <h2>Sobre Nosotros</h2>
       </div>
 
       <div
         id="#about-us"
-        className="p-2 flex flex-col bg-gray-100 md:flex-row justify-around items-center md:mb-6"
+        className="p-2 flex flex-col md:flex-row justify-around items-center md:mb-6"
       >
         <div className="w-full text-start md:w-1/3 lg:w-1/3 mb-8 md:mb-0">
           <h2 className="text-2xl font-palanquin text-gray-900 mb-4">
