@@ -12,6 +12,7 @@ import * as React from "react";
 import Contact from "./components/Contact";
 import Testimonial from "./sections/Testimonial";
 import Navbar from "./components/Navbar";
+import MockupCards from "./components/MockupCard";
 
 const App = () => (
   <main className="relative bg-city-lights ">
@@ -33,6 +34,10 @@ const App = () => (
 
       <section>
         <Services />
+      </section>
+
+      <section>
+        <MockupCards />
       </section>
 
       <section>
