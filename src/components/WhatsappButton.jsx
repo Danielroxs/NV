@@ -7,8 +7,8 @@ const FloatingButton = styled(motion.a)`
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background-color: #25d366;
   color: white;
   border-radius: 50%;
@@ -37,7 +37,7 @@ const whatsappAnimation = {
 const WhatsappButton = () => {
   return (
     <FloatingButton
-      href="https://wa.me/525512345678?text=Hola,%20me%20gustaría%20obtener%20más%20información%20sobre%20sus%20servicios.
+      href="https://wa.me/525538075005?text=Hola,%20me%20gustaría%20obtener%20más%20información%20sobre%20sus%20servicios.
 "
       target="_blank"
       rel="noopener noreferrer"
@@ -46,7 +46,7 @@ const WhatsappButton = () => {
       variants={whatsappAnimation}
       transition={{ duration: 0.5, delay: 2, ease: "easeOut" }}
     >
-      <FaWhatsapp size={24} />
+      <FaWhatsapp size={40} />
     </FloatingButton>
   );
 };

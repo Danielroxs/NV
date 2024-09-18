@@ -2,6 +2,7 @@ import Button from "../components/Button";
 import { motion } from "framer-motion";
 import bg from "../images/bg.webp";
 import { useEffect, useState } from "react";
+import { Box, Image } from "@chakra-ui/react";
 
 const Hero = () => {
   const [offsetY, setOffsetY] = useState(0);

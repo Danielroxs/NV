@@ -64,7 +64,7 @@ const Navbar = () => {
 
   return (
     <Box
-      bg={scrolling ? "gray.800" : "transparent"}
+      bg={scrolling ? "transparent" : "transparent"}
       color="white"
       p={3}
       position="fixed"
@@ -73,7 +73,7 @@ const Navbar = () => {
       transition="background-color 0.3s ease"
     >
       <Flex align="center" justify={justifyContent} className="md:mt-4">
-        <Box as="a" href="/" marginLeft="10px">
+        <Box as="a" href="/" marginLeft="5px">
           <StyledLogo
             src={Logo}
             alt="Logo de mi negocio"
