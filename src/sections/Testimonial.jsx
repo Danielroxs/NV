@@ -12,7 +12,7 @@ const Testimonial = () => {
     <section className="py-16">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
-          Testimonios
+          Clientes Satisfechos
         </h2>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}

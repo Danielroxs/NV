@@ -13,6 +13,8 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { motion, useAnimation } from "framer-motion";
+import Logo from "../images/Logo.png";
+import styled from "styled-components";
 
 const MotionBox = motion(Box);
 
@@ -21,6 +23,23 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const isDesktop = useBreakpointValue({ base: false, md: true });
   const controls = useAnimation();
+  const logoHeight = useBreakpointValue({ base: "40px", md: "50px" });
+
+  const justifyContent = useBreakpointValue({
+    base: "space-between",
+    md: "space-around",
+  });
+
+  const MotionBox = motion(Box);
+
+  const StyledLogo = styled.img`
+    height: ${(props) => props.height};
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  `;
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
@@ -47,14 +66,20 @@ const Navbar = () => {
     <Box
       bg={scrolling ? "gray.800" : "transparent"}
       color="white"
-      p={4}
+      p={3}
       position="fixed"
       width="100%"
       zIndex="1000"
       transition="background-color 0.3s ease"
     >
-      <Flex align="center" justify="space-between">
-        <Heading size="lg">Mi Página</Heading>
+      <Flex align="center" justify={justifyContent} className="md:mt-4">
+        <Box as="a" href="/" marginLeft="10px">
+          <StyledLogo
+            src={Logo}
+            alt="Logo de mi negocio"
+            style={{ height: logoHeight }}
+          />
+        </Box>
         {isDesktop ? (
           <Stack direction="row" spacing={4}>
             <Link href="#hero">Inicio</Link>
@@ -70,6 +95,10 @@ const Navbar = () => {
               aria-label={isOpen ? "Close menu" : "Open menu"}
               variant="outline"
               colorScheme="whiteAlpha"
+              backgroundColor="gray.700"
+              _hover={{ backgroundColor: "gray.600" }}
+              borderRadius="md"
+              p={3}
             />
             <MotionBox
               initial={{ opacity: 0, y: -20 }}
