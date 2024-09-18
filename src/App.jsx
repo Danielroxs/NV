@@ -13,6 +13,7 @@ import Contact from "./components/Contact";
 import Testimonial from "./sections/Testimonial";
 import Navbar from "./components/Navbar";
 import MockupCards from "./components/MockupCard";
+import WhatsappButton from "./components/WhatsappButton";
 
 const App = () => (
   <main className="relative bg-city-lights ">
@@ -31,6 +32,8 @@ const App = () => (
       <section>
         <AboutUs />
       </section>
+
+      <WhatsappButton />
 
       <section>
         <Services />

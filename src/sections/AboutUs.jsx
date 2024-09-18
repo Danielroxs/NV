@@ -1,7 +1,6 @@
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import Card from "../components/NeriCard";
 import neri from "../images/neri.webp"; // Asegúrate de que la ruta sea correcta
-import CustomizedTimeline from "../components/TimeLine";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import Spinner from "../components/Spinner";
