@@ -22,6 +22,8 @@ const Hero = () => {
       style={{
         backgroundImage: `url(${bg})`,
         backgroundAttachment: "fixed",
+        backgroundSize: "cover",
+        backgroundPosition: "center center",
       }}
     >
       {/* Capa oscura sobre la imagen de fondo */}
