@@ -4,6 +4,7 @@ import bg from "../images/bg.webp";
 import { useEffect, useState } from "react";
 import { Box, Image } from "@chakra-ui/react";
 import { FaWhatsapp } from "react-icons/fa";
+import WhatsappButton from "../components/WaButtonNormal";
 
 const Hero = () => {
   const [offsetY, setOffsetY] = useState(0);
@@ -16,6 +17,9 @@ const Hero = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const message = "Me gustarian mas informes acerca de sus servicios";
+  const contact = "¡Comienza ahora! ";
 
   return (
     <section
@@ -78,9 +82,15 @@ const Hero = () => {
             duration: 1.5,
           }}
         >
-          <Button className="flex items-center  justify-center bg-[#20b354] hover:bg-[#1c9547] md:text-lg text-sm">
-            ¡Comienza ahora! <FaWhatsapp className="ml-2 text-xl" />
-          </Button>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "20px",
+            }}
+          >
+            <WhatsappButton message={message} contact={contact} />
+          </div>
         </motion.div>
       </div>
     </section>
