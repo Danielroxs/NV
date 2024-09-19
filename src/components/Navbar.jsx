@@ -16,7 +16,16 @@ import { motion, useAnimation } from "framer-motion";
 import Logo from "../images/Logo.png";
 import styled from "styled-components";
 
-const MotionBox = motion(Box);
+const StyledLogo = styled.img`
+  height: ${(props) => props.height};
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+
+const MotionBox = motion.create(Box);
 
 const Navbar = () => {
   const [scrolling, setScrolling] = useState(false);
@@ -27,19 +36,8 @@ const Navbar = () => {
 
   const justifyContent = useBreakpointValue({
     base: "space-between",
-    md: "space-around",
+    md: "space-between",
   });
-
-  const MotionBox = motion(Box);
-
-  const StyledLogo = styled.img`
-    height: ${(props) => props.height};
-    transition: transform 0.2s ease-in-out;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-  `;
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
@@ -64,7 +62,7 @@ const Navbar = () => {
 
   return (
     <Box
-      bg={scrolling ? "transparent" : "transparent"}
+      bg={scrolling ? "gray.800" : "transparent"}
       color="white"
       p={3}
       position="fixed"

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import bg from "../images/bg.webp";
 import { useEffect, useState } from "react";
 import { Box, Image } from "@chakra-ui/react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Hero = () => {
   const [offsetY, setOffsetY] = useState(0);
@@ -66,6 +67,7 @@ const Hero = () => {
         </motion.p>
 
         <motion.div
+          className="flex justify-center items-center"
           initial={{ y: "30px", opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
@@ -76,7 +78,9 @@ const Hero = () => {
             duration: 1.5,
           }}
         >
-          <Button>Agenda una cita</Button>
+          <Button className="flex items-center  justify-center bg-[#20b354] hover:bg-[#1c9547] md:text-lg text-sm">
+            ¡Comienza ahora! <FaWhatsapp className="ml-2 text-xl" />
+          </Button>
         </motion.div>
       </div>
     </section>

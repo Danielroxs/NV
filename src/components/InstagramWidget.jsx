@@ -7,7 +7,7 @@ const InstagramWidget = () => {
         src="https://snapwidget.com/embed/1078420"
         className="snapwidget-widget rounded-2xl"
         allowtransparency="true"
-        frameborder="0"
+        frameBorder="0"
         style={{
           border: "none",
           overflow: "hidden",

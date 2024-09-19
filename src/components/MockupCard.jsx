@@ -5,6 +5,7 @@ import mock1 from "../images/mock1.jpg";
 import mock2 from "../images/mock2.jpg";
 import mock3 from "../images/mock3.jpg";
 import mock6 from "../images/mock6.jpg";
+import WhatsappButton from "./WaButtonNormal";
 
 // Card styles
 const Card = styled(motion.div)`
@@ -46,6 +47,12 @@ const Container = styled.div`
   padding: 40px;
 `;
 
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+`;
+
 // Data for mockups (you can customize these with your own images and descriptions)
 const mockups = [
   {
@@ -70,20 +77,30 @@ const mockups = [
 
 // Component for rendering cards
 const MockupCards = () => {
+  const message = "¡Quiero comprar una camiseta!";
+  const contact = "¡Quiero la mia!";
+
   return (
-    <Container>
-      {mockups.map((mockup) => (
-        <Card
-          key={mockup.id}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <img src={mockup.image} alt={mockup.title} />
-          <h3>{mockup.title}</h3>
-          <p>{mockup.description}</p>
-        </Card>
-      ))}
-    </Container>
+    <>
+      <Container>
+        {mockups.map((mockup) => (
+          <Card
+            key={mockup.id}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <img src={mockup.image} alt={mockup.title} />
+            <h3>{mockup.title}</h3>
+            <p>{mockup.description}</p>
+          </Card>
+        ))}
+      </Container>
+      <div
+        style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
+      >
+        <WhatsappButton message={message} contact={contact} />
+      </div>
+    </>
   );
 };
 

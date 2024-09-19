@@ -98,7 +98,7 @@ const ContactForm = () => {
           </div>
 
           <Button type="submit" className="w-full mt-6">
-            Submit
+            Enviar
           </Button>
         </form>
         <ToastContainer />

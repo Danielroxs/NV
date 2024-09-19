@@ -23,7 +23,10 @@ const Maps = () => {
           />
         </div>
 
-        <Button onClick={openInGoogleMaps} className="mt-2">
+        <Button
+          onClick={openInGoogleMaps}
+          className="bg-[#34A853] hover:bg-[#2c8c45] text-white mt-4"
+        >
           Abrir en Google Maps
         </Button>
       </div>

@@ -18,7 +18,6 @@ const Testimonial = () => {
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={30}
           slidesPerView={1}
-          navigation
           pagination={{ clickable: true }}
           autoplay={{ delay: 5000 }}
           className="mySwiper"
