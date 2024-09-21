@@ -40,20 +40,24 @@ const Card = styled(motion.div)`
   }
 `;
 
+// Actualiza el contenedor principal para incluir el fondo SVG
 const Container = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 40px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjE0NDAiIGhlaWdodD0iNTYwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB2aWV3Qm94PSIwIDAgMTQ0MCA1NjAiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCB4MT0iMTUuMjgiIHkxPSItMzkuMjkiIHgyPSI4NC43MiIgeTI9IjEzOS4yOSIgaWQ9IlN2Z2pzTGluZWFyR3JhZGllbnQxMDAzIj48c3RvcCBzdG9wLWNvbG9yPSIjMGUyYTQ3IiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjMDA0NTllIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48ZyBtYXNrPSJ1cmwoI1N2Z2pzTWFzazEwMDIpIiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSI1NjAiIGZpbGw9InVybCgjU3ZnanNMaW5lYXJHcmFkaWVudDEwMDMpIi8+PHBhdGggZD0iTTE0NDAgMEw3MzYuNzkgMEwxNDQwIDE4MC40MXoiIGZpbGw9InJnYmEoMjU1LCAyNTUsIDI1NSwgLjEpIi8+PHBhdGggZD0iTTczNi43OSAwTDE0NDAgMTgwLjQxTDE0NDAgMjMwLjI5TDY4OS4zNyAweiIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAuMDc1KSIvPjxwYXRoIGQ9Ik02ODkuMzcgMEwxNDQwIDIzMC4yOUwxNDQwIDM3Ni40OUw1MjguNjUgMHoiIGZpbGw9InJnYmEoMjU1LCAyNTUsIDI1NSwgLjA1KSIvPjxwYXRoIGQ9Ik01MjguNjUgMEwxNDQwIDM3Ni40OUwxNDQwIDQwMS40OUwzMjcuODQ5OTk5OTk3IDB6IiBmaWxsPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIC4wMjUpIi8+PHBhdGggZD0iTTAgNTYwTDM3NS42NCA1NjBMMCwgMzMyLjEyeiIgZmlsbD0icmdiYSgwLCAwLCAwLCAuMSkiLz48cGF0aCBkPSJNMCAzMzIuMTJMMzc1LjY0IDU2MEw4MDEuMSA1NjBMMCwgMTcyLjkiIHN0eWxlPSJmaWxsOnJnYmEoMCwgMCwgMCwgLjA3NSkiLz48cGF0aCBkPSJNIDAgMTcyLjk5OTk5OTk5TCA4MDEuMSA1NjBMIDg4Mi42MyA1NjBMMCwgMTUzLjkxeiIgZmlsbD0icmdiYSgwLCAwLCAwLCAuMDUpIi8+PHBhdGggZD0iTSAwIDE1My45MSBMIDg4Mi42MyA1NjBMIDEwMjMuMyA1NjBMMCwgMTUxLjg2OTk5OTk4IHoiIGZpbGw9InJnYmEoMCwgMCwgMCwgLjAyNSkiLz48L2c+PC9zdmc+");
+  background-size: cover;
 `;
 
+// Button container styles
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 20px;
 `;
 
-// Data for mockups (you can customize these with your own images and descriptions)
+// Data for mockups
 const mockups = [
   {
     id: 1,
@@ -82,6 +86,9 @@ const MockupCards = () => {
 
   return (
     <>
+      <div className="text-center text-4xl font-bold font-palanquin">
+        <h2 className="text-gray-500 mb-8">Tienda NV</h2>
+      </div>
       <Container>
         {mockups.map((mockup) => (
           <Card
@@ -95,11 +102,9 @@ const MockupCards = () => {
           </Card>
         ))}
       </Container>
-      <div
-        style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
-      >
+      <ButtonContainer>
         <WhatsappButton message={message} contact={contact} />
-      </div>
+      </ButtonContainer>
     </>
   );
 };

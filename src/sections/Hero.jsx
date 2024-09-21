@@ -1,4 +1,3 @@
-import Button from "../components/Button";
 import { motion } from "framer-motion";
 import bg from "../images/bg.webp";
 import { useEffect, useState } from "react";

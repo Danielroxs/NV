@@ -10,9 +10,9 @@ import {
 const muiTheme = createTheme({});
 
 createRoot(document.getElementById("root")).render(
-  <ChakraProvider>
-    <MUIThemeProvider theme={muiTheme}>
+  <MUIThemeProvider theme={muiTheme}>
+    <ChakraProvider>
       <App />
-    </MUIThemeProvider>
-  </ChakraProvider>
+    </ChakraProvider>
+  </MUIThemeProvider>
 );
