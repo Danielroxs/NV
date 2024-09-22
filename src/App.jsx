@@ -16,6 +16,7 @@ import MockupCards from "./components/MockupCard";
 import WhatsappButton from "./components/WhatsappButton";
 import SocialMedia from "./components/SocialMedia";
 import BeforeAfterComponent from "./components/AfterBefore";
+import Hero1 from "./components/Hero1";
 
 const App = () => (
   <main className="relative bg-city-lights ">
@@ -23,8 +24,12 @@ const App = () => (
     <Navbar />
 
     {/* Hero Section - Fuera del contenedor blanco */}
-    <section>
+    {/* <section>
       <Hero />
+    </section> */}
+
+    <section>
+      <Hero1 />
     </section>
 
     {/* Contenedor blanco que se superpone al Hero */}
