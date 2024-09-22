@@ -15,6 +15,7 @@ import Navbar from "./components/Navbar";
 import MockupCards from "./components/MockupCard";
 import WhatsappButton from "./components/WhatsappButton";
 import SocialMedia from "./components/SocialMedia";
+import BeforeAfterComponent from "./components/AfterBefore";
 
 const App = () => (
   <main className="relative bg-city-lights ">
@@ -32,6 +33,10 @@ const App = () => (
 
       <section>
         <AboutUs />
+      </section>
+
+      <section>
+        <BeforeAfterComponent />
       </section>
 
       <section>
