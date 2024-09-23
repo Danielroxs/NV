@@ -25,47 +25,47 @@ const App = () => (
     </section>
 
     {/* Contenedor blanco que se superpone al Hero */}
-    <section className="relative -mt-16 bg-city-lights shadow-lg rounded-lg z-10 p-8 w-11/12 mx-auto">
-      {/* Contenido de la landing page sobre el lienzo blanco */}
+    {/* <section className="relative -mt-16 bg-city-lights shadow-lg rounded-lg z-10 p-8 w-full mx-auto"> */}
+    {/* Contenido de la landing page sobre el lienzo blanco */}
 
-      <section>
-        <AboutUs />
-      </section>
-
-      <section>
-        <SocialMedia />
-      </section>
-
-      <section>
-        <BeforeAfterComponent />
-      </section>
-
-      <section>
-        <Benefits />
-      </section>
-
-      <WhatsappButton />
-
-      <section>
-        <TShirtGallery />
-      </section>
-
-      <section>
-        <Programas />
-      </section>
-
-      <section>
-        <Testimonial />
-      </section>
-
-      <section>
-        <Maps />
-      </section>
-
-      <section>
-        <Contact />
-      </section>
+    <section>
+      <AboutUs />
     </section>
+
+    <section>
+      <SocialMedia />
+    </section>
+
+    <section>
+      <BeforeAfterComponent />
+    </section>
+
+    <section>
+      <Benefits />
+    </section>
+
+    <WhatsappButton />
+
+    <section>
+      <TShirtGallery />
+    </section>
+
+    <section>
+      <Programas />
+    </section>
+
+    <section>
+      <Testimonial />
+    </section>
+
+    <section>
+      <Maps />
+    </section>
+
+    <section>
+      <Contact />
+    </section>
+    {/* </section> */}
 
     <section>
       <Footer />
