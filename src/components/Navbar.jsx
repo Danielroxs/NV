@@ -1,125 +1,118 @@
-import React, { useEffect, useState } from "react";
-import {
-  Box,
-  Flex,
-  Heading,
-  Link,
-  Button,
-  Stack,
-  useDisclosure,
-  useBreakpointValue,
-  IconButton,
-  useTheme,
-} from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import { motion, useAnimation } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import Logo from "../images/Logo.png";
-import styled from "styled-components";
-
-const StyledLogo = styled.img`
-  height: ${(props) => props.height};
-  transition: transform 0.2s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-`;
-
-const MotionBox = motion.create(Box);
 
 const Navbar = () => {
-  const [scrolling, setScrolling] = useState(false);
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const isDesktop = useBreakpointValue({ base: false, md: true });
-  const controls = useAnimation();
-  const logoHeight = useBreakpointValue({ base: "40px", md: "50px" });
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const justifyContent = useBreakpointValue({
-    base: "space-between",
-    md: "space-between",
-  });
-
-  const handleScroll = () => {
-    if (window.scrollY > 50) {
-      setScrolling(true);
-    } else {
-      setScrolling(false);
-    }
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
   useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  useEffect(() => {
-    if (isOpen) {
-      controls.start({ opacity: 1, y: 0 });
-    } else {
-      controls.start({ opacity: 0, y: -20 });
-    }
-  }, [isOpen, controls]);
+  const navLinks = [
+    { to: "home", label: "Home" },
+    { to: "about", label: "About Us" },
+    { to: "services", label: "Services" },
+    { to: "products", label: "Products" },
+    { to: "contact", label: "Contact" },
+  ];
 
   return (
-    <Box
-      bg={scrolling ? "gray.800" : "transparent"}
-      color="white"
-      p={3}
-      position="fixed"
-      width="100%"
-      zIndex="1000"
-      transition="background-color 0.3s ease"
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled ? "bg-gray-400 shadow-md" : "bg-transparent"
+      }`}
     >
-      <Flex align="center" justify={justifyContent} className="md:mt-4">
-        <Box as="a" href="/" marginLeft="5px">
-          <StyledLogo
-            src={Logo}
-            alt="Logo de mi negocio"
-            style={{ height: logoHeight }}
-          />
-        </Box>
-        {isDesktop ? (
-          <Stack direction="row" spacing={4}>
-            <Link href="#hero">Inicio</Link>
-            <Link href="#about">Sobre Nosotros</Link>
-            <Link href="#services">Servicios</Link>
-            <Link href="#contact">Contacto</Link>
-          </Stack>
-        ) : (
-          <>
-            <IconButton
-              icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-              onClick={isOpen ? onClose : onOpen}
-              aria-label={isOpen ? "Close menu" : "Open menu"}
-              variant="outline"
-              colorScheme="whiteAlpha"
-              backgroundColor="gray.700"
-              _hover={{ backgroundColor: "gray.600" }}
-              borderRadius="md"
-              p={3}
-            />
-            <MotionBox
-              initial={{ opacity: 0, y: -20 }}
-              animate={controls}
-              position="absolute"
-              top="100%"
-              right="0"
-              bg="gray.800"
-              p={4}
-              borderRadius="md"
-              width="full"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center">
+            <div className="flex-shrink-0">
+              <img className="h-8 w-auto" src={Logo} alt="Logo" />
+            </div>
+          </div>
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-4">
+              {navLinks.map((link) => (
+                <ScrollLink
+                  key={link.to}
+                  to={link.to}
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  className={`px-3 py-2 rounded-md text-sm font-medium ${
+                    isScrolled
+                      ? "text-gray-700 hover:bg-gray-100"
+                      : "text-white hover:bg-white hover:bg-opacity-20"
+                  } transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white`}
+                  aria-label={link.label}
+                >
+                  {link.label}
+                </ScrollLink>
+              ))}
+            </div>
+          </div>
+          <div className="-mr-2 flex md:hidden">
+            <button
+              onClick={toggleMenu}
+              type="button"
+              className={`inline-flex items-center justify-center p-2 rounded-md ${
+                isScrolled ? "text-gray-700" : "text-white"
+              } hover:bg-gray-100 hover:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white`}
+              aria-controls="mobile-menu"
+              aria-expanded="false"
             >
-              <Stack spacing={4}>
-                <Link href="#hero">Inicio</Link>
-                <Link href="#about">Sobre Nosotros</Link>
-                <Link href="#services">Servicios</Link>
-                <Link href="#contact">Contacto</Link>
-              </Stack>
-            </MotionBox>
-          </>
-        )}
-      </Flex>
-    </Box>
+              <span className="sr-only">Open main menu</span>
+              {isOpen ? (
+                <FaTimes className="block h-6 w-6" aria-hidden="true" />
+              ) : (
+                <FaBars className="block h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={`md:hidden ${isOpen ? "block" : "hidden"}`}
+        id="mobile-menu"
+      >
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg rounded-b-lg">
+          {navLinks.map((link) => (
+            <ScrollLink
+              key={link.to}
+              to={link.to}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+              aria-label={link.label}
+              onClick={() => setIsOpen(false)}
+            >
+              {link.label}
+            </ScrollLink>
+          ))}
+        </div>
+      </div>
+    </nav>
   );
 };
 

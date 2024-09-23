@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 import { testimonials } from "../constants";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -54,3 +54,96 @@ const Testimonial = () => {
 };
 
 export default Testimonial;
+ */
+
+import React, { useState, useEffect } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
+const testimonials = [
+  {
+    id: 1,
+    name: "John Doe",
+    text: "This product has completely transformed my workflow. It's intuitive, efficient, and a joy to use every day.",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80",
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    text: "I've tried many similar products, but this one stands out. The customer support is exceptional, and the features are unmatched.",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80",
+  },
+  {
+    id: 3,
+    name: "Mike Johnson",
+    text: "As a small business owner, this tool has been a game-changer. It's cost-effective and has significantly improved our productivity.",
+    image:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80",
+  },
+];
+
+const TestimonialCarousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 6000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  return (
+    <div className="relative w-full max-w-3xl mx-auto px-4 py-8">
+      <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="relative h-64 sm:h-80 md:h-96">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={testimonial.id}
+              className={`absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center p-8 transition-opacity duration-500 ease-in-out ${
+                index === currentIndex ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                className="w-20 h-20 rounded-full mb-4 object-cover"
+              />
+              <h3 className="text-xl font-semibold mb-2">{testimonial.name}</h3>
+              <p className="text-gray-600 text-center">{testimonial.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <button
+        onClick={goToPrevious}
+        className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+      >
+        <FaChevronLeft className="w-6 h-6 text-gray-600" />
+      </button>
+      <button
+        onClick={goToNext}
+        className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+      >
+        <FaChevronRight className="w-6 h-6 text-gray-600" />
+      </button>
+    </div>
+  );
+};
+
+export default TestimonialCarousel;

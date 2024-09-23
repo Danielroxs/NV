@@ -1,112 +1,98 @@
-import React from "react";
-import { motion } from "framer-motion";
-import styled from "styled-components";
-import mock1 from "../images/mock1.jpg";
-import mock2 from "../images/mock2.jpg";
-import mock3 from "../images/mock3.jpg";
-import mock6 from "../images/mock6.jpg";
-import WhatsappButton from "./WaButtonNormal";
+import React, { useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
-// Card styles
-const Card = styled(motion.div)`
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  text-align: center;
-  margin: 20px;
-  padding: 20px;
-  max-width: 300px;
-  transition: all 0.3s ease;
+const TShirtGallery = () => {
+  const tShirts = [
+    {
+      id: 1,
+      name: "Classic White Tee",
+      image:
+        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+      description:
+        "A timeless white t-shirt that never goes out of style. Perfect for any casual occasion.",
+    },
+    {
+      id: 2,
+      name: "Vintage Black Tee",
+      image:
+        "https://images.unsplash.com/photo-1503342394128-c104d54dba01?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+      description:
+        "A classic black tee with a vintage feel. Great for layering or wearing on its own.",
+    },
+    {
+      id: 3,
+      name: "Graphic Print Tee",
+      image:
+        "https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+      description:
+        "Express yourself with this eye-catching graphic print tee. Stand out from the crowd.",
+    },
+    {
+      id: 4,
+      name: "Striped Tee",
+      image:
+        "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+      description:
+        "A nautical-inspired striped tee. Perfect for a casual day out or a beach trip.",
+    },
+  ];
 
-  &:hover {
-    transform: scale(1.05);
-  }
+  const [selectedTShirt, setSelectedTShirt] = useState(null);
 
-  img {
-    width: 100%;
-    border-radius: 8px;
-  }
+  const handleWhatsAppClick = () => {
+    window.open("https://wa.me/525538975005", "_blank");
+  };
 
-  h3 {
-    margin: 20px 0 10px;
-    font-size: 1.2em;
-    color: #333;
-  }
-
-  p {
-    color: #777;
-    font-size: 1em;
-  }
-`;
-
-// Actualiza el contenedor principal para incluir el fondo SVG
-const Container = styled.div`
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 40px;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgd2lkdGg9IjE0NDAiIGhlaWdodD0iNTYwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB2aWV3Qm94PSIwIDAgMTQ0MCA1NjAiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCB4MT0iMTUuMjgiIHkxPSItMzkuMjkiIHgyPSI4NC43MiIgeTI9IjEzOS4yOSIgaWQ9IlN2Z2pzTGluZWFyR3JhZGllbnQxMDAzIj48c3RvcCBzdG9wLWNvbG9yPSIjMGUyYTQ3IiBvZmZzZXQ9IjAiLz48c3RvcCBzdG9wLWNvbG9yPSIjMDA0NTllIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48ZyBtYXNrPSJ1cmwoI1N2Z2pzTWFzazEwMDIpIiBmaWxsPSJub25lIj48cmVjdCB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSI1NjAiIGZpbGw9InVybCgjU3ZnanNMaW5lYXJHcmFkaWVudDEwMDMpIi8+PHBhdGggZD0iTTE0NDAgMEw3MzYuNzkgMEwxNDQwIDE4MC40MXoiIGZpbGw9InJnYmEoMjU1LCAyNTUsIDI1NSwgLjEpIi8+PHBhdGggZD0iTTczNi43OSAwTDE0NDAgMTgwLjQxTDE0NDAgMjMwLjI5TDY4OS4zNyAweiIgZmlsbD0icmdiYSgyNTUsIDI1NSwgMjU1LCAuMDc1KSIvPjxwYXRoIGQ9Ik02ODkuMzcgMEwxNDQwIDIzMC4yOUwxNDQwIDM3Ni40OUw1MjguNjUgMHoiIGZpbGw9InJnYmEoMjU1LCAyNTUsIDI1NSwgLjA1KSIvPjxwYXRoIGQ9Ik01MjguNjUgMEwxNDQwIDM3Ni40OUwxNDQwIDQwMS40OUwzMjcuODQ5OTk5OTk3IDB6IiBmaWxsPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIC4wMjUpIi8+PHBhdGggZD0iTTAgNTYwTDM3NS42NCA1NjBMMCwgMzMyLjEyeiIgZmlsbD0icmdiYSgwLCAwLCAwLCAuMSkiLz48cGF0aCBkPSJNMCAzMzIuMTJMMzc1LjY0IDU2MEw4MDEuMSA1NjBMMCwgMTcyLjkiIHN0eWxlPSJmaWxsOnJnYmEoMCwgMCwgMCwgLjA3NSkiLz48cGF0aCBkPSJNIDAgMTcyLjk5OTk5OTk5TCA4MDEuMSA1NjBMIDg4Mi42MyA1NjBMMCwgMTUzLjkxeiIgZmlsbD0icmdiYSgwLCAwLCAwLCAuMDUpIi8+PHBhdGggZD0iTSAwIDE1My45MSBMIDg4Mi42MyA1NjBMIDEwMjMuMyA1NjBMMCwgMTUxLjg2OTk5OTk4IHoiIGZpbGw9InJnYmEoMCwgMCwgMCwgLjAyNSkiLz48L2c+PC9zdmc+");
-  background-size: cover;
-`;
-
-// Button container styles
-const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-`;
-
-// Data for mockups
-const mockups = [
-  {
-    id: 1,
-    image: mock6,
-    title: "Camiseta Logo Classic",
-    description: "Camiseta blanca con el logo clásico del negocio.",
-  },
-  {
-    id: 2,
-    image: mock2,
-    title: "Camiseta Edición Especial",
-    description: "Camiseta negra con el logo en versión especial.",
-  },
-  {
-    id: 3,
-    image: mock3,
-    title: "Camiseta Logo Minimalista",
-    description: "Camiseta gris con logo minimalista.",
-  },
-];
-
-// Component for rendering cards
-const MockupCards = () => {
-  const message = "¡Quiero comprar una camiseta!";
-  const contact = "¡Quiero la mia!";
+  const handleTShirtClick = (id) => {
+    setSelectedTShirt(selectedTShirt === id ? null : id);
+  };
 
   return (
-    <>
-      <div className="text-center text-4xl font-bold font-palanquin">
-        <h2 className="text-gray-500 mb-8">Tienda NV</h2>
-      </div>
-      <Container>
-        {mockups.map((mockup) => (
-          <Card
-            key={mockup.id}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
+    <div className="container mx-auto px-6 py-12 max-w-7xl">
+      <h1 className="text-4xl font-bold text-center mb-10">T-Shirt NV</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+        {tShirts.map((tShirt) => (
+          <div
+            key={tShirt.id}
+            className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 relative cursor-pointer"
+            onClick={() => handleTShirtClick(tShirt.id)}
           >
-            <img src={mockup.image} alt={mockup.title} />
-            <h3>{mockup.title}</h3>
-            <p>{mockup.description}</p>
-          </Card>
+            <img
+              src={tShirt.image}
+              alt={tShirt.name}
+              className="w-full h-80 object-cover transition-opacity duration-300 ease-in-out"
+            />
+            <div className="p-6">
+              <h2 className="text-2xl font-semibold text-gray-800">
+                {tShirt.name}
+              </h2>
+            </div>
+            <div
+              className={`absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center transition-opacity duration-300 ease-in-out ${
+                selectedTShirt === tShirt.id
+                  ? "opacity-100"
+                  : "opacity-0 pointer-events-none"
+              }`}
+            >
+              <p className="text-white text-center px-4 py-2">
+                {tShirt.description}
+              </p>
+            </div>
+          </div>
         ))}
-      </Container>
-      <ButtonContainer>
-        <WhatsappButton message={message} contact={contact} />
-      </ButtonContainer>
-    </>
+      </div>
+      <div className="mt-16 text-center">
+        <button
+          onClick={handleWhatsAppClick}
+          className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full inline-flex items-center transition duration-300 ease-in-out transform hover:scale-105"
+          aria-label="Contact Us on WhatsApp"
+        >
+          <FaWhatsapp className="mr-3 text-2xl" />
+          Quiero la mia!
+        </button>
+      </div>
+    </div>
   );
 };
 
-export default MockupCards;
+export default TShirtGallery;

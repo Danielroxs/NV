@@ -1,28 +1,53 @@
-import { beneficios } from "../constants";
+import React from "react";
+import { FaDumbbell, FaAppleAlt, FaBolt } from "react-icons/fa";
 
-const Benefits = () => {
+const CombinedBenefits = () => {
   return (
-    <section className=" text-slate-700 py-16">
-      <div className="container mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12">
-          Beneficios combinados
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {beneficios.map((ben, id) => (
-            <div key={id} className="bg-white p-6 rounded-lg shadow-md">
-              <img
-                src={ben.Image}
-                alt="beneficio"
-                className="w-16 h-16 mx-auto mb-4"
-              />
-              <h3 className="text-2xl font-semibold mb-2">{ben.title}</h3>
-              <p className="text-gray-600">{ben.description}</p>
+    <div className="container mx-auto px-4 py-16">
+      <div className="flex flex-col md:flex-row items-center justify-between">
+        <div className="md:w-1/2 mb-8 md:mb-0 pr-0 md:pr-8">
+          <h2 className="text-3xl font-bold mb-6 text-gray-800">
+            Beneficios Combinados con Neri Villeda
+          </h2>
+          <p className="text-lg mb-6 text-gray-600">
+            Experimenta el poder de combinar planes de nutrición personalizados
+            con entrenamiento físico experto. El enfoque holístico de Neri
+            Villeda conduce a resultados transformadores.
+          </p>
+          <div className="space-y-4">
+            <div className="flex items-center">
+              <FaDumbbell className="text-green-500 text-2xl mr-4" />
+              <span className="text-gray-700">
+                Mejora en el rendimiento físico y la fuerza
+              </span>
             </div>
-          ))}
+            <div className="flex items-center">
+              <FaAppleAlt className="text-red-500 text-2xl mr-4" />
+              <span className="text-gray-700">
+                Nutrición optimizada para una mejor salud
+              </span>
+            </div>
+            <div className="flex items-center">
+              <FaBolt className="text-yellow-500 text-2xl mr-4" />
+              <span className="text-gray-700">
+                Aumento de energía y vitalidad
+              </span>
+            </div>
+          </div>
+          <button className="mt-8 bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300">
+            Comienza Tu Viaje
+          </button>
+        </div>
+        <div className="md:w-1/2">
+          <img
+            src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            alt="Neri Villeda en acción"
+            className="rounded-lg shadow-xl w-full h-auto object-cover"
+          />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Benefits;
+export default CombinedBenefits;
