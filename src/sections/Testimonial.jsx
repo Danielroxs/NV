@@ -62,22 +62,22 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const testimonials = [
   {
     id: 1,
-    name: "John Doe",
-    text: "This product has completely transformed my workflow. It's intuitive, efficient, and a joy to use every day.",
+    name: "Fulanito",
+    text: "¡Los planes personalizados de Neri transformaron por completo mi salud! Nunca me he sentido más fuerte ni con más energía. ¡Lo recomiendo mucho!",
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80",
   },
   {
     id: 2,
-    name: "Jane Smith",
-    text: "I've tried many similar products, but this one stands out. The customer support is exceptional, and the features are unmatched.",
+    name: "Sutanito",
+    text: "Gracias a Neri, logré mis objetivos de fitness más rápido de lo que pensé. La combinación de nutrición y entrenamiento fue un cambio total.",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80",
   },
   {
     id: 3,
-    name: "Mike Johnson",
-    text: "As a small business owner, this tool has been a game-changer. It's cost-effective and has significantly improved our productivity.",
+    name: "Menganito",
+    text: "Estoy muy agradecida por el apoyo de Neri. Su enfoque holístico me ayudó a mejorar mi bienestar y alcanzar mis metas personales.",
     image:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80",
   },

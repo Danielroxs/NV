@@ -5,35 +5,35 @@ const TShirtGallery = () => {
   const tShirts = [
     {
       id: 1,
-      name: "Classic White Tee",
+      name: "Camiseta Blanca Clásica",
       image:
         "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
       description:
-        "A timeless white t-shirt that never goes out of style. Perfect for any casual occasion.",
+        "Una camiseta blanca atemporal que nunca pasa de moda. Perfecta para cualquier ocasión casual.",
     },
     {
       id: 2,
-      name: "Vintage Black Tee",
+      name: "Camiseta Negra Vintage",
       image:
         "https://images.unsplash.com/photo-1503342394128-c104d54dba01?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
       description:
-        "A classic black tee with a vintage feel. Great for layering or wearing on its own.",
+        "Una camiseta negra clásica con un toque vintage. Ideal para llevar en capas o usar sola.",
     },
     {
       id: 3,
-      name: "Graphic Print Tee",
+      name: "Camiseta con Estampado Gráfico",
       image:
         "https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
       description:
-        "Express yourself with this eye-catching graphic print tee. Stand out from the crowd.",
+        "Exprésate con esta camiseta de estampado gráfico llamativo. Destácate entre la multitud.",
     },
     {
       id: 4,
-      name: "Striped Tee",
+      name: "Camiseta Rayada",
       image:
         "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
       description:
-        "A nautical-inspired striped tee. Perfect for a casual day out or a beach trip.",
+        "Una camiseta rayada de inspiración náutica. Perfecta para un día casual o un viaje a la playa.",
     },
   ];
 

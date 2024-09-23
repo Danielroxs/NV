@@ -12,12 +12,11 @@ const AboutUs = () => {
               Conoce a Neri Villeda
             </h1>
             <p className="text-lg text-gray-700 mb-6">
-              Neri Villeda es una apasionada nutricionista y entrenadora
-              personal dedicada a ayudar a las personas a alcanzar sus objetivos
-              de salud y forma física. Gracias a su basta experiencia, Neri
-              combina conocimientos científicos con estrategias prácticas para
-              crear planes de nutrición y rutinas de entrenamiento
-              personalizados.
+              Neri Villeda es una apasionado nutricionista y entrenador personal
+              dedicado a ayudar a las personas a alcanzar sus objetivos de salud
+              y forma física. Gracias a su basta experiencia, Neri combina
+              conocimientos científicos con estrategias prácticas para crear
+              planes de nutrición y rutinas de entrenamiento personalizados.
             </p>
             <p className="text-lg text-gray-700 mb-6">
               En nuestro consultorio, creemos que la salud es un equilibrio
