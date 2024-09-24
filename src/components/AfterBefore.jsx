@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { FaChevronLeft, FaChevronRight, FaExchangeAlt } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaHandPaper } from "react-icons/fa";
 
 const TransformationGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -108,7 +108,7 @@ const TransformationGallery = () => {
   return (
     <div className="max-w-4xl mx-auto p-4">
       <h2 className="text-3xl font-bold text-center mb-8">
-        Transformation Gallery
+        Transformaciones NV
       </h2>
       <div
         className="relative overflow-hidden rounded-lg shadow-lg"
@@ -136,22 +136,22 @@ const TransformationGallery = () => {
             style={{ left: `calc(${sliderPosition}% - 1px)` }}
           >
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center">
-              <FaExchangeAlt className="text-gray-800 text-xl" />
+              <FaHandPaper className="text-gray-800 text-xl" />
             </div>
           </div>
         </div>
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4">
+        <div className="absolute bottom-4 left-0 right-0 flex justify-between px-4">
           <button
             onClick={prevTransformation}
             className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
           >
-            <FaChevronLeft className="text-gray-800" />
+            <FaArrowLeft className="text-gray-800 text-xl" />
           </button>
           <button
             onClick={nextTransformation}
             className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
           >
-            <FaChevronRight className="text-gray-800" />
+            <FaArrowRight className="text-gray-800 text-xl" />
           </button>
         </div>
       </div>
