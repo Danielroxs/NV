@@ -1,108 +1,118 @@
 import React, { useState } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaExchangeAlt } from "react-icons/fa";
 
 const TransformationGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [sliderPosition, setSliderPosition] = useState(50);
 
   const transformations = [
     {
-      id: 1,
-      name: "Carlos Pérez",
       beforeImage:
-        "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61",
+        "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
       afterImage:
-        "https://images.unsplash.com/photo-1605296867724-fa87a8ef53fd",
+        "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b",
+      patientName: "John Doe",
       description:
-        "Carlos quería perder 20 kilos y mejorar su resistencia física. Con un plan nutricional personalizado y sesiones de entrenamiento intenso, logró su objetivo en 5 meses, reduciendo su porcentaje de grasa corporal y aumentando su energía.",
+        "Lost 30 pounds in 3 months through a combination of diet and exercise.",
     },
     {
-      id: 2,
-      name: "Laura García",
       beforeImage:
-        "https://images.unsplash.com/photo-1518310383802-640c2de311b2",
+        "https://images.unsplash.com/photo-1518310952931-b1de897abd40",
       afterImage:
-        "https://images.unsplash.com/photo-1579758629938-03607ccdbaba",
+        "https://images.unsplash.com/photo-1574680096145-d05b474e2155",
+      patientName: "Jane Smith",
       description:
-        "Laura buscaba tonificar su cuerpo y ganar fuerza. A través de nuestro programa de entrenamiento y alimentación, logró un aumento significativo en su masa muscular y mejoró su postura y movilidad en 6 meses.",
+        "Gained 15 pounds of muscle mass in 6 months with strength training.",
     },
     {
-      id: 3,
-      name: "Ana Rodríguez",
       beforeImage:
-        "https://images.unsplash.com/photo-1594381898411-846e7d193883",
+        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd",
       afterImage:
-        "https://images.unsplash.com/photo-1610969524483-1a3954632a9e",
+        "https://images.unsplash.com/photo-1490645935967-10de6ba17061",
+      patientName: "Alice Johnson",
       description:
-        "Ana quería bajar 10 kilos y adoptar un estilo de vida más saludable. Con una dieta equilibrada y entrenamiento cardiovascular, logró alcanzar su meta en solo 4 meses, sintiéndose más fuerte y llena de energía.",
+        "Transformed her diet from processed foods to whole, nutrient-rich meals.",
     },
   ];
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? transformations.length - 1 : prevIndex - 1
-    );
+  const handleSliderChange = (e) => {
+    setSliderPosition(e.target.value);
   };
 
-  const handleNext = () => {
+  const nextTransformation = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === transformations.length - 1 ? 0 : prevIndex + 1
     );
+    setSliderPosition(50);
   };
 
+  const prevTransformation = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? transformations.length - 1 : prevIndex - 1
+    );
+    setSliderPosition(50);
+  };
+
+  const currentTransformation = transformations[currentIndex];
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-8">
-        Transformaciones NV
-      </h1>
-      <div className="max-w-4xl mx-auto">
-        <div className="relative">
-          <div className="flex items-center justify-center mb-4">
+    <div className="max-w-4xl mx-auto p-4">
+      <h2 className="text-3xl font-bold text-center mb-8">
+        Transformation Gallery
+      </h2>
+      <div className="relative overflow-hidden rounded-lg shadow-lg">
+        <div className="relative w-full h-[400px]">
+          <img
+            src={currentTransformation.beforeImage}
+            alt="Before"
+            className="absolute top-0 left-0 w-full h-full object-cover"
+          />
+          <div
+            className="absolute top-0 right-0 w-full h-full overflow-hidden"
+            style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+          >
             <img
-              src={transformations[currentIndex].beforeImage}
-              alt={`${transformations[currentIndex].name} before`}
-              className="w-1/2 h-64 object-cover rounded-l-lg"
-            />
-            <img
-              src={transformations[currentIndex].afterImage}
-              alt={`${transformations[currentIndex].name} after`}
-              className="w-1/2 h-64 object-cover rounded-r-lg"
+              src={currentTransformation.afterImage}
+              alt="After"
+              className="absolute top-0 left-0 w-full h-full object-cover"
             />
           </div>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value={sliderPosition}
+            onChange={handleSliderChange}
+            className="absolute top-0 bottom-0 left-0 right-0 w-full h-full opacity-0 cursor-pointer"
+          />
+          <div
+            className="absolute top-0 bottom-0 w-1 bg-white"
+            style={{ left: `calc(${sliderPosition}% - 1px)` }}
+          ></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white bg-opacity-75 rounded-full p-2">
+            <FaExchangeAlt className="text-gray-800 text-2xl" />
+          </div>
+        </div>
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4">
           <button
-            onClick={handlePrev}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full"
-            aria-label="Previous transformation"
+            onClick={prevTransformation}
+            className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
           >
-            <FaArrowLeft className="text-gray-800" />
+            <FaChevronLeft className="text-gray-800" />
           </button>
           <button
-            onClick={handleNext}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full"
-            aria-label="Next transformation"
+            onClick={nextTransformation}
+            className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
           >
-            <FaArrowRight className="text-gray-800" />
+            <FaChevronRight className="text-gray-800" />
           </button>
         </div>
-        <div className="mt-4 text-center">
-          <h2 className="text-2xl font-semibold mb-2">
-            {transformations[currentIndex].name}
-          </h2>
-          <p className="text-gray-600">
-            {transformations[currentIndex].description}
-          </p>
-        </div>
-        <div className="flex justify-center mt-4">
-          {transformations.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full mx-1 ${
-                index === currentIndex ? "bg-blue-500" : "bg-gray-300"
-              }`}
-              aria-label={`Go to transformation ${index + 1}`}
-            />
-          ))}
-        </div>
+      </div>
+      <div className="mt-6 bg-white rounded-lg shadow-md p-6">
+        <h3 className="text-2xl font-semibold mb-2">
+          {currentTransformation.patientName}
+        </h3>
+        <p className="text-gray-600">{currentTransformation.description}</p>
       </div>
     </div>
   );
