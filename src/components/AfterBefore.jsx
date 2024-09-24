@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight, FaExchangeAlt } from "react-icons/fa";
 
 const TransformationGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [sliderPosition, setSliderPosition] = useState(50);
+  const sliderRef = useRef(null);
+  const containerRef = useRef(null);
 
   const transformations = [
     {
@@ -35,8 +37,43 @@ const TransformationGallery = () => {
     },
   ];
 
-  const handleSliderChange = (e) => {
-    setSliderPosition(e.target.value);
+  const handleMouseDown = (e) => {
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+  };
+
+  const handleTouchStart = (e) => {
+    document.addEventListener("touchmove", handleTouchMove);
+    document.addEventListener("touchend", handleTouchEnd);
+  };
+
+  const handleMouseMove = (e) => {
+    if (containerRef.current) {
+      const containerRect = containerRef.current.getBoundingClientRect();
+      const newPosition =
+        ((e.clientX - containerRect.left) / containerRect.width) * 100;
+      setSliderPosition(Math.max(0, Math.min(100, newPosition)));
+    }
+  };
+
+  const handleTouchMove = (e) => {
+    if (containerRef.current) {
+      const containerRect = containerRef.current.getBoundingClientRect();
+      const newPosition =
+        ((e.touches[0].clientX - containerRect.left) / containerRect.width) *
+        100;
+      setSliderPosition(Math.max(0, Math.min(100, newPosition)));
+    }
+  };
+
+  const handleMouseUp = () => {
+    document.removeEventListener("mousemove", handleMouseMove);
+    document.removeEventListener("mouseup", handleMouseUp);
+  };
+
+  const handleTouchEnd = () => {
+    document.removeEventListener("touchmove", handleTouchMove);
+    document.removeEventListener("touchend", handleTouchEnd);
   };
 
   const nextTransformation = () => {
@@ -53,6 +90,19 @@ const TransformationGallery = () => {
     setSliderPosition(50);
   };
 
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (slider) {
+      slider.addEventListener("mousedown", handleMouseDown);
+      slider.addEventListener("touchstart", handleTouchStart);
+
+      return () => {
+        slider.removeEventListener("mousedown", handleMouseDown);
+        slider.removeEventListener("touchstart", handleTouchStart);
+      };
+    }
+  }, []);
+
   const currentTransformation = transformations[currentIndex];
 
   return (
@@ -60,7 +110,10 @@ const TransformationGallery = () => {
       <h2 className="text-3xl font-bold text-center mb-8">
         Transformation Gallery
       </h2>
-      <div className="relative overflow-hidden rounded-lg shadow-lg">
+      <div
+        className="relative overflow-hidden rounded-lg shadow-lg"
+        ref={containerRef}
+      >
         <div className="relative w-full h-[400px]">
           <img
             src={currentTransformation.beforeImage}
@@ -77,20 +130,14 @@ const TransformationGallery = () => {
               className="absolute top-0 left-0 w-full h-full object-cover"
             />
           </div>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={sliderPosition}
-            onChange={handleSliderChange}
-            className="absolute top-0 bottom-0 left-0 right-0 w-full h-full opacity-0 cursor-pointer"
-          />
           <div
-            className="absolute top-0 bottom-0 w-1 bg-white"
+            ref={sliderRef}
+            className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"
             style={{ left: `calc(${sliderPosition}% - 1px)` }}
-          ></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white bg-opacity-75 rounded-full p-2">
-            <FaExchangeAlt className="text-gray-800 text-2xl" />
+          >
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center">
+              <FaExchangeAlt className="text-gray-800 text-xl" />
+            </div>
           </div>
         </div>
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4">
