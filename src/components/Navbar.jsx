@@ -27,11 +27,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { to: "home", label: "Home" },
-    { to: "about", label: "About Us" },
-    { to: "services", label: "Services" },
-    { to: "products", label: "Products" },
-    { to: "contact", label: "Contact" },
+    { to: "home", label: "Inicio" },
+    { to: "about", label: "Acerca" },
+    { to: "services", label: "Servicios" },
+    { to: "products", label: "Productos" },
+    { to: "contact", label: "Contacto" },
   ];
 
   return (

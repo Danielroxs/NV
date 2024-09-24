@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { FaArrowLeft, FaArrowRight, FaHandPaper } from "react-icons/fa";
+import { MdOutlineSkipNext, MdOutlineSkipPrevious } from "react-icons/md";
+import { FaArrowRightArrowLeft } from "react-icons/fa6";
 
 const TransformationGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -136,7 +137,7 @@ const TransformationGallery = () => {
             style={{ left: `calc(${sliderPosition}% - 1px)` }}
           >
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center">
-              <FaHandPaper className="text-gray-800 text-xl" />
+              <FaArrowRightArrowLeft className="text-gray-800 text-xl" />
             </div>
           </div>
         </div>
@@ -145,13 +146,13 @@ const TransformationGallery = () => {
             onClick={prevTransformation}
             className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
           >
-            <FaArrowLeft className="text-gray-800 text-xl" />
+            <MdOutlineSkipPrevious className="text-gray-800 text-xl" />
           </button>
           <button
             onClick={nextTransformation}
             className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
           >
-            <FaArrowRight className="text-gray-800 text-xl" />
+            <MdOutlineSkipNext className="text-gray-800 text-xl" />
           </button>
         </div>
       </div>
