@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+scroll-behavior: smooth;
+
+.navbar-links {
+  display: none; /* Oculto en pantallas pequeñas */
+}
+
+@media (min-width: 768px) {
+  .navbar-links {
+    display: block;
+  }
+}
+
+/* {
+}
+
+.icon-hover {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-hover:hover {
+  transform: scale(1.2);
+  color: #ff5733;
+} */

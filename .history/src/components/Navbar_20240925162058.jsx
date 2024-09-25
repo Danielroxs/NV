@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link as ScrollLink } from "react-scroll";
-import Logo from "../assets/images/Logo.png";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import Logo from "../images/Logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   useEffect(() => {
-    // Detectar cuando se hace scroll
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setIsScrolled(true);
@@ -22,22 +20,9 @@ const Navbar = () => {
       }
     };
 
-    // Detectar tamaño de la pantalla para mobile
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
-    };
-
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
-    handleResize(); // Ejecutar una vez para detectar el tamaño inicial
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -53,7 +38,8 @@ const Navbar = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled ? "bg-gray-400 shadow-md" : "bg-transparent"
-      }`} // Aumentamos el z-index por si hay otros elementos superpuestos
+      }`}
+      style={{ zIndex: 100 }} // Aumentamos el z-index por si hay otros elementos superpuestos
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -62,8 +48,7 @@ const Navbar = () => {
               <img className="h-8 w-auto" src={Logo} alt="Logo" />
             </div>
           </div>
-          {/* Mostrar links solo si se ha hecho scroll y no estamos en mobile */}
-          {!isMobile && isScrolled && (
+          <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {navLinks.map((link) => (
                 <ScrollLink
@@ -73,14 +58,19 @@ const Navbar = () => {
                   smooth={true}
                   offset={-70}
                   duration={500}
-                  className={`px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 transition-all duration-300 cursor-pointer`}
+                  className={`px-3 py-2 rounded-md text-sm font-medium ${
+                    isScrolled
+                      ? "text-gray-700 hover:bg-gray-100"
+                      : "text-gray-300 hover:text-white hover:bg-opacity-20"
+                  } transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white`}
                   aria-label={link.label}
+                  style={{ border: "1px solid red" }} // Clases de depuración para visualizar el área de los links
                 >
                   {link.label}
                 </ScrollLink>
               ))}
             </div>
-          )}
+          </div>
           <div className="-mr-2 flex md:hidden">
             <button
               onClick={toggleMenu}
