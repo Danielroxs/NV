@@ -106,7 +106,7 @@ const Navbar = () => {
         className={`md:hidden ${isOpen ? "block" : "hidden"}`}
         id="mobile-menu"
       >
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-anti-flash-white shadow-lg rounded-b-lg">
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-blue shadow-lg rounded-b-lg">
           {navLinks.map((link) => (
             <ScrollLink
               key={link.to}

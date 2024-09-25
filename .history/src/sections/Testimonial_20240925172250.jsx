@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FaPause, FaPlay } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaPause, FaPlay } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
@@ -41,30 +41,23 @@ const TestimonialCarousel = () => {
   const [dragEnd, setDragEnd] = useState(0);
   const intervalRef = useRef(null);
 
-  const resetInterval = () => {
-    clearInterval(intervalRef.current);
+  useEffect(() => {
     if (!isPaused) {
       intervalRef.current = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-      }, 5000);
+      }, 6000);
     }
-  };
-
-  useEffect(() => {
-    resetInterval();
     return () => clearInterval(intervalRef.current);
   }, [isPaused]);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    resetInterval();
   };
 
   const handlePrev = () => {
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
     );
-    resetInterval();
   };
 
   const handleTouchStart = (e) => {
@@ -142,7 +135,13 @@ const TestimonialCarousel = () => {
         </AnimatePresence>
       </div>
 
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center items-center">
+      <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+        <button
+          onClick={handlePrev}
+          className="p-2 rounded-full bg-white text-purple-600 hover:bg-purple-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 md:block hidden"
+        >
+          <FaChevronLeft className="w-6 h-6" />
+        </button>
         <button
           onClick={() => setIsPaused(!isPaused)}
           className="p-2 rounded-full bg-white text-purple-600 hover:bg-purple-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
@@ -152,6 +151,12 @@ const TestimonialCarousel = () => {
           ) : (
             <FaPause className="w-6 h-6" />
           )}
+        </button>
+        <button
+          onClick={handleNext}
+          className="p-2 rounded-full bg-white text-purple-600 hover:bg-purple-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 md:block hidden"
+        >
+          <FaChevronRight className="w-6 h-6" />
         </button>
       </div>
     </div>
