@@ -13,7 +13,6 @@ import AboutUs from "./sections/AboutUs";
 const App = () => (
   <>
     <Navbar />
-
     <main className="relative bg-city-lights ">
       <section id="home">
         <Hero1 />

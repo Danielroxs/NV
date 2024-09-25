@@ -8,7 +8,7 @@ box-sizing: border-box;
 scroll-behavior: smooth;
 
 .navbar-links {
-  display: none; /* Oculto en pantallas pequeñas */
+  display: none;
 }
 
 @media (min-width: 768px) {
