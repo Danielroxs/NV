@@ -39,6 +39,7 @@ const Navbar = () => {
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled ? "bg-gray-400 shadow-md" : "bg-transparent"
       }`}
+      style={{ zIndex: 100 }} // Aumentamos el z-index por si hay otros elementos superpuestos
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -60,9 +61,10 @@ const Navbar = () => {
                   className={`px-3 py-2 rounded-md text-sm font-medium ${
                     isScrolled
                       ? "text-gray-700 hover:bg-gray-100"
-                      : "text-white hover:bg-white hover:bg-opacity-20"
+                      : "text-gray-300 hover:text-white hover:bg-opacity-20"
                   } transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white`}
                   aria-label={link.label}
+                  style={{ border: "1px solid red" }} // Clases de depuración para visualizar el área de los links
                 >
                   {link.label}
                 </ScrollLink>

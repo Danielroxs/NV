@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
-const TShirtGallery = () => {
+const Tienda = () => {
   const tShirts = [
     {
       id: 1,
@@ -95,4 +95,4 @@ const TShirtGallery = () => {
   );
 };
 
-export default TShirtGallery;
+export default Tienda;

@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import bg from "../images/bg.webp";
 import { useEffect, useState } from "react";
-import { Box, Image } from "@chakra-ui/react";
-import { FaWhatsapp } from "react-icons/fa";
 import WhatsappButton from "../components/WaButtonNormal";
 
 const Hero = () => {
