@@ -4,7 +4,7 @@ import neri from "../images/neri.webp";
 
 const AboutUs = () => {
   return (
-    <div className="bg-[# min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen lg:text-left text-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-1/2 lg:pr-12 mb-8 lg:mb-0">

@@ -1,103 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-}
-
-@layer components {
-  .max-container {
-    max-width: 1440px;
-    margin: 0 auto;
-  }
-
-  .input {
-    @apply sm:flex-1 max-sm:w-full text-base leading-normal text-slate-gray pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-slate-gray max-sm:rounded-full;
-  }
-}
-
-@layer utilities {
-  .padding {
-    @apply sm:px-16 px-8 sm:py-24 py-12;
-  }
-
-  .padding-x {
-    @apply sm:px-16 px-8;
-  }
-
-  .padding-y {
-    @apply sm:py-24 py-12;
-  }
-
-  .padding-l {
-    @apply sm:pl-16 pl-8;
-  }
-
-  .padding-r {
-    @apply sm:pr-16 pr-8;
-  }
-
-  .padding-t {
-    @apply sm:pt-24 pt-12;
-  }
-
-  .padding-b {
-    @apply sm:pb-24 pb-12;
-  }
-
-  .info-text {
-    @apply font-montserrat text-slate-gray text-lg leading-7;
-  }
-}
-
-.bounce-right {
-  animation: bounce-right 0.9s linear both;
-}
-@keyframes bounce-right {
-  0% {
-    transform: translateX(48px);
-    animation-timing-function: ease-in;
-    opacity: 1;
-  }
-  24% {
-    opacity: 1;
-  }
-  40% {
-    transform: translateX(26px);
-    animation-timing-function: ease-in;
-  }
-  65% {
-    transform: translateX(13px);
-    animation-timing-function: ease-in;
-  }
-  82% {
-    transform: translateX(6.5px);
-    animation-timing-function: ease-in;
-  }
-  93% {
-    transform: translateX(4px);
-    animation-timing-function: ease-in;
-  }
-  25%,
-  55%,
-  75%,
-  87%,
-  98% {
-    transform: translateX(0);
-    animation-timing-function: ease-out;
-  }
-  100% {
-    transform: translateX(0);
-    animation-timing-function: ease-out;
-    opacity: 1;
-  }
 }
 
 .icon-hover {
@@ -108,62 +17,4 @@
 .icon-hover:hover {
   transform: scale(1.2);
   color: #ff5733;
-}
-
-.spinner {
-  width: 36px;
-  height: 36px;
-
-  border: 5px solid #fffc;
-  border-top-color: #09f;
-  border-radius: 100%;
-
-  animation: spin 1s infinite;
-}
-
-body {
-  min-height: 100vh;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Estilos underline contact form */
-
-.input-wrapper {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-input {
-  width: 100%;
-  border: none;
-  border-bottom: 2px solid #ccc;
-  padding: 10px 0;
-  font-size: 16px;
-  outline: none;
-}
-
-.underline {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background-color: #6a1b9a;
-  transition: width 0.4s ease, left 0.4s ease;
-}
-
-input:focus ~ .underline {
-  width: 100%;
-  left: 0;
-}
-
-.my-component .text-center {
-  text-align: right; /* Sin !important */
-}
-
-/*  */
+} */
