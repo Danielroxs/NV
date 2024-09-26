@@ -27,7 +27,7 @@ const AboutUs = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://www.facebook.com/share/uG6KzuhtfF5o4jZD/?mibextid=LQQJ4d"
+                href="fb://www.facebook.com/nerii.villeda.3"
                 target="_blank"
                 className="text-blue-600 hover:text-blue-800 transition-colors duration-300"
               >
