@@ -89,9 +89,7 @@ const Tienda = () => {
       </div>
       <div className="mt-16 text-center">
         <button
-          onClick={() =>
-            sendMessage("Me gustaría adquirir mi Camiseta Team NV")
-          }
+          onClick={sendMessage}
           className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full inline-flex items-center transition duration-300 ease-in-out transform hover:scale-105"
           aria-label="Contact Us on WhatsApp"
         >

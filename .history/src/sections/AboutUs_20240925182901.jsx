@@ -29,7 +29,7 @@ const AboutUs = () => {
               <a
                 href="https://www.facebook.com/nerii.villeda.3"
                 target="_blank"
-                className="text-blue-600 hover:text-blue-800 transition-colors duration-300"
+                className="text-blue-400 hover:text-blue-600 transition-colors duration-300"
               >
                 <FaFacebook size={24} />
               </a>
@@ -42,7 +42,7 @@ const AboutUs = () => {
               </a>
               <a
                 href="https://www.youtube.com/@NeriPrideMusicOficial/videos"
-                className="text-red-600 hover:text-red-800 transition-colors duration-300"
+                className="text-blue-600 hover:text-blue-800 transition-colors duration-300"
                 target="_blank"
               >
                 <FaYoutube size={24} />

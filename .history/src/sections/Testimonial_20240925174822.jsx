@@ -31,25 +31,34 @@ const TestimonialGallery = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const intervalRef = useRef(null);
 
   useEffect(() => {
     if (isPlaying) {
       intervalRef.current = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+        handleNext();
       }, 6000);
     }
     return () => clearInterval(intervalRef.current);
-  }, [isPlaying, testimonials.length]);
+  }, [isPlaying]);
 
   const handlePrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    );
+    if (!isTransitioning) {
+      setIsTransitioning(true);
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+      );
+      setTimeout(() => setIsTransitioning(false), 500);
+    }
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    if (!isTransitioning) {
+      setIsTransitioning(true);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+      setTimeout(() => setIsTransitioning(false), 500);
+    }
   };
 
   const togglePlayPause = () => {
@@ -67,7 +76,15 @@ const TestimonialGallery = () => {
           >
             <FaChevronLeft className="text-blue-500" />
           </button>
-          <div className="text-center p-8 transition-opacity duration-500 ease-in-out">
+
+          {/* Contenedor de las transiciones */}
+          <div
+            className={`text-center p-8 transition-opacity duration-500 ease-in-out transform ${
+              isTransitioning
+                ? "opacity-0 -translate-x-10"
+                : "opacity-100 translate-x-0"
+            }`}
+          >
             <img
               src={testimonials[currentIndex].image}
               alt={`${testimonials[currentIndex].name}'s profile`}
@@ -80,6 +97,7 @@ const TestimonialGallery = () => {
               "{testimonials[currentIndex].message}"
             </p>
           </div>
+
           <button
             onClick={handleNext}
             className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -88,6 +106,7 @@ const TestimonialGallery = () => {
             <FaChevronRight className="text-blue-500" />
           </button>
         </div>
+
         <button
           onClick={togglePlayPause}
           className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"

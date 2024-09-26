@@ -4,16 +4,11 @@ import { Link as ScrollLink } from "react-scroll"; // Importa ScrollLink
 import Logo from "../assets/images/Logo.png";
 
 const Footer = () => {
-  const scrollToTop = (e) => {
-    e.preventDefault(); // Evitar la recarga de la página
-    window.scrollTo({ top: 0, behavior: "smooth" }); // Desplazamiento suave hacia la parte superior
-  };
-
   return (
     <footer className="bg-gray-800 text-white py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-          <a href="#" onClick={scrollToTop} className="mb-4 md:mb-0">
+          <a href="/" className="mb-4 md:mb-0">
             <img
               src={Logo}
               alt="Company Logo"
@@ -26,7 +21,7 @@ const Footer = () => {
               smooth={true}
               offset={-70} // Ajusta si es necesario
               duration={500}
-              className="hover:text-gray-300 transition duration-300 cursor-pointer"
+              className="hover:text-gray-300 transition duration-300"
             >
               Inicio
             </ScrollLink>
@@ -35,7 +30,7 @@ const Footer = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className="hover:text-gray-300 transition duration-300 cursor-pointer"
+              className="hover:text-gray-300 transition duration-300"
             >
               Acerca
             </ScrollLink>
@@ -44,7 +39,7 @@ const Footer = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className="hover:text-gray-300 transition duration-300 cursor-pointer"
+              className="hover:text-gray-300 transition duration-300"
             >
               Servicios
             </ScrollLink>
@@ -53,7 +48,7 @@ const Footer = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className="hover:text-gray-300 transition duration-300 cursor-pointer"
+              className="hover:text-gray-300 transition duration-300"
             >
               Productos
             </ScrollLink>
@@ -62,7 +57,7 @@ const Footer = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className="hover:text-gray-300 transition duration-300 cursor-pointer"
+              className="hover:text-gray-300 transition duration-300"
             >
               Contacto
             </ScrollLink>

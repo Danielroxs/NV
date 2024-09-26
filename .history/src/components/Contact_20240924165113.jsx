@@ -147,7 +147,7 @@ const ContactForm = () => {
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
-                placeholder="Mensaje..."
+                placeholder="Dirección"
                 rows="3"
                 className={`w-full pl-10 pr-3 py-2 text-sm lg:text-base border ${
                   errors.address ? "border-red-500" : "border-gray-300"

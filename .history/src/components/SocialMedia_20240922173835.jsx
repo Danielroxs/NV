@@ -1,22 +1,17 @@
 import React from "react";
-import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 const SocialMediaSection = () => {
   const socialLinks = [
     {
       name: "Instagram",
       icon: FaInstagram,
-      url: "https://www.instagram.com/nerii_villeda.fit/",
+      url: "https://www.instagram.com/nerivilleda",
     },
     {
       name: "Facebook",
       icon: FaFacebook,
-      url: "https://www.facebook.com/nerii.villeda.3",
-    },
-    {
-      name: "Youtube",
-      icon: FaYoutube,
-      url: "https://www.youtube.com/@NeriPrideMusicOficial/videos",
+      url: "https://www.facebook.com/nerivilleda",
     },
   ];
 

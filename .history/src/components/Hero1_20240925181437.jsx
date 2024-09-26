@@ -78,7 +78,7 @@ const DynamicHero = () => {
           <button
             onClick={() =>
               sendMessage(
-                "Me gustaría solicitar informes acerca de sus planes de entrenamiento personal"
+                "Me gustaría solicitar informes acerca de sus planes de entrenamiento personal 💪"
               )
             }
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full flex items-center justify-center transition duration-300 w-full sm:w-auto max-w-xs"

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
 import neri from "../assets/images/neri.webp";
 
 const AboutUs = () => {
@@ -27,11 +27,10 @@ const AboutUs = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://www.facebook.com/nerii.villeda.3"
-                target="_blank"
+                href="#"
                 className="text-blue-600 hover:text-blue-800 transition-colors duration-300"
               >
-                <FaFacebook size={24} />
+                <FaLinkedin size={24} />
               </a>
               <a
                 href="https://www.instagram.com/nerii_villeda.fit/"
@@ -41,11 +40,10 @@ const AboutUs = () => {
                 <FaInstagram size={24} />
               </a>
               <a
-                href="https://www.youtube.com/@NeriPrideMusicOficial/videos"
-                className="text-red-600 hover:text-red-800 transition-colors duration-300"
-                target="_blank"
+                href="#"
+                className="text-blue-400 hover:text-blue-600 transition-colors duration-300"
               >
-                <FaYoutube size={24} />
+                <FaFacebook size={24} />
               </a>
             </div>
           </div>

@@ -4,21 +4,12 @@ import { Link as ScrollLink } from "react-scroll"; // Importa ScrollLink
 import Logo from "../assets/images/Logo.png";
 
 const Footer = () => {
-  const scrollToTop = (e) => {
-    e.preventDefault(); // Evitar la recarga de la página
-    window.scrollTo({ top: 0, behavior: "smooth" }); // Desplazamiento suave hacia la parte superior
-  };
-
   return (
     <footer className="bg-gray-800 text-white py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-          <a href="#" onClick={scrollToTop} className="mb-4 md:mb-0">
-            <img
-              src={Logo}
-              alt="Company Logo"
-              className="h-12 cursor-pointer"
-            />
+          <a href="/" className="mb-4 md:mb-0">
+            <img src={Logo} alt="Company Logo" className="h-12" />
           </a>
           <nav className="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
             <ScrollLink
@@ -26,7 +17,7 @@ const Footer = () => {
               smooth={true}
               offset={-70} // Ajusta si es necesario
               duration={500}
-              className="hover:text-gray-300 transition duration-300 cursor-pointer"
+              className="hover:text-gray-300 transition duration-300"
             >
               Inicio
             </ScrollLink>
@@ -35,7 +26,7 @@ const Footer = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className="hover:text-gray-300 transition duration-300 cursor-pointer"
+              className="hover:text-gray-300 transition duration-300"
             >
               Acerca
             </ScrollLink>
@@ -44,7 +35,7 @@ const Footer = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className="hover:text-gray-300 transition duration-300 cursor-pointer"
+              className="hover:text-gray-300 transition duration-300"
             >
               Servicios
             </ScrollLink>
@@ -53,7 +44,7 @@ const Footer = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className="hover:text-gray-300 transition duration-300 cursor-pointer"
+              className="hover:text-gray-300 transition duration-300"
             >
               Productos
             </ScrollLink>
@@ -62,7 +53,7 @@ const Footer = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className="hover:text-gray-300 transition duration-300 cursor-pointer"
+              className="hover:text-gray-300 transition duration-300"
             >
               Contacto
             </ScrollLink>
@@ -71,7 +62,7 @@ const Footer = () => {
         <div className="flex justify-center space-x-6 mb-8">
           <a
             href="https://www.facebook.com/nerii.villeda.3"
-            className="text-2xl hover:text-blue-500 transition duration-300 cursor-pointer"
+            className="text-2xl hover:text-blue-500 transition duration-300"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -79,7 +70,7 @@ const Footer = () => {
           </a>
           <a
             href="https://www.instagram.com/nerii_villeda.fit/"
-            className="text-2xl hover:text-pink-500 transition duration-300 cursor-pointer"
+            className="text-2xl hover:text-pink-500 transition duration-300"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -87,7 +78,7 @@ const Footer = () => {
           </a>
           <a
             href="https://www.youtube.com/@NeriPrideMusicOficial/videos"
-            className="text-2xl hover:text-blue-400 transition duration-300 cursor-pointer"
+            className="text-2xl hover:text-blue-400 transition duration-300"
             target="_blank"
             rel="noopener noreferrer"
           >

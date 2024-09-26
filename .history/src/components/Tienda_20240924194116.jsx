@@ -39,15 +39,9 @@ const Tienda = () => {
 
   const [selectedTShirt, setSelectedTShirt] = useState(null);
 
-  const sendMessage = (message) => {
-    const whatsappLink = `https://wa.me/${whatsappNumber.replace(
-      /[^0-9]/g,
-      ""
-    )}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappLink, "_blank");
+  const handleWhatsAppClick = () => {
+    window.open("https://wa.me/525538975005", "_blank");
   };
-
-  const whatsappNumber = "+525538075005";
 
   const handleTShirtClick = (id) => {
     setSelectedTShirt(selectedTShirt === id ? null : id);
@@ -89,9 +83,7 @@ const Tienda = () => {
       </div>
       <div className="mt-16 text-center">
         <button
-          onClick={() =>
-            sendMessage("Me gustaría adquirir mi Camiseta Team NV")
-          }
+          onClick={handleWhatsAppClick}
           className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full inline-flex items-center transition duration-300 ease-in-out transform hover:scale-105"
           aria-label="Contact Us on WhatsApp"
         >

@@ -38,16 +38,6 @@ const DynamicHero = () => {
     return () => clearTimeout(timer);
   }, [text, isDeleting, loopNum, typingSpeed, textArray]);
 
-  const whatsappNumber = "+525538075005";
-
-  const sendMessage = (message) => {
-    const whatsappLink = `https://wa.me/${whatsappNumber.replace(
-      /[^0-9]/g,
-      ""
-    )}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappLink, "_blank");
-  };
-
   return (
     <div className="relative h-screen flex items-center justify-center overflow-hidden">
       <div
@@ -75,25 +65,10 @@ const DynamicHero = () => {
           necesidades.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <button
-            onClick={() =>
-              sendMessage(
-                "Me gustaría solicitar informes acerca de sus planes de entrenamiento personal"
-              )
-            }
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full flex items-center justify-center transition duration-300 w-full sm:w-auto max-w-xs"
-          >
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full flex items-center justify-center transition duration-300 w-full sm:w-auto max-w-xs">
             <FaDumbbell className="mr-2" /> Comienza a Entrenar
           </button>
-
-          <button
-            onClick={() =>
-              sendMessage(
-                "Me gustaría obtener más información sobre los planes de nutrición"
-              )
-            }
-            className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full flex items-center justify-center transition duration-300 w-full sm:w-auto max-w-xs"
-          >
+          <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full flex items-center justify-center transition duration-300 w-full sm:w-auto max-w-xs">
             <FaAppleAlt className="mr-2" /> Planes de Nutrición
           </button>
         </div>

@@ -2,16 +2,6 @@ import React from "react";
 import { FaDumbbell, FaAppleAlt, FaBolt } from "react-icons/fa";
 
 const CombinedBenefits = () => {
-  const sendMessage = (message) => {
-    const whatsappLink = `https://wa.me/${whatsappNumber.replace(
-      /[^0-9]/g,
-      ""
-    )}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappLink, "_blank");
-  };
-
-  const whatsappNumber = "+525538075005";
-
   return (
     <div className="container mx-auto px-4 py-16 lg:text-left text-center">
       <div className="flex flex-col md:flex-row items-center justify-between">
@@ -44,14 +34,7 @@ const CombinedBenefits = () => {
               </span>
             </div>
           </div>
-          <button
-            onClick={() =>
-              sendMessage(
-                "Me gustaría obtener más información para empezar mi vida Fitness"
-              )
-            }
-            className="mt-8 bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300"
-          >
+          <button className="mt-8 bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300">
             Comienza Tu Viaje
           </button>
         </div>

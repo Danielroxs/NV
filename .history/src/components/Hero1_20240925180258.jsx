@@ -38,16 +38,6 @@ const DynamicHero = () => {
     return () => clearTimeout(timer);
   }, [text, isDeleting, loopNum, typingSpeed, textArray]);
 
-  const whatsappNumber = "+525538075005";
-
-  const sendMessage = (message) => {
-    const whatsappLink = `https://wa.me/${whatsappNumber.replace(
-      /[^0-9]/g,
-      ""
-    )}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappLink, "_blank");
-  };
-
   return (
     <div className="relative h-screen flex items-center justify-center overflow-hidden">
       <div

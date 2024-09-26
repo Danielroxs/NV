@@ -10,8 +10,6 @@ const CombinedBenefits = () => {
     window.open(whatsappLink, "_blank");
   };
 
-  const whatsappNumber = "+525538075005";
-
   return (
     <div className="container mx-auto px-4 py-16 lg:text-left text-center">
       <div className="flex flex-col md:flex-row items-center justify-between">
