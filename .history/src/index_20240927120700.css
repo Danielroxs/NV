@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+scroll-behavior: smooth;
+
+// Divider
+
+.custom-shape-divider-top-1727460387 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1727460387 svg {
+    position: relative;
+    display: block;
+    width: calc(101% + 1.3px);
+    height: 61px;
+}
+
+.custom-shape-divider-top-1727460387 .shape-fill {
+    fill: #030303;
+}
+Copy HTML

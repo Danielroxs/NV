@@ -1,6 +1,7 @@
 import React from "react";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import neri from "../assets/images/neri.webp";
+import Divider from "../components/DividerSection";
 
 const AboutUs = () => {
   const ServiceCard = ({ title, description, icon }) => {
@@ -35,7 +36,7 @@ const AboutUs = () => {
               diseñados para cada individuo. ¡Nos comprometemos a acompañarte en
               cada paso del camino!
             </p>
-            <div className="flex justify-center lg:justify-start space-x-4">
+            <div className="flex space-x-4">
               <a
                 href="https://www.facebook.com/share/uG6KzuhtfF5o4jZD/?mibextid=LQQJ4d"
                 target="_blank"
@@ -93,6 +94,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
+      <Divider />
     </div>
   );
 };

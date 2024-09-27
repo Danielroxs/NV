@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const TestimonialSlider = () => {
@@ -75,12 +75,17 @@ const TestimonialSlider = () => {
     }
   };
 
+  useEffect(() => {
+    const slider = sliderRef.current;
+    slider.focus();
+  }, []);
+
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div
         ref={sliderRef}
         className="relative bg-white rounded-lg shadow-lg overflow-hidden"
-        tabIndex="-1"
+        tabIndex="0"
         onKeyDown={handleKeyDown}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}

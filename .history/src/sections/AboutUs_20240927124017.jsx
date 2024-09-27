@@ -14,7 +14,7 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="min-h-screen lg:text-left text-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen lg:text-left text-center  px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-1/2 lg:pr-12 mb-8 lg:mb-0">
@@ -35,7 +35,7 @@ const AboutUs = () => {
               diseñados para cada individuo. ¡Nos comprometemos a acompañarte en
               cada paso del camino!
             </p>
-            <div className="flex justify-center lg:justify-start space-x-4">
+            <div className="flex space-x-4">
               <a
                 href="https://www.facebook.com/share/uG6KzuhtfF5o4jZD/?mibextid=LQQJ4d"
                 target="_blank"

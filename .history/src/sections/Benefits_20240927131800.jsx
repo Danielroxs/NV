@@ -13,7 +13,7 @@ const CombinedBenefits = () => {
   const whatsappNumber = "+525538075005";
 
   return (
-    <div className="container mx-auto px-4 py-16 lg:text-left text-center">
+    <div className="container mx-auto px-4 py-16 justify-center lg:justify-start lg:text-left text-center">
       <div className="flex flex-col md:flex-row items-center justify-between">
         <div className="md:w-1/2 mb-8 md:mb-0 pr-0 md:pr-8">
           <h2 className="text-3xl font-bold mb-6 text-gray-800">
@@ -25,19 +25,19 @@ const CombinedBenefits = () => {
             Villeda conduce a resultados transformadores.
           </p>
           <div className="space-y-4">
-            <div className="flex items-center flex-col md:flex-row justify-center md:justify-start">
+            <div className="flex items-center">
               <FaDumbbell className="text-green-500 text-2xl mr-4" />
               <span className="text-gray-700">
                 Mejora en el rendimiento físico y la fuerza
               </span>
             </div>
-            <div className="flex items-center flex-col md:flex-row justify-center md:justify-start">
+            <div className="flex items-center">
               <FaAppleAlt className="text-red-500 text-2xl mr-4" />
               <span className="text-gray-700">
                 Nutrición optimizada para una mejor salud
               </span>
             </div>
-            <div className="flex items-center flex-col md:flex-row justify-center md:justify-start">
+            <div className="flex items-center">
               <FaBolt className="text-yellow-500 text-2xl mr-4" />
               <span className="text-gray-700">
                 Aumento de energía y vitalidad

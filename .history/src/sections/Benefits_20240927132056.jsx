@@ -24,26 +24,29 @@ const CombinedBenefits = () => {
             con entrenamiento físico experto. El enfoque holístico de Neri
             Villeda conduce a resultados transformadores.
           </p>
+
+          {/* Iconos centrados con sus textos */}
           <div className="space-y-4">
-            <div className="flex items-center flex-col md:flex-row justify-center md:justify-start">
-              <FaDumbbell className="text-green-500 text-2xl mr-4" />
-              <span className="text-gray-700">
+            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start">
+              <FaDumbbell className="text-green-500 text-4xl mb-2 md:mb-0 md:mr-4" />
+              <span className="text-gray-700 text-center md:text-left">
                 Mejora en el rendimiento físico y la fuerza
               </span>
             </div>
-            <div className="flex items-center flex-col md:flex-row justify-center md:justify-start">
-              <FaAppleAlt className="text-red-500 text-2xl mr-4" />
-              <span className="text-gray-700">
+            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start">
+              <FaAppleAlt className="text-red-500 text-4xl mb-2 md:mb-0 md:mr-4" />
+              <span className="text-gray-700 text-center md:text-left">
                 Nutrición optimizada para una mejor salud
               </span>
             </div>
-            <div className="flex items-center flex-col md:flex-row justify-center md:justify-start">
-              <FaBolt className="text-yellow-500 text-2xl mr-4" />
-              <span className="text-gray-700">
+            <div className="flex flex-col md:flex-row items-center justify-center md:justify-start">
+              <FaBolt className="text-yellow-500 text-4xl mb-2 md:mb-0 md:mr-4" />
+              <span className="text-gray-700 text-center md:text-left">
                 Aumento de energía y vitalidad
               </span>
             </div>
           </div>
+
           <button
             onClick={() =>
               sendMessage(

@@ -9,22 +9,23 @@ scroll-behavior: smooth;
 
 // Divider
 
-.custom-shape-divider-top-1727460625 {
+.custom-shape-divider-top-1727460387 {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  transform: rotate(180deg);
 }
 
-.custom-shape-divider-top-1727460625 svg {
+.custom-shape-divider-top-1727460387 svg {
   position: relative;
   display: block;
   width: calc(101% + 1.3px);
   height: 61px;
 }
 
-.custom-shape-divider-top-1727460625 .shape-fill {
-  fill: #040404;
+.custom-shape-divider-top-1727460387 .shape-fill {
+  fill: #030303;
 }

@@ -107,7 +107,7 @@ const TransformationGallery = () => {
   const currentTransformation = transformations[currentIndex];
 
   return (
-    <div className="max-w-4xl text-center lg:text-start mx-auto p-4">
+    <div className="max-w-4xl justify-center lg:justify-start tex-center lg:text-start mx-auto p-4">
       <h2 className="text-3xl font-bold text-center mb-8">
         Transformaciones NV
       </h2>
