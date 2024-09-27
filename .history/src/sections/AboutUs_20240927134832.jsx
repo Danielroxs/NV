@@ -1,6 +1,5 @@
 import React from "react";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
-import neri from "../assets/images/neri.webp";
 import ProfileCard from "../components/ProfileCard";
 
 const AboutUs = () => {
@@ -23,18 +22,8 @@ const AboutUs = () => {
               Conoce a Neri Villeda
             </h1>
             <p className="text-lg text-gray-700 mb-6">
-              Neri Villeda es una apasionado nutricionista y entrenador personal
-              dedicado a ayudar a las personas a alcanzar sus objetivos de salud
-              y forma física. Gracias a su basta experiencia, Neri combina
-              conocimientos científicos con estrategias prácticas para crear
-              planes de nutrición y rutinas de entrenamiento personalizados.
-            </p>
-            <p className="text-lg text-gray-700 mb-6">
-              En nuestro consultorio, creemos que la salud es un equilibrio
-              entre nutrición y ejercicio. Nuestro enfoque combina planes
-              alimenticios personalizados con programas de entrenamiento
-              diseñados para cada individuo. ¡Nos comprometemos a acompañarte en
-              cada paso del camino!
+              Neri Villeda es un apasionado nutricionista y entrenador
+              personal...
             </p>
             <div className="flex justify-center lg:justify-start space-x-4">
               <a
@@ -60,18 +49,13 @@ const AboutUs = () => {
               </a>
             </div>
           </div>
-          <div className="lg:w-1/2">
-            <div className="relative w-64 h-64 mx-auto lg:w-80 lg:h-80">
-              {/* <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-blue-500 rounded-full animate-pulse"></div>
-              <img
-                src={neri}
-                alt="Neri Villeda"
-                className="absolute inset-2 w-60 h-60 lg:w-76 lg:h-76 object-cover rounded-full"
-                /> */}
-              <ProfileCard />
-            </div>
+
+          {/* Posiciona bien el ProfileCard */}
+          <div className="lg:w-1/2 flex justify-center lg:justify-end">
+            <ProfileCard />
           </div>
         </div>
+
         <div className="mt-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             Nuestros servicios
@@ -79,17 +63,17 @@ const AboutUs = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ServiceCard
               title="Planes de nutrición personalizados"
-              description="Planes de comidas personalizados diseñados para satisfacer sus objetivos de salud y preferencias dietéticas específicos."
+              description="Planes de comidas personalizados diseñados..."
               icon={"🥗"}
             />
             <ServiceCard
               title="Formación individual"
-              description="Sesiones de entrenamiento individualizadas centradas en su nivel de forma física y sus objetivos"
+              description="Sesiones de entrenamiento individualizadas..."
               icon={"💪"}
             />
             <ServiceCard
               title="Talleres de bienestar"
-              description="Seminarios educativos sobre diversos temas de salud para que adquiera conocimientos."
+              description="Seminarios educativos sobre diversos temas..."
               icon={"📚"}
             />
           </div>

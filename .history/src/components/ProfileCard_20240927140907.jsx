@@ -1,6 +1,5 @@
 import React from "react";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
-import neri from "../assets/images/neri.webp";
 import ProfileCard from "../components/ProfileCard";
 
 const AboutUs = () => {
@@ -15,7 +14,7 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="min-h-screen lg:text-left text-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-1/2 lg:pr-12 mb-8 lg:mb-0">
@@ -25,16 +24,7 @@ const AboutUs = () => {
             <p className="text-lg text-gray-700 mb-6">
               Neri Villeda es una apasionado nutricionista y entrenador personal
               dedicado a ayudar a las personas a alcanzar sus objetivos de salud
-              y forma física. Gracias a su basta experiencia, Neri combina
-              conocimientos científicos con estrategias prácticas para crear
-              planes de nutrición y rutinas de entrenamiento personalizados.
-            </p>
-            <p className="text-lg text-gray-700 mb-6">
-              En nuestro consultorio, creemos que la salud es un equilibrio
-              entre nutrición y ejercicio. Nuestro enfoque combina planes
-              alimenticios personalizados con programas de entrenamiento
-              diseñados para cada individuo. ¡Nos comprometemos a acompañarte en
-              cada paso del camino!
+              y forma física...
             </p>
             <div className="flex justify-center lg:justify-start space-x-4">
               <a
@@ -60,18 +50,14 @@ const AboutUs = () => {
               </a>
             </div>
           </div>
-          <div className="lg:w-1/2">
-            <div className="relative w-64 h-64 mx-auto lg:w-80 lg:h-80">
-              {/* <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-blue-500 rounded-full animate-pulse"></div>
-              <img
-                src={neri}
-                alt="Neri Villeda"
-                className="absolute inset-2 w-60 h-60 lg:w-76 lg:h-76 object-cover rounded-full"
-                /> */}
-              <ProfileCard />
-            </div>
+
+          {/* ProfileCard Section */}
+          <div className="lg:w-1/2 flex justify-center">
+            <ProfileCard />
           </div>
         </div>
+
+        {/* Services Section */}
         <div className="mt-12">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             Nuestros servicios

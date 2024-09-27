@@ -62,8 +62,8 @@ const AboutUs = () => {
           </div>
           <div className="lg:w-1/2">
             <div className="relative w-64 h-64 mx-auto lg:w-80 lg:h-80">
-              {/* <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-blue-500 rounded-full animate-pulse"></div>
-              <img
+              <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-blue-500 rounded-full animate-pulse"></div>
+              {/* <img
                 src={neri}
                 alt="Neri Villeda"
                 className="absolute inset-2 w-60 h-60 lg:w-76 lg:h-76 object-cover rounded-full"
