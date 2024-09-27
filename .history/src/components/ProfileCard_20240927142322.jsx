@@ -34,7 +34,7 @@ const ProfileCard = () => {
   return (
     <div className="w-64 h-64 lg:w-80 lg:h-80 relative cursor-pointer">
       <div
-        className="relative w-full h-full rounded-full overflow-hidden border-4 border-[#09f] shadow-lg transition-transform duration-300 transform hover:scale-105"
+        className="relative w-full h-full rounded-full overflow-hidden border-4 border-indigo-500 shadow-lg transition-transform duration-300 transform hover:scale-105"
         onClick={toggleDetails}
       >
         <img

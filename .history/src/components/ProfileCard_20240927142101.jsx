@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaGraduationCap, FaBriefcase, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
-import neri from "../assets/images/neri.webp";
+import neri from "../assets/images/neri.webp"
 
 const ProfileCard = () => {
   const [showDetails, setShowDetails] = useState(false);
@@ -34,13 +34,13 @@ const ProfileCard = () => {
   return (
     <div className="w-64 h-64 lg:w-80 lg:h-80 relative cursor-pointer">
       <div
-        className="relative w-full h-full rounded-full overflow-hidden border-4 border-[#09f] shadow-lg transition-transform duration-300 transform hover:scale-105"
+        className="relative w-full h-full rounded-full overflow-hidden border-4 border-indigo-500 shadow-lg transition-transform duration-300 transform hover:scale-105"
         onClick={toggleDetails}
       >
         <img
           className="object-cover w-full h-full"
           src={neri}
-          alt="Neri fotografia"
+          alt={neri foto}
         />
         {/* Texto de "Ver más..." que aparece en hover */}
         <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
