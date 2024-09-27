@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import { MdFitnessCenter, MdRestaurant, MdPeople } from "react-icons/md";
 
@@ -47,23 +47,9 @@ const ProgramCard = ({
 };
 
 const ProgramModal = ({ program, onClose }) => {
-  const modalRef = useRef(null); // Usamos una referencia para el contenido del modal
-
-  const handleClickOutside = (e) => {
-    if (modalRef.current && !modalRef.current.contains(e.target)) {
-      onClose();
-    }
-  };
-
   return (
-    <div
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-      onClick={handleClickOutside}
-    >
-      <div
-        ref={modalRef}
-        className="bg-white rounded-lg p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
-      >
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-white rounded-lg p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold">{program.name}</h2>
           <button
