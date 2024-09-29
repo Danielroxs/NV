@@ -49,12 +49,12 @@ const Maps = () => {
   };
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-6 text-center max-w-3xl mx-auto">
+    <div className="bg-anti-flash-white shadow-lg rounded-lg p-6 text-center md:max-w-screen-lg max-w-fit mx-auto">
       <h2 className="text-2xl font-bold mb-4 text-gray-800 flex items-center justify-center">
         <FaMapMarkerAlt className="mr-2 text-red-500" />
         Google Maps
       </h2>
-      <div className="relative h-96 mb-4">
+      <div className="relative h-80 mb-4">
         <iframe
           title="google-maps"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3758.578089026633!2d-99.22346511400052!3d19.60256818809573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d21d4a5296bf3b%3A0xaabcfe6a8f16d9a3!2sGYM%20MUSCLE%20MACHINE!5e0!3m2!1ses!2smx!4v1723833160116!5m2!1ses!2smx"
