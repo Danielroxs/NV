@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaDumbbell, FaAppleAlt } from "react-icons/fa";
 import LogoHero from "../assets/images/LogoHero.png";
 
@@ -7,6 +7,8 @@ const DynamicHero = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
+  const [backgroundPosition, setBackgroundPosition] = useState("center");
+  const heroRef = useRef(null);
 
   const textArray = [
     "Transforma tu cuerpo",
@@ -39,6 +41,27 @@ const DynamicHero = () => {
     return () => clearTimeout(timer);
   }, [text, isDeleting, loopNum, typingSpeed, textArray]);
 
+  // Efecto Parallax
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const offset = heroRef.current.offsetTop;
+      const windowHeight = window.innerHeight;
+      const heroHeight = heroRef.current.offsetHeight;
+
+      if (scrollY >= offset - windowHeight && scrollY <= offset + heroHeight) {
+        const parallaxValue = (scrollY - offset) * 0.5; // Controla la profundidad del parallax
+        setBackgroundPosition(`center ${parallaxValue}px`);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const whatsappNumber = "+525538075005";
 
   const sendMessage = (message) => {
@@ -50,15 +73,18 @@ const DynamicHero = () => {
   };
 
   return (
-    <div className="relative h-screen flex items-center justify-center overflow-hidden">
+    <div
+      ref={heroRef}
+      className="relative h-screen flex items-center justify-center overflow-hidden"
+    >
       <div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')",
           backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
+          backgroundPosition: backgroundPosition, // Parallax effect on background position
+          transition: "background-position 0.2s ease-out", // Smooth scrolling effect
         }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -66,11 +92,7 @@ const DynamicHero = () => {
 
       <div className="relative z-10 text-center text-white px-4">
         <div className="flex justify-center items-start ">
-          <img
-            src={LogoHero}
-            alt="Logotipo"
-            className="block md:hidden w-24 h-auto pb-2"
-          />
+          <img src={LogoHero} alt="Logotipo" className="hidden lg:block" />
         </div>
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
           Nutrición y Entrenamiento Personalizado
