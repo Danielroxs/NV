@@ -52,13 +52,17 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-gray-400 shadow-md" : "bg-transparent"
-      }`} // Aumentamos el z-index por si hay otros elementos superpuestos
+        isMobile
+          ? "bg-transparent"
+          : isScrolled
+          ? "bg-gray-400"
+          : "bg-transparent"
+      } `} // Aumentamos el z-index por si hay otros elementos superpuestos
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="flex-shrink-0">
+            <div className={`flex-shrink-0 ${isMobile ? "hidden" : "block"}`}>
               <img className="h-8 w-auto" src={Logo} alt="Logo" />
             </div>
           </div>

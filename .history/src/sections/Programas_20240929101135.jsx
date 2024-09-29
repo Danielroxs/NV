@@ -11,12 +11,8 @@ const ProgramCard = ({
   image,
 }) => {
   return (
-    <div
-      className="bg-white rounded-lg shadow-md p-6 relative h-full flex flex-col"
-      tabIndex={0}
-      onKeyDown={(e) => e.key === "Enter" && onClick()}
-      aria-label={`View details for ${name} program`}
-    >
+    <div className="bg-white rounded-lg shadow-md p-6 relative h-full flex flex-col">
+      {" "}
       <img
         src={image}
         alt={name}
@@ -36,8 +32,8 @@ const ProgramCard = ({
         ))}
       </ul>
       <button
-        onClick={onClick}
-        className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300 self-start mt-auto"
+        onClick={onClick} // Deja el evento onClick solo en el botón
+        className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300 self-start mt-auto cursor-pointer"
       >
         Detalles
       </button>
@@ -46,7 +42,7 @@ const ProgramCard = ({
 };
 
 const ProgramModal = ({ program, onClose }) => {
-  const modalRef = useRef(null); // Usamos una referencia para el contenido del modal
+  const modalRef = useRef(null);
 
   const handleClickOutside = (e) => {
     if (modalRef.current && !modalRef.current.contains(e.target)) {
@@ -169,7 +165,7 @@ const CombinedProgramsSection = () => {
 
   return (
     <section className="py-16">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 ">
         <h2 className="text-3xl font-bold text-center mb-12">
           Nuestros programas combinados
         </h2>

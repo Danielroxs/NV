@@ -169,7 +169,7 @@ const CombinedProgramsSection = () => {
 
   return (
     <section className="py-16">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 cursor-pointer:none">
         <h2 className="text-3xl font-bold text-center mb-12">
           Nuestros programas combinados
         </h2>

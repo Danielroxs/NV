@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaDumbbell, FaAppleAlt } from "react-icons/fa";
+import LogoHero from "../assets/images/LogoHero.png";
 
 const DynamicHero = () => {
   const [text, setText] = useState("");
@@ -63,6 +64,13 @@ const DynamicHero = () => {
       </div>
 
       <div className="relative z-10 text-center text-white px-4">
+        <div className="flex justify-center items-start ">
+          <img
+            src={LogoHero}
+            alt="Logotipo"
+            className="block md:hidden w-24 h-auto pb-2"
+          />
+        </div>
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
           Nutrición y Entrenamiento Personalizado
         </h1>

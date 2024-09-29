@@ -13,7 +13,6 @@ const ProgramCard = ({
   return (
     <div
       className="bg-white rounded-lg shadow-md p-6 relative h-full flex flex-col"
-      role="button"
       tabIndex={0}
       onKeyDown={(e) => e.key === "Enter" && onClick()}
       aria-label={`View details for ${name} program`}

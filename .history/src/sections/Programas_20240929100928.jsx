@@ -61,7 +61,7 @@ const ProgramModal = ({ program, onClose }) => {
     >
       <div
         ref={modalRef}
-        className="bg-white rounded-lg p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+        className="bg-white rounded-lg p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto cursor-none"
       >
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold">{program.name}</h2>
@@ -169,7 +169,7 @@ const CombinedProgramsSection = () => {
 
   return (
     <section className="py-16">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 ">
         <h2 className="text-3xl font-bold text-center mb-12">
           Nuestros programas combinados
         </h2>
