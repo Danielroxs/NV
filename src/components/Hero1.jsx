@@ -9,7 +9,7 @@ const DynamicHero = () => {
   const [typingSpeed, setTypingSpeed] = useState(150);
   const [backgroundPosition, setBackgroundPosition] = useState("center");
   const heroRef = useRef(null);
-  const ticking = useRef(false); // Para controlar requestAnimationFrame
+  const ticking = useRef(false);
 
   const textArray = [
     "Transforma tu cuerpo",
@@ -42,7 +42,6 @@ const DynamicHero = () => {
     return () => clearTimeout(timer);
   }, [text, isDeleting, loopNum, typingSpeed, textArray]);
 
-  // Efecto Parallax optimizado
   useEffect(() => {
     const handleScroll = () => {
       if (!ticking.current) {
@@ -56,7 +55,7 @@ const DynamicHero = () => {
             scrollY >= offset - windowHeight &&
             scrollY <= offset + heroHeight
           ) {
-            const parallaxValue = (scrollY - offset) * 0.5; // Controla la profundidad del parallax
+            const parallaxValue = (scrollY - offset) * 0.5;
             setBackgroundPosition(`center ${parallaxValue}px`);
           }
           ticking.current = false;
@@ -85,10 +84,10 @@ const DynamicHero = () => {
   return (
     <div
       ref={heroRef}
-      className="relative h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Logotipo centrado en la parte superior */}
-      <div className="absolute lg:hidden top-10 left-1/2 transform -translate-x-1/2 z-20">
+      <div className="absolute lg:hidden top-12 left-1/2 transform -translate-x-1/2 z-20">
         <img
           src={LogoHero}
           alt="Logotipo"
@@ -102,24 +101,21 @@ const DynamicHero = () => {
           backgroundImage:
             "url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')",
           backgroundSize: "cover",
-          backgroundPosition: backgroundPosition, // Parallax effect on background position
+          backgroundPosition: backgroundPosition,
         }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
 
       <div className="relative z-10 text-center text-white px-4">
-        <div className="flex justify-center items-start ">
-          {/* Imagen logotipo se ha movido hacia arriba */}
-        </div>
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4">
           Nutrición y Entrenamiento Personalizado
         </h1>
-        <h2 className="text-2xl md:text-4xl font-semibold mb-6">
+        <h2 className="text-xl md:text-3xl lg:text-4xl font-semibold mb-6">
           <span className="mr-2">{text}</span>
           <span className="animate-blink">|</span>
         </h2>
-        <p className="text-xl md:text-2xl mb-8">
+        <p className="text-lg md:text-xl lg:text-2xl mb-8">
           Desarrolla un estilo de vida equilibrado con planes adaptados a tus
           necesidades.
         </p>
