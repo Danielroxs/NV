@@ -87,6 +87,15 @@ const DynamicHero = () => {
       ref={heroRef}
       className="relative h-screen flex items-center justify-center overflow-hidden"
     >
+      {/* Logotipo centrado en la parte superior */}
+      <div className="absolute lg:hidden top-10 left-1/2 transform -translate-x-1/2 z-20">
+        <img
+          src={LogoHero}
+          alt="Logotipo"
+          className="w-16 h-16 md:w-32 md:h-32 object-contain"
+        />
+      </div>
+
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -101,7 +110,7 @@ const DynamicHero = () => {
 
       <div className="relative z-10 text-center text-white px-4">
         <div className="flex justify-center items-start ">
-          <img src={LogoHero} alt="Logotipo" className="hidden lg:block" />
+          {/* Imagen logotipo se ha movido hacia arriba */}
         </div>
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
           Nutrición y Entrenamiento Personalizado
