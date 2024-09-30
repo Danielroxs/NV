@@ -108,7 +108,7 @@ const TransformationGallery = () => {
 
   return (
     <div className="max-w-4xl text-center lg:text-start mx-auto p-4">
-      <h2 className="text-3xl font-bold text-center mb-8">
+      <h2 className="font-roboto text-4xl font-bold text-gray-700 mb-6 text-center">
         Transformaciones NV
       </h2>
       <div

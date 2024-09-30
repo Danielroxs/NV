@@ -55,7 +55,9 @@ const Tienda = () => {
 
   return (
     <div className="text-center lg:text-start container mx-auto px-6 py-12 max-w-7xl">
-      <h1 className="text-4xl font-bold text-center mb-10">T-Shirt NV</h1>
+      <h1 className="font-roboto text-4xl font-bold text-gray-700 mb-10 text-center">
+        T-Shirt NV
+      </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {tShirts.map((tShirt) => (
           <div

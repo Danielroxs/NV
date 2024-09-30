@@ -19,17 +19,17 @@ const AboutUs = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-1/2 lg:pr-12 mb-8 lg:mb-0">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">
+            <h1 className="font-roboto text-4xl font-bold text-gray-700 mb-6">
               Conoce a Neri Villeda
             </h1>
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="md:text-xl text-lg text-gray-700 mb-6 font-lora">
               Neri Villeda es una apasionado nutricionista y entrenador personal
               dedicado a ayudar a las personas a alcanzar sus objetivos de salud
               y forma física. Gracias a su basta experiencia, Neri combina
               conocimientos científicos con estrategias prácticas para crear
               planes de nutrición y rutinas de entrenamiento personalizados.
             </p>
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="md:text-xl text-lg text-gray-700 mb-6 font-lora">
               En nuestro consultorio, creemos que la salud es un equilibrio
               entre nutrición y ejercicio. Nuestro enfoque combina planes
               alimenticios personalizados con programas de entrenamiento

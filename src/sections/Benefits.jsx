@@ -16,7 +16,7 @@ const CombinedBenefits = () => {
     <div className="container mx-auto px-4 py-16 lg:text-left text-center">
       <div className="flex flex-col md:flex-row items-center justify-between">
         <div className="md:w-1/2 mb-8 md:mb-0 pr-0 md:pr-8">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800">
+          <h2 className="font-roboto text-4xl font-bold text-gray-700 md:mb-6 mb-4">
             Beneficios Combinados con Neri Villeda
           </h2>
           <p className="text-lg mb-6 text-gray-600">

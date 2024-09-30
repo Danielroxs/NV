@@ -1,4 +1,4 @@
-import { Footer, Maps, Programas, Benefits } from "./sections";
+import { Footer, Maps, ProgramasCombinados, Benefits } from "./sections";
 import * as React from "react";
 import Contact from "./components/Contact";
 import Testimonial from "./sections/Testimonial";
@@ -38,7 +38,7 @@ const App = () => (
       <WhatsappButton />
 
       <section id="services" className="py-16">
-        <Programas />
+        <ProgramasCombinados />
       </section>
 
       <section id="products" className="py-16">

@@ -14,7 +14,22 @@ export default {
         "slate-gray": "#6D6D6D",
         "pale-blue": "#F5F6FF",
         "white-400": "rgba(255, 255, 255, 0.80)",
-        "gray-blue": "#5A6F7D "
+        "soft-gray": "#F8F9FA ",
+        "soft-blue": "#E9ECEF",
+        "medium-blue": "#DEE2E6",
+        "soft-navy": "#CED4DA",
+        "gray-1": "#ADB5BD",
+
+        "gray-2": "#6C757D",
+        "gray-3": "#495057",
+        "gray-4": "#343A40",
+        "gray-5": "#212529",
+
+      },
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+        openSans: ['Open Sans', 'sans-serif'],
+        lora: ['Lora', 'serif'],
       },
     },
   },

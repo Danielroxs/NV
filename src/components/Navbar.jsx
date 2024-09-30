@@ -55,7 +55,7 @@ const Navbar = () => {
         isMobile
           ? "bg-transparent"
           : isScrolled
-          ? "bg-gray-400"
+          ? "bg-[#aea3b0]"
           : "bg-transparent"
       } `} // Aumentamos el z-index por si hay otros elementos superpuestos
     >

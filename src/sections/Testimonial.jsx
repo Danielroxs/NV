@@ -77,6 +77,9 @@ const TestimonialSlider = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
+      <h1 className="font-roboto text-4xl font-bold text-gray-700 mb-10 text-center">
+        Cientes Satisfechos
+      </h1>
       <div
         ref={sliderRef}
         className="relative bg-white rounded-lg shadow-lg overflow-hidden"
