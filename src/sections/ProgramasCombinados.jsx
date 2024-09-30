@@ -37,7 +37,7 @@ const ProgramCard = ({
       </ul>
       <button
         onClick={onClick}
-        className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300 self-center mt-auto"
+        className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300 md:self-start self-center mt-auto"
       >
         Detalles
       </button>
@@ -97,7 +97,7 @@ const ProgramModal = ({ program, onClose }) => {
           <h3 className="text-xl font-semibold mb-2">Información adicional</h3>
           <p className="text-gray-600">{program.additionalInfo}</p>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center md:hidden">
           <button
             onClick={onClose}
             className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300"
