@@ -1,6 +1,6 @@
 import React from "react";
 import { FaDumbbell, FaAppleAlt, FaBolt } from "react-icons/fa";
-import BeneficiosCombinados from "../assets/images/BeneficiosCombinados.webp";
+import benefits from "../assets/images/benefits.webp";
 
 const CombinedBenefits = () => {
   const sendMessage = (message) => {
@@ -58,7 +58,7 @@ const CombinedBenefits = () => {
         </div>
         <div className="md:w-1/2">
           <img
-            src={BeneficiosCombinados}
+            src={benefits}
             alt="Neri Villeda en acción"
             className="rounded-lg shadow-xl w-full h-auto object-cover"
           />
