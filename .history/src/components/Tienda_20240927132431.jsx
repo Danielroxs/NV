@@ -47,7 +47,7 @@ const Tienda = () => {
     window.open(whatsappLink, "_blank");
   };
 
-  const whatsappNumber = "+525538075005";
+  const whatsappNumber = "+525561706548";
 
   const handleTShirtClick = (id) => {
     setSelectedTShirt(selectedTShirt === id ? null : id);

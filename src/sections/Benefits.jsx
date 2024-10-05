@@ -1,5 +1,6 @@
 import React from "react";
 import { FaDumbbell, FaAppleAlt, FaBolt } from "react-icons/fa";
+import BeneficiosCombinados from "../assets/images/BeneficiosCombinados.webp";
 
 const CombinedBenefits = () => {
   const sendMessage = (message) => {
@@ -10,7 +11,7 @@ const CombinedBenefits = () => {
     window.open(whatsappLink, "_blank");
   };
 
-  const whatsappNumber = "+525538075005";
+  const whatsappNumber = "+525561706548";
 
   return (
     <div className="container mx-auto px-4 py-16 lg:text-left text-center">
@@ -57,7 +58,7 @@ const CombinedBenefits = () => {
         </div>
         <div className="md:w-1/2">
           <img
-            src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            src={BeneficiosCombinados}
             alt="Neri Villeda en acción"
             className="rounded-lg shadow-xl w-full h-auto object-cover"
           />

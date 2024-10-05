@@ -1,29 +1,29 @@
 import React, { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import T1 from "../assets/images/T1.webp";
+import T2 from "../assets/images/T2.webp";
+import T3 from "../assets/images/T3.webp";
 
 const Tienda = () => {
   const tShirts = [
     {
       id: 1,
       name: "Camiseta Blanca Clásica",
-      image:
-        "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+      image: T1,
       description:
         "Una camiseta blanca atemporal que nunca pasa de moda. Perfecta para cualquier ocasión casual.",
     },
     {
       id: 2,
       name: "Camiseta Negra Vintage",
-      image:
-        "https://images.unsplash.com/photo-1503342394128-c104d54dba01?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+      image: T2,
       description:
         "Una camiseta negra clásica con un toque vintage. Ideal para llevar en capas o usar sola.",
     },
     {
       id: 3,
       name: "Camiseta con Estampado Gráfico",
-      image:
-        "https://images.unsplash.com/photo-1562157873-818bc0726f68?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+      image: T3,
       description:
         "Exprésate con esta camiseta de estampado gráfico llamativo. Destácate entre la multitud.",
     },
@@ -47,7 +47,7 @@ const Tienda = () => {
     window.open(whatsappLink, "_blank");
   };
 
-  const whatsappNumber = "+525538075005";
+  const whatsappNumber = "+525561706548";
 
   const handleTShirtClick = (id) => {
     setSelectedTShirt(selectedTShirt === id ? null : id);

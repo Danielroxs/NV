@@ -38,7 +38,7 @@ const DynamicHero = () => {
     return () => clearTimeout(timer);
   }, [text, isDeleting, loopNum, typingSpeed, textArray]);
 
-  const whatsappNumber = "+525538075005";
+  const whatsappNumber = "+525561706548";
 
   const sendMessage = (message) => {
     const whatsappLink = `https://wa.me/${whatsappNumber.replace(

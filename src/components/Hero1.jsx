@@ -71,7 +71,7 @@ const DynamicHero = () => {
     };
   }, []);
 
-  const whatsappNumber = "+525538075005";
+  const whatsappNumber = "+525561706548";
 
   const sendMessage = (message) => {
     const whatsappLink = `https://wa.me/${whatsappNumber.replace(

@@ -2,7 +2,11 @@ import React, { useState, useRef, useEffect } from "react";
 import { MdOutlineSkipNext, MdOutlineSkipPrevious } from "react-icons/md";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import B1 from "../assets/images/B1.webp";
+import A1 from "../assets/images/A1.webp";
+import B2 from "../assets/images/B2.webp";
 import A2 from "../assets/images/A2.webp";
+import A3 from "../assets/images/A3.webp";
+import B3 from "../assets/images/B3.webp";
 
 const TransformationGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -13,25 +17,21 @@ const TransformationGallery = () => {
   const transformations = [
     {
       beforeImage: B1,
-      afterImage: A2,
+      afterImage: A1,
       patientName: "John Doe",
       description:
         "Lost 30 pounds in 3 months through a combination of diet and exercise.",
     },
     {
-      beforeImage:
-        "https://images.unsplash.com/photo-1518310952931-b1de897abd40",
-      afterImage:
-        "https://images.unsplash.com/photo-1574680096145-d05b474e2155",
+      beforeImage: B2,
+      afterImage: A2,
       patientName: "Jane Smith",
       description:
         "Gained 15 pounds of muscle mass in 6 months with strength training.",
     },
     {
-      beforeImage:
-        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd",
-      afterImage:
-        "https://images.unsplash.com/photo-1490645935967-10de6ba17061",
+      beforeImage: B3,
+      afterImage: A3,
       patientName: "Alice Johnson",
       description:
         "Transformed her diet from processed foods to whole, nutrient-rich meals.",
@@ -136,8 +136,8 @@ const TransformationGallery = () => {
             className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"
             style={{ left: `calc(${sliderPosition}% - 1px)` }}
           >
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center">
-              <FaArrowRightArrowLeft className="text-gray-800 text-xl" />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center">
+              <FaArrowRightArrowLeft className="text-gray-800 text-2xl" />
             </div>
           </div>
         </div>

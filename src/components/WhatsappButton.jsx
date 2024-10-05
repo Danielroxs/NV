@@ -37,7 +37,7 @@ const whatsappAnimation = {
 const WhatsappButton = () => {
   return (
     <FloatingButton
-      href="https://wa.me/525538075005?text=Hola,%20me%20gustaría%20obtener%20más%20información%20sobre%20sus%20servicios.
+      href="https://wa.me/525561706548?text=Hola,%20me%20gustaría%20obtener%20más%20información%20sobre%20sus%20servicios.
 "
       target="_blank"
       rel="noopener noreferrer"
