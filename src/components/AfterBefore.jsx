@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { MdOutlineSkipNext, MdOutlineSkipPrevious } from "react-icons/md";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
+import B1 from "../assets/images/B1.webp";
+import A2 from "../assets/images/A2.webp";
 
 const TransformationGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,10 +12,8 @@ const TransformationGallery = () => {
 
   const transformations = [
     {
-      beforeImage:
-        "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
-      afterImage:
-        "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b",
+      beforeImage: B1,
+      afterImage: A2,
       patientName: "John Doe",
       description:
         "Lost 30 pounds in 3 months through a combination of diet and exercise.",
@@ -117,16 +117,16 @@ const TransformationGallery = () => {
       >
         <div className="relative w-full h-[400px]">
           <img
-            src={currentTransformation.beforeImage}
+            src={currentTransformation.afterImage}
             alt="Before"
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            className="w-full h-[400px] object-cover"
           />
           <div
             className="absolute top-0 right-0 w-full h-full overflow-hidden"
             style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
           >
             <img
-              src={currentTransformation.afterImage}
+              src={currentTransformation.beforeImage}
               alt="After"
               className="absolute top-0 left-0 w-full h-full object-cover"
             />

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaGraduationCap, FaBriefcase, FaTimes } from "react-icons/fa";
+import { PiCertificateFill } from "react-icons/pi";
 import { motion, AnimatePresence } from "framer-motion";
 import neri from "../assets/images/neri.webp";
 
@@ -17,12 +18,27 @@ const ProfileCard = () => {
         institution: "Universidad de XYZ",
         year: "2018",
       },
+      {
+        degree: "Profesional del Fitness",
+        institution: "Sport City University",
+        year: "2018",
+      },
+    ],
+    certifications: [
+      {
+        certificate1:
+          " Suplementacion y Complementacion aplicada en el Deporte y Culturismo",
+        certificate3: " Dieta Cetogenica aplicada en el Deporte y Culturismo",
+        certificate2: " Farmacología Deportiva",
+        certificate4: " Terapia Posciclo",
+        certificate5: " Especialización en Fuerza",
+      },
     ],
     experience: [
       {
         position: "Entrenador Personal",
-        company: "Consultorio NV",
-        duration: "2019 - Presente",
+        company: "Muscle Machine GYM",
+        duration: "2016 - Actualidad",
       },
     ],
   };
@@ -122,6 +138,34 @@ const ProfileCard = () => {
                           <p className="text-sm text-gray-600">{exp.company}</p>
                           <p className="text-xs text-gray-500">
                             {exp.duration}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+
+                  <section>
+                    <h3 className="text-xl font-semibold flex items-center">
+                      <PiCertificateFill className="mr-2" />
+                      Certificaciones
+                    </h3>
+                    <div className="mt-3 space-y-3">
+                      {person.certifications.map((exp, index) => (
+                        <div
+                          key={index}
+                          className="border-l-4 border-indigo-500 pl-4 py-2"
+                        >
+                          <p className="text-base font-medium text-gray-900">
+                            {exp.company}
+                          </p>
+                          <p className="text-sm text-gray-600">
+                            •{exp.certificate1}
+                          </p>
+                          <p className="text-sm text-gray-600">
+                            •{exp.certificate2}
+                          </p>
+                          <p className="text-sm text-gray-600">
+                            •{exp.certificate3}
                           </p>
                         </div>
                       ))}
