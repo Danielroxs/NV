@@ -28,7 +28,7 @@ const DynamicHero = () => {
           : fullText.substring(0, text.length + 1)
       );
 
-      setTypingSpeed(isDeleting ? 30 : 150);
+      setTypingSpeed(isDeleting ? 35 : 150);
 
       if (!isDeleting && text === fullText) {
         setTimeout(() => setIsDeleting(true), 500);

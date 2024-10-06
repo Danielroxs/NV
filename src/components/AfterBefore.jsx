@@ -107,56 +107,58 @@ const TransformationGallery = () => {
   const currentTransformation = transformations[currentIndex];
 
   return (
-    <div className="max-w-4xl text-center lg:text-start mx-auto p-4">
-      <h2 className="font-roboto text-4xl font-bold text-gray-700 mb-6 text-center">
+    <div className="max-w-4xl text-center mx-auto p-4">
+      <h2 className="font-roboto text-4xl font-bold text-gray-700 mb-4 text-center">
         Transformaciones NV
       </h2>
-      <div
-        className="relative overflow-hidden rounded-lg shadow-lg"
-        ref={containerRef}
-      >
-        <div className="relative w-full h-[400px]">
-          <img
-            src={currentTransformation.afterImage}
-            alt="Before"
-            className="w-full h-[400px] object-cover"
-          />
-          <div
-            className="absolute top-0 right-0 w-full h-full overflow-hidden"
-            style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
-          >
+      <div className="flex justify-center">
+        <div
+          className="relative overflow-hidden rounded-lg shadow-lg w-full md:w-1/2 lg:w-6/12"
+          ref={containerRef}
+        >
+          <div className="relative w-full h-full">
             <img
-              src={currentTransformation.beforeImage}
-              alt="After"
-              className="absolute top-0 left-0 w-full h-full object-cover"
+              src={currentTransformation.afterImage}
+              alt="Before"
+              className=" w-full h-full object-cover"
             />
-          </div>
-          <div
-            ref={sliderRef}
-            className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"
-            style={{ left: `calc(${sliderPosition}% - 1px)` }}
-          >
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center">
-              <FaArrowRightArrowLeft className="text-gray-800 text-2xl" />
+            <div
+              className="absolute top-0 right-0 w-full h-full overflow-hidden"
+              style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+            >
+              <img
+                src={currentTransformation.beforeImage}
+                alt="After"
+                className="absolute top-0 left-0 w-full h-full object-cover"
+              />
+            </div>
+            <div
+              ref={sliderRef}
+              className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"
+              style={{ left: `calc(${sliderPosition}% - 1px)` }}
+            >
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center">
+                <FaArrowRightArrowLeft className="text-gray-800 text-2xl" />
+              </div>
             </div>
           </div>
-        </div>
-        <div className="absolute bottom-4 left-0 right-0 flex justify-between px-4">
-          <button
-            onClick={prevTransformation}
-            className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
-          >
-            <MdOutlineSkipPrevious className="text-gray-800 text-xl" />
-          </button>
-          <button
-            onClick={nextTransformation}
-            className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
-          >
-            <MdOutlineSkipNext className="text-gray-800 text-xl" />
-          </button>
+          <div className="absolute bottom-4 left-0 right-0 flex justify-between px-4">
+            <button
+              onClick={prevTransformation}
+              className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
+            >
+              <MdOutlineSkipPrevious className="text-gray-800 text-xl" />
+            </button>
+            <button
+              onClick={nextTransformation}
+              className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
+            >
+              <MdOutlineSkipNext className="text-gray-800 text-xl" />
+            </button>
+          </div>
         </div>
       </div>
-      <div className="mt-6 bg-white rounded-lg shadow-md p-6">
+      <div className="mt-6 bg-white rounded-lg shadow-md p-4 max-w-md mx-auto">
         <h3 className="text-2xl font-semibold mb-2">
           {currentTransformation.patientName}
         </h3>
