@@ -7,6 +7,18 @@ import B2 from "../assets/images/B2.webp";
 import A2 from "../assets/images/A2.webp";
 import A3 from "../assets/images/A3.webp";
 import B3 from "../assets/images/B3.webp";
+import B4 from "../assets/images/B4.webp";
+import A4 from "../assets/images/A4.webp";
+import B5 from "../assets/images/B5.webp";
+import A5 from "../assets/images/A5.webp";
+import B6 from "../assets/images/B6.webp";
+import A6 from "../assets/images/A6.webp";
+import B7 from "../assets/images/B7.webp";
+import A7 from "../assets/images/A7.webp";
+import B8 from "../assets/images/B8.webp";
+import A8 from "../assets/images/A8.webp";
+import B9 from "../assets/images/B9.webp";
+import A9 from "../assets/images/A9.webp";
 
 const TransformationGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,6 +45,48 @@ const TransformationGallery = () => {
       beforeImage: B3,
       afterImage: A3,
       patientName: "Alice Johnson",
+      description:
+        "Transformed her diet from processed foods to whole, nutrient-rich meals.",
+    },
+    {
+      beforeImage: B4,
+      afterImage: A4,
+      patientName: "Mary Mercado",
+      description:
+        "Transformed her diet from processed foods to whole, nutrient-rich meals.",
+    },
+    {
+      beforeImage: B5,
+      afterImage: A5,
+      patientName: "Antonio Villegas",
+      description:
+        "Transformed her diet from processed foods to whole, nutrient-rich meals.",
+    },
+    {
+      beforeImage: B6,
+      afterImage: A6,
+      patientName: "Alfredo villegas",
+      description:
+        "Transformed her diet from processed foods to whole, nutrient-rich meals.",
+    },
+    {
+      beforeImage: B7,
+      afterImage: A7,
+      patientName: "Alejandro Zavala",
+      description:
+        "Transformed her diet from processed foods to whole, nutrient-rich meals.",
+    },
+    {
+      beforeImage: B8,
+      afterImage: A8,
+      patientName: "Carlos Villa",
+      description:
+        "Transformed her diet from processed foods to whole, nutrient-rich meals.",
+    },
+    {
+      beforeImage: B9,
+      afterImage: A9,
+      patientName: "Ernesto Villa",
       description:
         "Transformed her diet from processed foods to whole, nutrient-rich meals.",
     },
