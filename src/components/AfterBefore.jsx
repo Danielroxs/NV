@@ -19,6 +19,7 @@ import B8 from "../assets/images/B8.webp";
 import A8 from "../assets/images/A8.webp";
 import B9 from "../assets/images/B9.webp";
 import A9 from "../assets/images/A9.webp";
+import FadeInText from "./Motion";
 
 const TransformationGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -162,9 +163,11 @@ const TransformationGallery = () => {
 
   return (
     <div className="max-w-4xl text-center mx-auto p-4">
-      <h2 className="font-roboto text-4xl font-bold text-gray-700 mb-4 text-center">
-        Transformaciones NV
-      </h2>
+      <FadeInText
+        text="Transformaciones NV"
+        tagName="h2"
+        className="font-roboto text-4xl font-bold text-gray-700 md:mb-6 mb-4"
+      />
       <div className="flex justify-center">
         <div
           className="relative overflow-hidden rounded-lg shadow-lg w-full md:w-1/2 lg:w-6/12"

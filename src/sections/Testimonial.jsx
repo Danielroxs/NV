@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
+import { Fade } from "react-bootstrap";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import FadeInText from "../components/Motion";
 
 const TestimonialSlider = () => {
   const testimonials = [
@@ -77,9 +79,11 @@ const TestimonialSlider = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="font-roboto text-4xl font-bold text-gray-700 mb-10 text-center">
-        Cientes Satisfechos
-      </h1>
+      <FadeInText
+        text="Nuestros Clientes"
+        tagName="h2"
+        className="font-roboto text-4xl font-bold text-gray-700 md:mb-6 mb-4 text-center"
+      />
       <div
         ref={sliderRef}
         className="relative bg-white rounded-lg shadow-lg overflow-hidden"

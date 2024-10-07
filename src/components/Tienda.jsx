@@ -3,6 +3,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import T1 from "../assets/images/T1.webp";
 import T2 from "../assets/images/T2.webp";
 import T3 from "../assets/images/T3.webp";
+import FadeInText from "./Motion";
 
 const Tienda = () => {
   const tShirts = [
@@ -55,9 +56,11 @@ const Tienda = () => {
 
   return (
     <div className="text-center lg:text-start container mx-auto px-6 py-12 max-w-7xl">
-      <h1 className="font-roboto text-4xl font-bold text-gray-700 mb-10 text-center">
-        T-Shirt NV
-      </h1>
+      <FadeInText
+        text="T-Shirt NV"
+        tagName="h2"
+        className="font-roboto text-4xl font-bold text-gray-700 md:mb-6 mb-4 text-center"
+      />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {tShirts.map((tShirt) => (
           <div

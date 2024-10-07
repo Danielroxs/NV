@@ -45,6 +45,7 @@ const WhatsappButton = () => {
       animate="visible"
       variants={whatsappAnimation}
       transition={{ duration: 0.5, delay: 2, ease: "easeOut" }}
+      alt="Whatsapp button"
     >
       <FaWhatsapp size={40} />
     </FloatingButton>

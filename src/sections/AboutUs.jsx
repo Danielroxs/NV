@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import neri from "../assets/images/neri.webp";
 import ProfileCard from "../components/ProfileCard";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
+import FadeInText from "../components/Motion";
 
 const AboutUs = () => {
   const ServiceCard = ({ title, description, icon }) => {
@@ -19,10 +22,12 @@ const AboutUs = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-1/2 lg:pr-12 mb-8 lg:mb-0">
-            <h1 className="font-roboto text-4xl font-bold text-gray-700 mb-6">
-              Conoce a Neri Villeda
-            </h1>
-            <p className="md:text-2xl text-xl text-gray-700 mb-6 font-lora">
+            <FadeInText
+              text="Conoce a Neri Villeda"
+              tagName="h2"
+              className="font-roboto text-4xl font-bold text-gray-700 md:mb-6 mb-4"
+            />
+            <p className="md:text-2xl text-xl text-gray-700 mb-6">
               Neri Villeda es una apasionado nutricionista y entrenador personal
               dedicado a ayudar a las personas a alcanzar sus objetivos de salud
               y forma física. Gracias a su basta experiencia, Neri combina

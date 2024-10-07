@@ -127,6 +127,7 @@ const DynamicHero = () => {
               )
             }
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full flex items-center justify-center transition duration-300 w-full sm:w-auto max-w-xs"
+            alt="Whatsapp button"
           >
             <FaDumbbell className="mr-2" /> Comienza a Entrenar
           </button>
@@ -138,6 +139,7 @@ const DynamicHero = () => {
               )
             }
             className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full flex items-center justify-center transition duration-300 w-full sm:w-auto max-w-xs"
+            alt="Whatsapp button"
           >
             <FaAppleAlt className="mr-2" /> Planes de Nutrición
           </button>

@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 import { FaUser, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import FadeInText from "./Motion";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -80,9 +81,11 @@ const ContactForm = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-75"></div>
           <div className="absolute inset-0 flex items-center justify-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white text-center px-4 drop-shadow-lg">
-              ¡Envíanos tu consulta!
-            </h2>
+            <FadeInText
+              text="¡Envíanos tu consulta!"
+              tagName="h2"
+              className="text-3xl lg:text-4xl font-bold text-white text-center px-4 drop-shadow-lg"
+            />
           </div>
         </div>
         <div className="lg:w-1/2 p-6 lg:p-8">

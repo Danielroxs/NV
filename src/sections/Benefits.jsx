@@ -1,6 +1,7 @@
 import React from "react";
 import { FaDumbbell, FaAppleAlt, FaBolt } from "react-icons/fa";
 import benefits from "../assets/images/benefits.webp";
+import FadeInText from "../components/Motion";
 
 const CombinedBenefits = () => {
   const sendMessage = (message) => {
@@ -17,9 +18,11 @@ const CombinedBenefits = () => {
     <div className="container mx-auto px-4 py-16 lg:text-left text-center">
       <div className="flex flex-col md:flex-row items-center justify-between">
         <div className="md:w-1/2 mb-8 md:mb-0 pr-0 md:pr-8">
-          <h2 className="font-roboto text-4xl font-bold text-gray-700 md:mb-6 mb-4">
-            Beneficios Combinados con Neri Villeda
-          </h2>
+          <FadeInText
+            text="Beneficios Combinados con Neri Villeda"
+            tagName="h2"
+            className="font-roboto text-4xl font-bold text-gray-700 md:mb-6 mb-4"
+          />
           <p className="text-lg mb-6 text-gray-600">
             Experimenta el poder de combinar planes de nutrición personalizados
             con entrenamiento físico experto. El enfoque holístico de Neri
@@ -52,6 +55,7 @@ const CombinedBenefits = () => {
               )
             }
             className="mt-8 bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300"
+            alt="Whatsapp button"
           >
             Comienza Tu Viaje
           </button>

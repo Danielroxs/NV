@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import { MdFitnessCenter, MdRestaurant, MdPeople } from "react-icons/md";
+import FadeInText from "../components/Motion";
 
 const ProgramCard = ({
   name,
@@ -172,9 +173,11 @@ const ProgramasCombinados = () => {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4 ">
-        <h2 className="font-roboto text-4xl font-bold text-gray-700 md:mb-10 mb-6 text-center">
-          Nuestros programas combinados
-        </h2>
+        <FadeInText
+          text="Nuestros programas combinados"
+          tagName="h2"
+          className="font-roboto text-4xl font-bold text-gray-700 md:mb-6 mb-4 text-center"
+        />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((program, index) => (
             <ProgramCard
