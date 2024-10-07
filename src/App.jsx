@@ -19,41 +19,41 @@ const App = () => (
         <Hero1 />
       </section>
 
-      <section id="about" className="py-16">
+      <section id="about" className="pb-10 pt-4">
         <AboutUs />
       </section>
 
-      <section className="py-16">
+      <section className="py-10">
         <SocialMedia />
       </section>
 
-      <section className="py-16">
+      <section className="py-10">
         <BeforeAfterComponent />
       </section>
 
-      <section id="benefits" className="py-16">
+      <section id="benefits" className="py-10">
         <Benefits />
       </section>
 
       <WhatsappButton />
 
-      <section id="services" className="py-16">
+      <section id="services" className="py-10">
         <ProgramasCombinados />
       </section>
 
-      <section id="products" className="py-16">
+      <section id="products" className="py-10">
         <Tienda />
       </section>
 
-      <section className="py-16">
+      <section className="py-10">
         <Testimonial />
       </section>
 
-      <section className="py-16">
+      <section className="py-10">
         <Maps />
       </section>
 
-      <section id="contact" className="py-16">
+      <section id="contact" className="py-10">
         <Contact />
       </section>
 
