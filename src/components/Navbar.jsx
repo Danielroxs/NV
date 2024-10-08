@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll";
-import Logo from "../assets/images/Logo.png";
+import Logo from "../assets/images/Logo.webp";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,7 +1,7 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { Link as ScrollLink } from "react-scroll"; // Importa ScrollLink
-import Logo from "../assets/images/Logo.png";
+import Logo from "../assets/images/Logo.webp";
 
 const Footer = () => {
   const scrollToTop = (e) => {

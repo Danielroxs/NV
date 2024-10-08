@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaDumbbell, FaAppleAlt } from "react-icons/fa";
-import LogoHero from "../assets/images/LogoHero.png";
+import Logo from "../assets/images/Logo.webp";
 
 const DynamicHero = () => {
   const [text, setText] = useState("");
@@ -89,7 +89,7 @@ const DynamicHero = () => {
       {/* Logotipo centrado en la parte superior */}
       <div className="absolute lg:hidden top-12 left-1/2 transform -translate-x-1/2 z-20">
         <img
-          src={LogoHero}
+          src={Logo}
           alt="Logotipo"
           className="w-16 h-16 md:w-32 md:h-32 object-contain"
         />
