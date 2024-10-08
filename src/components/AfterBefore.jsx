@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { MdOutlineSkipNext, MdOutlineSkipPrevious } from "react-icons/md";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
-import LazyLoad from "react-lazyload";
 import B1 from "../assets/images/B1.webp";
 import A1 from "../assets/images/A1.webp";
 import B2 from "../assets/images/B2.webp";
@@ -164,33 +163,31 @@ const TransformationGallery = () => {
 
   return (
     <div className="max-w-4xl text-center mx-auto p-4">
-      <h2 className="font-roboto text-4xl font-bold text-gray-700 mb-6">
-        Transformaciones NV
-      </h2>
+      <FadeInText
+        text="Transformaciones NV"
+        tagName="h2"
+        className="font-roboto text-4xl font-bold text-gray-700 md:mb-6 mb-4"
+      />
       <div className="flex justify-center">
         <div
           className="relative overflow-hidden rounded-lg shadow-lg w-full md:w-1/2 lg:w-6/12"
           ref={containerRef}
         >
           <div className="relative w-full h-full">
-            <LazyLoad height={200} once>
-              <img
-                src={currentTransformation.afterImage}
-                alt="After"
-                className=" w-full h-full object-cover"
-              />
-            </LazyLoad>
+            <img
+              src={currentTransformation.afterImage}
+              alt="Before"
+              className=" w-full h-full object-cover"
+            />
             <div
               className="absolute top-0 right-0 w-full h-full overflow-hidden"
               style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
             >
-              <LazyLoad height={200} once>
-                <img
-                  src={currentTransformation.beforeImage}
-                  alt="Before"
-                  className="absolute top-0 left-0 w-full h-full object-cover"
-                />
-              </LazyLoad>
+              <img
+                src={currentTransformation.beforeImage}
+                alt="After"
+                className="absolute top-0 left-0 w-full h-full object-cover"
+              />
             </div>
             <div
               ref={sliderRef}
@@ -202,7 +199,29 @@ const TransformationGallery = () => {
               </div>
             </div>
           </div>
+          <div className="absolute bottom-4 left-0 right-0 flex justify-between px-4">
+            <button
+              aria-label="Anterior"
+              onClick={prevTransformation}
+              className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
+            >
+              <MdOutlineSkipPrevious className="text-gray-800 text-xl" />
+            </button>
+            <button
+              aria-label="Siguiente"
+              onClick={nextTransformation}
+              className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
+            >
+              <MdOutlineSkipNext className="text-gray-800 text-xl" />
+            </button>
+          </div>
         </div>
+      </div>
+      <div className="mt-6 bg-white rounded-lg shadow-md p-4 max-w-md mx-auto">
+        <h3 className="text-2xl font-semibold mb-2">
+          {currentTransformation.patientName}
+        </h3>
+        <p className="text-gray-600">{currentTransformation.description}</p>
       </div>
     </div>
   );
