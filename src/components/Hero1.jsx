@@ -121,6 +121,7 @@ const DynamicHero = () => {
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
           <button
+            aria-label="Boton Whatsapp"
             onClick={() =>
               sendMessage(
                 "Me gustaría solicitar informes acerca de sus planes de entrenamiento personal"
@@ -133,6 +134,7 @@ const DynamicHero = () => {
           </button>
 
           <button
+            aria-label="button whatsapp"
             onClick={() =>
               sendMessage(
                 "Me gustaría obtener más información sobre los planes de nutrición"

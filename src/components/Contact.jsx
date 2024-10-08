@@ -162,6 +162,7 @@ const ContactForm = () => {
               )}
             </div>
             <button
+              aria-label="Enviar Mensaje"
               type="submit"
               className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-2 lg:py-3 rounded-md hover:from-purple-700 hover:to-indigo-700 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 text-sm lg:text-base"
             >

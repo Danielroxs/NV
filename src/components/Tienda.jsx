@@ -98,7 +98,7 @@ const Tienda = () => {
             sendMessage("Me gustaría adquirir mi Camiseta Team NV")
           }
           className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full inline-flex items-center transition duration-300 ease-in-out transform hover:scale-105"
-          aria-label="Contact Us on WhatsApp"
+          aria-label="Contactanos en Whatsapp"
         >
           <FaWhatsapp className="mr-3 text-2xl" />
           Quiero la mia!

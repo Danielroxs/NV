@@ -74,6 +74,7 @@ const Maps = () => {
           ></iframe>
         </div>
         <button
+          aria-label="Abrir en Google Maps"
           className="px-6 py-3 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-300 flex items-center justify-center mx-auto"
           onClick={openInGoogleMaps}
         >

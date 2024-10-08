@@ -94,6 +94,7 @@ const Navbar = () => {
               } hover:bg-gray-100 hover:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white`}
               aria-controls="mobile-menu"
               aria-expanded="false"
+              aria-label="Abrir menu"
             >
               <span className="sr-only">Open main menu</span>
               {isOpen ? (

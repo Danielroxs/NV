@@ -49,6 +49,7 @@ const CombinedBenefits = () => {
             </div>
           </div>
           <button
+            aria-label="boton whatsapp"
             onClick={() =>
               sendMessage(
                 "Me gustaría obtener más información para empezar mi vida Fitness"

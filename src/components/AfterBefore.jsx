@@ -201,12 +201,14 @@ const TransformationGallery = () => {
           </div>
           <div className="absolute bottom-4 left-0 right-0 flex justify-between px-4">
             <button
+              aria-label="Anterior"
               onClick={prevTransformation}
               className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
             >
               <MdOutlineSkipPrevious className="text-gray-800 text-xl" />
             </button>
             <button
+              aria-label="Siguiente"
               onClick={nextTransformation}
               className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors"
             >
