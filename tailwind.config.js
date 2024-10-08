@@ -27,6 +27,7 @@ export default {
 
       },
       fontFamily: {
+        sans: ['ui-sans-serif', 'system-ui', '...'],
         roboto: ['Roboto', 'sans-serif'],
         openSans: ['Open Sans', 'sans-serif'],
         lora: ['Lora', 'serif'],
