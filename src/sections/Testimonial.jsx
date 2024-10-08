@@ -104,6 +104,7 @@ const TestimonialSlider = () => {
               className="w-full flex-shrink-0 p-8 flex flex-col items-center"
             >
               <img
+                loading="lazy"
                 src={testimonial.image}
                 alt={testimonial.name}
                 className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full mb-4 object-cover"

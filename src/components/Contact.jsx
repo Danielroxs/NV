@@ -75,6 +75,7 @@ const ContactForm = () => {
       <div className="bg-white rounded-xl shadow-2xl overflow-hidden max-w-6xl w-full flex flex-col lg:flex-row">
         <div className="relative lg:w-1/2 h-64 lg:h-auto overflow-hidden">
           <img
+            loading="lazy"
             src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80"
             alt="Customer Service"
             className="object-cover w-full h-full"

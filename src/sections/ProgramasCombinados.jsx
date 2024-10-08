@@ -19,6 +19,7 @@ const ProgramCard = ({
       aria-label={`View details for ${name} program`}
     >
       <img
+        loading="lazy"
         src={image}
         alt={name}
         className="w-full h-48 object-cover mb-4 rounded"
@@ -75,6 +76,7 @@ const ProgramModal = ({ program, onClose }) => {
           </button>
         </div>
         <img
+          loading="lazy"
           src={program.image}
           alt={program.name}
           className="w-full h-64 object-cover mb-6 rounded"

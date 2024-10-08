@@ -69,6 +69,7 @@ const Tienda = () => {
             onClick={() => handleTShirtClick(tShirt.id)}
           >
             <img
+              loading="lazy"
               src={tShirt.image}
               alt={tShirt.name}
               className="w-full h-80 object-cover transition-opacity duration-300 ease-in-out"

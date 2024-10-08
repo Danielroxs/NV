@@ -63,6 +63,7 @@ const CombinedBenefits = () => {
         </div>
         <div className="md:w-1/2">
           <img
+            loading="lazy"
             src={benefits}
             alt="Neri Villeda en acción"
             className="rounded-lg shadow-xl w-full h-auto object-cover"
