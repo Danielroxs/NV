@@ -70,25 +70,43 @@ const Tienda = () => {
 
           React.useEffect(() => {
             if (inView) {
-              controls.start({
-                opacity: 1,
-                y: 0,
-                transition: {
-                  type: "spring",
-                  stiffness: 60, // Una rigidez menor para un resorte más suave
-                  damping: 20, // Amortiguación alta para menos oscilaciones
-                  mass: 0.5, // Masa baja para una respuesta rápida
-                  velocity: 10, // Velocidad inicial baja para iniciar la animación suavemente
-                },
-              });
+              controls.start("visible");
             }
           }, [controls, inView]);
 
           return (
             <motion.div
               ref={ref}
-              initial={{ opacity: 0, y: 50 }} // Start with the item moved down and faded out
-              animate={controls} // Animation controls based on inView
+              initial="hidden"
+              animate={controls}
+              variants={{
+                hidden: {
+                  scale: 0.85,
+                  y: 20,
+                  opacity: 0,
+                },
+                visible: {
+                  scale: 1,
+                  y: 0,
+                  opacity: 1,
+                  transition: {
+                    scale: {
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                    },
+                    y: {
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                    },
+                    opacity: {
+                      duration: 0.5,
+                      ease: "easeInOut",
+                    },
+                  },
+                },
+              }}
               key={tShirt.id}
               className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 relative cursor-pointer"
               onClick={() => handleTShirtClick(tShirt.id)}
