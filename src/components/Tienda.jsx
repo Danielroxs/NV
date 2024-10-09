@@ -4,6 +4,8 @@ import T1 from "../assets/images/T1.webp";
 import T2 from "../assets/images/T2.webp";
 import T3 from "../assets/images/T3.webp";
 import FadeInText from "./Motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Tienda = () => {
   const tShirts = [
@@ -41,14 +43,11 @@ const Tienda = () => {
   const [selectedTShirt, setSelectedTShirt] = useState(null);
 
   const sendMessage = (message) => {
-    const whatsappLink = `https://wa.me/${whatsappNumber.replace(
-      /[^0-9]/g,
-      ""
-    )}?text=${encodeURIComponent(message)}`;
+    const whatsappLink = `https://wa.me/+525561706548?text=${encodeURIComponent(
+      message
+    )}`;
     window.open(whatsappLink, "_blank");
   };
-
-  const whatsappNumber = "+525561706548";
 
   const handleTShirtClick = (id) => {
     setSelectedTShirt(selectedTShirt === id ? null : id);
@@ -62,36 +61,62 @@ const Tienda = () => {
         className="font-roboto text-4xl font-bold text-gray-700 md:mb-6 mb-4 text-center"
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
-        {tShirts.map((tShirt) => (
-          <div
-            key={tShirt.id}
-            className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 relative cursor-pointer"
-            onClick={() => handleTShirtClick(tShirt.id)}
-          >
-            <img
-              loading="lazy"
-              src={tShirt.image}
-              alt={tShirt.name}
-              className="w-full h-80 object-cover transition-opacity duration-300 ease-in-out"
-            />
-            <div className="p-6">
-              <h2 className="text-2xl font-semibold text-gray-800">
-                {tShirt.name}
-              </h2>
-            </div>
-            <div
-              className={`absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center transition-opacity duration-300 ease-in-out ${
-                selectedTShirt === tShirt.id
-                  ? "opacity-100"
-                  : "opacity-0 pointer-events-none"
-              }`}
+        {tShirts.map((tShirt, index) => {
+          const controls = useAnimation();
+          const [ref, inView] = useInView({
+            triggerOnce: true,
+            threshold: 0.3, // Triggers the animation when 30% of the item is visible
+          });
+
+          React.useEffect(() => {
+            if (inView) {
+              controls.start({
+                opacity: 1,
+                y: 0,
+                transition: {
+                  type: "spring",
+                  stiffness: 60, // Una rigidez menor para un resorte más suave
+                  damping: 20, // Amortiguación alta para menos oscilaciones
+                  mass: 0.5, // Masa baja para una respuesta rápida
+                  velocity: 10, // Velocidad inicial baja para iniciar la animación suavemente
+                },
+              });
+            }
+          }, [controls, inView]);
+
+          return (
+            <motion.div
+              ref={ref}
+              initial={{ opacity: 0, y: 50 }} // Start with the item moved down and faded out
+              animate={controls} // Animation controls based on inView
+              key={tShirt.id}
+              className="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 relative cursor-pointer"
+              onClick={() => handleTShirtClick(tShirt.id)}
             >
-              <p className="text-white text-center px-4 py-2">
-                {tShirt.description}
-              </p>
-            </div>
-          </div>
-        ))}
+              <img
+                src={tShirt.image}
+                alt={tShirt.name}
+                className="w-full h-80 object-cover transition-opacity duration-300 ease-in-out"
+              />
+              <div className="p-6">
+                <h2 className="text-2xl font-semibold text-gray-800">
+                  {tShirt.name}
+                </h2>
+              </div>
+              <div
+                className={`absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center transition-opacity duration-300 ease-in-out ${
+                  selectedTShirt === tShirt.id
+                    ? "opacity-100"
+                    : "opacity-0 pointer-events-none"
+                }`}
+              >
+                <p className="text-white text-center px-4 py-2">
+                  {tShirt.description}
+                </p>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
       <div className="mt-16 text-center">
         <button
