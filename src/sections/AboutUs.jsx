@@ -74,11 +74,10 @@ const AboutUs = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-1/2 lg:pr-12 mb-8 lg:mb-0">
-            <FadeInText
-              text="Conoce a Neri Villeda"
-              tagName="h2"
-              className="font-roboto text-4xl font-bold text-gray-700 md:mb-6 mb-4"
-            />
+            <h2 className="font-roboto text-4xl font-bold text-gray-700 md:mb-6 mb-4">
+              Conoce a Neri Villeda
+            </h2>
+
             <p className="md:text-2xl text-xl text-gray-700 mb-6">
               Neri Villeda es una apasionado nutricionista y entrenador personal
               dedicado a ayudar a las personas a alcanzar sus objetivos de salud

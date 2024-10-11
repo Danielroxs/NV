@@ -9,9 +9,12 @@ import SocialMedia from "./components/SocialMedia";
 import BeforeAfterComponent from "./components/AfterBefore";
 import Hero1 from "./components/Hero1";
 import AboutUs from "./sections/AboutUs";
+import Curtain from "./sections/Curtain";
 
 const App = () => (
   <>
+    <Curtain />
+
     <Navbar />
 
     <main className="relative bg-city-lights ">
