@@ -15,7 +15,7 @@ export default {
         "pale-blue": "#F5F6FF",
         "white-400": "rgba(255, 255, 255, 0.80)",
         "soft-gray": "#F8F9FA ",
-        "soft-blue": "#E9ECEF",
+        "soft-gray-blue": "#E9ECEF",
         "medium-blue": "#DEE2E6",
         "soft-navy": "#CED4DA",
         "gray-1": "#ADB5BD",
