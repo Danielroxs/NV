@@ -66,7 +66,7 @@ const CombinedBenefits = () => {
             loading="lazy"
             src={benefits}
             alt="Neri Villeda en acción"
-            className="rounded-lg shadow-xl w-full h-auto object-cover"
+            className="rounded-xl shadow-xl w-full h-auto object-cover"
           />
         </div>
       </div>

@@ -6,3 +6,9 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 scroll-behavior: smooth;
+
+html,
+body {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch; /* Para iOS Safari */
+}
