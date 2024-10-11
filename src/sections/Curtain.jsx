@@ -6,7 +6,7 @@ const Curtain = ({ isCurtainOpen, setIsCurtainOpen }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsCurtainOpen(false);
-    }, 2000); // Abre la cortina después de 2 segundos
+    }, 2100); // Abre la cortina después de 2 segundos
     return () => clearTimeout(timer);
   }, [setIsCurtainOpen]);
 
@@ -26,7 +26,7 @@ const Curtain = ({ isCurtainOpen, setIsCurtainOpen }) => {
             animate={{
               opacity: 1,
               scale: 1.2, // Ajusta al tamaño deseado más grande
-              transition: { delay: 1, duration: 0.8 }, // El logo aparece después de 1 segundo con duración de 0.8s
+              transition: { delay: 0.8, duration: 0.8 }, // El logo aparece después de 1 segundo con duración de 0.8s
             }}
             exit={{ opacity: 0, transition: { duration: 0.5 } }}
             className="w-32 h-32" // Ajusta el tamaño según sea necesario
