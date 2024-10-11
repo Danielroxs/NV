@@ -17,6 +17,7 @@ export default {
         "soft-gray": "#F8F9FA ",
         "soft-gray-blue": "#E9ECEF",
         "medium-blue": "#DEE2E6",
+        "great-blue": "#2f36ff",
         "soft-navy": "#CED4DA",
         "gray-1": "#ADB5BD",
 
