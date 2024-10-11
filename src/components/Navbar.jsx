@@ -14,27 +14,17 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    // Detectar cuando se hace scroll
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
-    // Detectar tamaño de la pantalla para mobile
     const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
+      setIsMobile(window.innerWidth < 768);
     };
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
-    handleResize(); // Ejecutar una vez para detectar el tamaño inicial
+    handleResize(); // Detect initial size
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -50,29 +40,6 @@ const Navbar = () => {
     { to: "contact", label: "Contacto" },
   ];
 
-  const menuVariants = {
-    open: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.3, // Reducir la duración para que la animación sea más rápida
-        ease: "easeInOut",
-      },
-      display: "block",
-    },
-    closed: {
-      y: "100%", // Cambio de -100% a 100% para que el menú se deslice desde abajo hacia arriba
-      opacity: 0,
-      transition: {
-        duration: 0.3, // Asegúrate de que el cierre sea también rápido
-        ease: "easeInOut",
-      },
-      transitionEnd: {
-        display: "none",
-      },
-    },
-  };
-
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -81,16 +48,22 @@ const Navbar = () => {
           : isScrolled
           ? "bg-[#aea3b0]"
           : "bg-transparent"
-      } `} // Aumentamos el z-index por si hay otros elementos superpuestos
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className={`flex-shrink-0 ${isMobile ? "hidden" : "block"}`}>
-              <img className="h-8 w-auto" src={Logo} alt="Logo" />
-            </div>
+            {/* Animación del logo con delay */}
+            {!isMobile && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1 }} // Delay de 1 segundo para la animación
+              >
+                <img className="h-8 w-auto" src={Logo} alt="Logo" />
+              </motion.div>
+            )}
           </div>
-          {/* Mostrar links solo si se ha hecho scroll y no estamos en mobile */}
           {!isMobile && isScrolled && (
             <div className="ml-10 flex items-baseline space-x-4">
               {navLinks.map((link) => (
@@ -101,7 +74,7 @@ const Navbar = () => {
                   smooth={true}
                   offset={-70}
                   duration={500}
-                  className={`px-3 py-2 rounded-md text-sm font-medium hover:text-gray-700 text-anti-flash-white hover:bg-gray-100 transition-all duration-300 cursor-pointer`}
+                  className="px-3 py-2 rounded-md text-sm font-medium hover:text-gray-700 text-anti-flash-white hover:bg-gray-100 transition-all duration-300 cursor-pointer"
                   aria-label={link.label}
                 >
                   {link.label}
@@ -120,7 +93,6 @@ const Navbar = () => {
               aria-expanded="false"
               aria-label="Abrir menu"
             >
-              <span className="sr-only">Open main menu</span>
               {isOpen ? (
                 <FaTimes className="block h-6 w-6" aria-hidden="true" />
               ) : (
@@ -130,32 +102,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
-      <motion.div
-        className="md:hidden"
-        initial="closed"
-        animate={isOpen ? "open" : "closed"}
-        variants={menuVariants}
-        id="mobile-menu"
-      >
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-anti-flash-white shadow-lg rounded-xl text-center hover:bg-soft-gray-blue">
-          {navLinks.map((link) => (
-            <ScrollLink
-              key={link.to}
-              to={link.to}
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 transition-all duration-300 cursor-pointer"
-              aria-label={link.label}
-              onClick={() => setIsOpen(false)}
-            >
-              {link.label}
-            </ScrollLink>
-          ))}
-        </div>
-      </motion.div>
     </nav>
   );
 };

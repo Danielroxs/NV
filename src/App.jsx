@@ -9,62 +9,73 @@ import SocialMedia from "./components/SocialMedia";
 import BeforeAfterComponent from "./components/AfterBefore";
 import Hero1 from "./components/Hero1";
 import AboutUs from "./sections/AboutUs";
+import { useState } from "react";
 import Curtain from "./sections/Curtain";
 
-const App = () => (
-  <>
-    <Curtain />
+const App = () => {
+  const [isCurtainOpen, setIsCurtainOpen] = useState(true);
 
-    <Navbar />
+  return (
+    <>
+      <Curtain
+        isCurtainOpen={isCurtainOpen}
+        setIsCurtainOpen={setIsCurtainOpen}
+      />
+      {!isCurtainOpen && (
+        <>
+          <Navbar />
 
-    <main className="relative bg-city-lights ">
-      <section id="home">
-        <Hero1 />
-      </section>
+          <main className="relative bg-city-lights ">
+            <section id="home">
+              <Hero1 />
+            </section>
 
-      <section id="about" className="pb-10 pt-4">
-        <AboutUs />
-      </section>
+            <section id="about" className="pb-10 pt-4">
+              <AboutUs />
+            </section>
 
-      <section className="py-10">
-        <SocialMedia />
-      </section>
+            <section className="py-10">
+              <SocialMedia />
+            </section>
 
-      <section className="py-10">
-        <BeforeAfterComponent />
-      </section>
+            <section className="py-10">
+              <BeforeAfterComponent />
+            </section>
 
-      <section id="benefits" className="py-10">
-        <Benefits />
-      </section>
+            <section id="benefits" className="py-10">
+              <Benefits />
+            </section>
 
-      <WhatsappButton />
+            <WhatsappButton />
 
-      <section id="services" className="py-10">
-        <ProgramasCombinados />
-      </section>
+            <section id="services" className="py-10">
+              <ProgramasCombinados />
+            </section>
 
-      <section id="products" className="py-10">
-        <Tienda />
-      </section>
+            <section id="products" className="py-10">
+              <Tienda />
+            </section>
 
-      <section className="py-10">
-        <Testimonial />
-      </section>
+            <section className="py-10">
+              <Testimonial />
+            </section>
 
-      <section className="py-10">
-        <Maps />
-      </section>
+            <section className="py-10">
+              <Maps />
+            </section>
 
-      <section id="contact" className="py-10">
-        <Contact />
-      </section>
+            <section id="contact" className="py-10">
+              <Contact />
+            </section>
 
-      <section>
-        <Footer />
-      </section>
-    </main>
-  </>
-);
+            <section>
+              <Footer />
+            </section>
+          </main>
+        </>
+      )}
+    </>
+  );
+};
 
 export default App;
