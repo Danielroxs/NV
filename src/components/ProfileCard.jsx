@@ -1,11 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaGraduationCap, FaBriefcase, FaTimes } from "react-icons/fa";
 import { PiCertificateFill } from "react-icons/pi";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import neri from "../assets/images/neri.webp";
+import { useInView } from "react-intersection-observer";
 
 const ProfileCard = () => {
   const [showDetails, setShowDetails] = useState(false);
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.75, // Se dispara cuando el 50% del elemento está en vista
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1 });
+    } else {
+      controls.start({ opacity: 0 }); // Comienza semi-transparente
+    }
+  }, [controls, inView]);
 
   const person = {
     name: "Neri Villeda",
@@ -53,7 +67,11 @@ const ProfileCard = () => {
 
   return (
     <div className="w-64 h-64 lg:w-80 lg:h-80 relative cursor-pointer">
-      <div
+      <motion.div
+        ref={ref}
+        animate={controls}
+        initial={{ opacity: 0.5 }}
+        transition={{ duration: 0.8 }}
         className="relative w-full h-full rounded-full overflow-hidden border-4 border-[#09f] shadow-lg transition-transform duration-300 transform hover:scale-105"
         onClick={toggleDetails}
       >
@@ -68,7 +86,7 @@ const ProfileCard = () => {
             Ver Educación
           </span>
         </div>
-      </div>
+      </motion.div>
 
       {/* Contenido Modal */}
       <AnimatePresence>
