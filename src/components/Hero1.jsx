@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { FaDumbbell, FaAppleAlt } from "react-icons/fa";
 import Logo from "../assets/images/Logo.webp";
 
@@ -7,9 +7,6 @@ const DynamicHero = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
-  const [backgroundPosition, setBackgroundPosition] = useState("center");
-  const heroRef = useRef(null);
-  const ticking = useRef(false);
 
   const textArray = [
     "Transforma tu cuerpo",
@@ -42,35 +39,6 @@ const DynamicHero = () => {
     return () => clearTimeout(timer);
   }, [text, isDeleting, loopNum, typingSpeed, textArray]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!ticking.current) {
-        window.requestAnimationFrame(() => {
-          const scrollY = window.scrollY;
-          const offset = heroRef.current.offsetTop;
-          const windowHeight = window.innerHeight;
-          const heroHeight = heroRef.current.offsetHeight;
-
-          if (
-            scrollY >= offset - windowHeight &&
-            scrollY <= offset + heroHeight
-          ) {
-            const parallaxValue = (scrollY - offset) * 0.5;
-            setBackgroundPosition(`center ${parallaxValue}px`);
-          }
-          ticking.current = false;
-        });
-        ticking.current = true;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   const whatsappNumber = "+525561706548";
 
   const sendMessage = (message) => {
@@ -82,10 +50,7 @@ const DynamicHero = () => {
   };
 
   return (
-    <div
-      ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Logotipo centrado en la parte superior */}
       <div className="absolute lg:hidden top-12 left-1/2 transform -translate-x-1/2 z-20">
         <img
@@ -95,13 +60,15 @@ const DynamicHero = () => {
         />
       </div>
 
+      {/* Fondo con efecto parallax puro en CSS */}
       <div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')",
           backgroundSize: "cover",
-          backgroundPosition: backgroundPosition,
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed", // Fondo fijo para el efecto parallax
         }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -127,7 +94,7 @@ const DynamicHero = () => {
                 "Me gustaría solicitar informes acerca de sus planes de entrenamiento personal"
               )
             }
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full flex items-center justify-center transition duration-300 w-full sm:w-auto max-w-xs"
+            className="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white font-bold py-3 px-8 rounded-full flex items-center justify-center transition-all duration-500 ease-in-out w-full sm:w-auto max-w-xs shadow-md hover:shadow-lg"
             alt="Whatsapp button"
           >
             <FaDumbbell className="mr-2" /> Comienza a Entrenar
@@ -140,7 +107,7 @@ const DynamicHero = () => {
                 "Me gustaría obtener más información sobre los planes de nutrición"
               )
             }
-            className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full flex items-center justify-center transition duration-300 w-full sm:w-auto max-w-xs"
+            className="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white font-bold py-3 px-8 rounded-full flex items-center justify-center transition-all duration-500 ease-in-out w-full sm:w-auto max-w-xs shadow-md hover:shadow-lg"
             alt="Whatsapp button"
           >
             <FaAppleAlt className="mr-2" /> Planes de Nutrición

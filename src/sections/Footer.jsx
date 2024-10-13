@@ -87,7 +87,7 @@ const Footer = () => {
           </a>
           <a
             href="https://www.youtube.com/@NeriPrideMusicOficial/videos"
-            className="text-2xl hover:text-blue-400 transition duration-300 cursor-pointer"
+            className="text-2xl hover:text-red-500 transition duration-300 cursor-pointer"
             target="_blank"
             rel="noopener noreferrer"
           >
