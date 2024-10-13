@@ -60,15 +60,14 @@ const DynamicHero = () => {
         />
       </div>
 
-      {/* Fondo con efecto parallax puro en CSS */}
+      {/* Fondo con parallax en pantallas grandes */}
       <div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 bg-fixed lg:bg-scroll"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed", // Fondo fijo para el efecto parallax
         }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
