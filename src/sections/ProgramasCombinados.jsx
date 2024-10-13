@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import { MdFitnessCenter, MdRestaurant, MdPeople } from "react-icons/md";
 import FadeInText from "../components/Motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const ProgramCard = ({
   name,
@@ -10,9 +12,26 @@ const ProgramCard = ({
   icon: Icon,
   onClick,
   image,
+  index,
 }) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1 });
+    }
+  }, [controls, inView]);
+
   return (
-    <div
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0 }}
+      animate={controls}
+      transition={{ duration: 0.8, delay: index * 0.2 }}
       className="bg-white rounded-lg shadow-md p-6 relative h-full flex flex-col"
       tabIndex={0}
       onKeyDown={(e) => e.key === "Enter" && onClick()}
@@ -43,7 +62,7 @@ const ProgramCard = ({
       >
         Detalles
       </button>
-    </div>
+    </motion.div>
   );
 };
 
@@ -186,6 +205,7 @@ const ProgramasCombinados = () => {
               key={index}
               {...program}
               onClick={() => handleProgramClick(program)}
+              index={index}
             />
           ))}
         </div>

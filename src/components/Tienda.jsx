@@ -82,7 +82,7 @@ const Tienda = () => {
               variants={{
                 hidden: {
                   scale: 0.85,
-                  y: 20,
+                  y: 50,
                   opacity: 0,
                 },
                 visible: {
@@ -90,20 +90,11 @@ const Tienda = () => {
                   y: 0,
                   opacity: 1,
                   transition: {
-                    scale: {
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 10,
-                    },
-                    y: {
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 10,
-                    },
-                    opacity: {
-                      duration: 0.5,
-                      ease: "easeInOut",
-                    },
+                    type: "spring",
+                    stiffness: 120,
+                    damping: 20,
+                    delay: index * 0.2,
+                    duration: 0.6,
                   },
                 },
               }}

@@ -12,7 +12,7 @@ const SocialMediaSection = () => {
         rotateY: {
           delay: i * 0.3,
           type: "tween",
-          duration: 3.5,
+          duration: 2.5,
           ease: "easeOut",
         },
       },
@@ -42,7 +42,7 @@ const SocialMediaSection = () => {
   const youtubeAnimation = useSetupAnimation(2);
 
   return (
-    <section className="bg-gradient-to-r from-red-500 to-blue-500 py-12">
+    <section className="bg-gradient-to-r from-pink-500 via-orange-400 to-purple-600 py-12">
       <div className="container mx-auto px-4">
         <h2 className="font-roboto text-3xl font-bold text-white mb-8 text-center">
           Conoce a Neri Villeda
@@ -62,7 +62,7 @@ const SocialMediaSection = () => {
             style={{ perspective: "1000px" }}
           >
             <div className="relative bg-white p-4 rounded-full">
-              <FaInstagram className="w-8 h-8 text-gray-800 group-hover:text-blue-700" />
+              <FaInstagram className="w-8 h-8 text-[#E1306C] group-hover:text-[#FD1D1D] transition-colors duration-300" />
             </div>
           </motion.a>
 
@@ -80,7 +80,7 @@ const SocialMediaSection = () => {
             style={{ perspective: "1000px" }}
           >
             <div className="relative bg-white p-4 rounded-full">
-              <FaFacebook className="w-8 h-8 text-gray-800 group-hover:text-blue-700" />
+              <FaFacebook className="w-8 h-8 text-[#1877F2] group-hover:text-[#3b5998] transition-colors duration-300" />
             </div>
           </motion.a>
 
@@ -98,7 +98,7 @@ const SocialMediaSection = () => {
             style={{ perspective: "1000px" }}
           >
             <div className="relative bg-white p-4 rounded-full">
-              <FaYoutube className="w-8 h-8 text-gray-800 group-hover:text-blue-700" />
+              <FaYoutube className="w-8 h-8 text-[#FF0000] group-hover:text-[#cc0000] transition-colors duration-300" />
             </div>
           </motion.a>
         </div>

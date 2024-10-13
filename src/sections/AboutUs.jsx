@@ -3,7 +3,6 @@ import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import ProfileCard from "../components/ProfileCard";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import FadeInText from "../components/Motion";
 
 const AboutUs = () => {
   const ServiceCard = ({ title, description, icon, index }) => {
@@ -28,7 +27,7 @@ const AboutUs = () => {
           type: "spring",
           bounce: 0.4,
           duration: 0.8,
-          delay: index * 0.2, // adding staggered effect using index
+          delay: index * 0.2,
         },
       },
     };
@@ -70,10 +69,11 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="min-h-screen lg:text-left text-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
+        {/* Bloque que contiene el texto a la izquierda y la imagen a la derecha */}
         <div className="flex flex-col lg:flex-row items-center justify-between">
-          <div className="lg:w-1/2 lg:pr-12 mb-8 lg:mb-0">
+          <div className="lg:w-1/2 w-full lg:pr-12 mb-8 lg:mb-0">
             <h2 className="font-roboto text-4xl font-bold text-gray-700 md:mb-6 mb-4">
               Conoce a Neri Villeda
             </h2>
@@ -81,11 +81,11 @@ const AboutUs = () => {
             <p className="md:text-2xl text-xl text-gray-700 mb-6">
               Neri Villeda es una apasionado nutricionista y entrenador personal
               dedicado a ayudar a las personas a alcanzar sus objetivos de salud
-              y forma física. Gracias a su basta experiencia, Neri combina
+              y forma física. Gracias a su vasta experiencia, Neri combina
               conocimientos científicos con estrategias prácticas para crear
               planes de nutrición y rutinas de entrenamiento personalizados.
             </p>
-            <p className="md:text-2xl text-xl text-gray-700 mb-6 font-lora">
+            <p className="md:text-2xl text-xl text-gray-700 mb-6">
               En nuestro consultorio, creemos que la salud es un equilibrio
               entre nutrición y ejercicio. Nuestro enfoque combina planes
               alimenticios personalizados con programas de entrenamiento
@@ -119,22 +119,25 @@ const AboutUs = () => {
               </a>
             </div>
           </div>
-          <div className="lg:w-1/2">
+          {/* Componente de la tarjeta de perfil (ProfileCard) que estará a la derecha */}
+          <div className="lg:w-1/2 w-full flex justify-center items-center ">
             <ProfileCard />
           </div>
         </div>
+
+        {/* Sección de nuestros servicios */}
         <div className="mt-12">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4 md:text-start text-center">
             Nuestros servicios
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:text-start text-center">
             {services.map((service, index) => (
               <ServiceCard
                 key={index}
                 title={service.title}
                 description={service.description}
                 icon={service.icon}
-                index={index} // passing index for staggered animation
+                index={index}
               />
             ))}
           </div>

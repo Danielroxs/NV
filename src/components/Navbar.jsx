@@ -8,22 +8,44 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [showLogo, setShowLogo] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0); // Estado para la posición anterior de scroll
+  const [isVisible, setIsVisible] = useState(false); // Inicialmente ocultar el navbar
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   useEffect(() => {
-    // Detectar cuando se hace scroll
+    const logoTimer = setTimeout(() => {
+      setShowLogo(true);
+    }, 1000);
+
+    return () => clearTimeout(logoTimer);
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
+      const currentScrollY = window.scrollY;
+
+      // No mostrar el navbar si estamos en la parte superior (scrollY === 0)
+      if (currentScrollY <= 50) {
         setIsScrolled(false);
+        setIsVisible(false); // Siempre ocultar el navbar si estamos en el top
+      } else {
+        setIsScrolled(true);
+
+        // Mostrar el navbar cuando scrolleamos hacia abajo
+        if (currentScrollY > lastScrollY) {
+          setIsVisible(false);
+        } else {
+          setIsVisible(true); // Ocultar el navbar al scrollear hacia arriba
+        }
       }
+
+      setLastScrollY(currentScrollY);
     };
 
-    // Detectar tamaño de la pantalla para mobile
     const handleResize = () => {
       if (window.innerWidth < 768) {
         setIsMobile(true);
@@ -34,13 +56,13 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleResize);
-    handleResize(); // Ejecutar una vez para detectar el tamaño inicial
+    handleResize();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [lastScrollY]);
 
   const navLinks = [
     { to: "home", label: "Inicio" },
@@ -55,16 +77,16 @@ const Navbar = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.3, // Reducir la duración para que la animación sea más rápida
+        duration: 0.3,
         ease: "easeInOut",
       },
       display: "block",
     },
     closed: {
-      y: "100%", // Cambio de -100% a 100% para que el menú se deslice desde abajo hacia arriba
+      y: "100%",
       opacity: 0,
       transition: {
-        duration: 0.3, // Asegúrate de que el cierre sea también rápido
+        duration: 0.3,
         ease: "easeInOut",
       },
       transitionEnd: {
@@ -74,23 +96,25 @@ const Navbar = () => {
   };
 
   return (
-    <nav
+    <motion.nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         isMobile
           ? "bg-transparent"
           : isScrolled
-          ? "bg-[#aea3b0]"
+          ? "bg-gradient-to-r from-pink-500 via-orange-400 to-purple-600"
           : "bg-transparent"
-      } `} // Aumentamos el z-index por si hay otros elementos superpuestos
+      } `}
+      initial={{ y: -80, opacity: 0 }} // Inicialmente oculto
+      animate={isVisible ? { y: 0, opacity: 1 } : { y: -80, opacity: 0 }} // Animar visibilidad
+      transition={{ duration: 0.5, ease: "easeInOut" }} // Transición suave
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className={`flex-shrink-0 ${isMobile ? "hidden" : "block"}`}>
-              <img className="h-8 w-auto" src={Logo} alt="Logo" />
+              {showLogo && <img className="h-10 w-12" src={Logo} alt="Logo" />}
             </div>
           </div>
-          {/* Mostrar links solo si se ha hecho scroll y no estamos en mobile */}
           {!isMobile && isScrolled && (
             <div className="ml-10 flex items-baseline space-x-4">
               {navLinks.map((link) => (
@@ -101,7 +125,7 @@ const Navbar = () => {
                   smooth={true}
                   offset={-70}
                   duration={500}
-                  className={`px-3 py-2 rounded-md text-sm font-medium hover:text-gray-700 text-anti-flash-white hover:bg-gray-100 transition-all duration-300 cursor-pointer`}
+                  className="px-3 py-2 rounded-md text-sm font-medium hover:text-gray-700 text-anti-flash-white hover:bg-gray-100 transition-all duration-300 cursor-pointer"
                   aria-label={link.label}
                 >
                   {link.label}
@@ -156,7 +180,7 @@ const Navbar = () => {
           ))}
         </div>
       </motion.div>
-    </nav>
+    </motion.nav>
   );
 };
 
