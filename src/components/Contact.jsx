@@ -82,11 +82,9 @@ const ContactForm = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 opacity-75"></div>
           <div className="absolute inset-0 flex items-center justify-center">
-            <FadeInText
-              text="¡Envíanos tu consulta!"
-              tagName="h2"
-              className="text-3xl lg:text-4xl font-bold text-white text-center px-4 drop-shadow-lg"
-            />
+            <h2 className="text-3xl lg:text-4xl font-bold text-white text-center px-4 drop-shadow-lg">
+              ¡Envíanos tu consulta!
+            </h2>
           </div>
         </div>
         <div className="lg:w-1/2 p-6 lg:p-8">

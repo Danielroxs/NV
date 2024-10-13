@@ -42,29 +42,29 @@ const App = () => {
               <BeforeAfterComponent />
             </section>
 
-            <section id="benefits" className="py-10">
+            <section id="benefits" className="md:py-12 py-8">
               <Benefits />
             </section>
 
             <WhatsappButton />
 
-            <section id="services" className="py-10">
+            <section id="services" className="md:py-12 py-8">
               <ProgramasCombinados />
             </section>
 
-            <section id="products" className="py-10">
+            <section id="products" className="md:py-12 py-8">
               <Tienda />
             </section>
 
-            <section className="py-10">
+            <section className="md:py-12 py-8">
               <Testimonial />
             </section>
 
-            <section className="py-10">
+            <section className="md:py-12 py-8">
               <Maps />
             </section>
 
-            <section id="contact" className="py-10">
+            <section id="contact" className="md:py-12 py-8">
               <Contact />
             </section>
 

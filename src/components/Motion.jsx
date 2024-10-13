@@ -44,9 +44,9 @@ const SectionTitle = ({
 
 const FadeInText = ({ text, tagName: Tag = "div" }) => {
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto">
       <SectionTitle
-        fontSize="text-2xl sm:text-3xl md:text-4xl lg:text-5xl" // Ajustar el tamaño de fuente para pantallas pequeñas
+        fontSize="text-3xl sm:text-3xl md:text-4xl lg:text-5xl" // Ajustar el tamaño de fuente para pantallas pequeñas
         alignment="text-center"
         animation="slideIn"
         bgStyle="bg-transparent"

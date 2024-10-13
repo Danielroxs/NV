@@ -87,11 +87,11 @@ const DynamicHero = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Logotipo centrado en la parte superior */}
-      <div className="absolute lg:hidden top-12 left-1/2 transform -translate-x-1/2 z-20">
+      <div className="absolute mt-6 top-12 left-1/2 transform -translate-x-1/2 z-20 md:mb-8">
         <img
           src={Logo}
           alt="Logotipo"
-          className="w-16 h-16 md:w-32 md:h-32 object-contain"
+          className="w-24 h-24 md:w-32 md:h-32 object-contain"
         />
       </div>
 
@@ -108,17 +108,14 @@ const DynamicHero = () => {
       </div>
 
       <div className="relative z-10 text-center text-white px-4">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold md:mb-8 mb-4">
           Nutrición y Entrenamiento Personalizado
         </h1>
-        <h2 className="text-xl md:text-3xl lg:text-4xl font-semibold mb-6">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6">
           <span className="mr-2">{text}</span>
           <span className="animate-blink">|</span>
         </h2>
-        <p className="text-lg md:text-xl lg:text-2xl mb-8">
-          Desarrolla un estilo de vida equilibrado con planes adaptados a tus
-          necesidades.
-        </p>
+
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
           <button
             aria-label="Boton Whatsapp"
