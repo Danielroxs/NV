@@ -250,7 +250,7 @@ const ShirtGallery = () => {
       return;
     }
     const message = `Hola, Estoy interesado en la T-Shirt ${selectedShirt.name} (Size: ${selectedSize}, Color: ${selectedColor}), Precio: ${selectedShirt.price}`;
-    const whatsappUrl = `https://wa.me/+525512345678?text=${encodeURIComponent(
+    const whatsappUrl = `https://wa.me/+525561706548?text=${encodeURIComponent(
       message
     )}`;
     window.open(whatsappUrl, "_blank");
