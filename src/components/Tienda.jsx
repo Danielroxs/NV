@@ -280,7 +280,7 @@ const ShirtGallery = () => {
             </button>
 
             <motion.img
-              key={currentIndex}
+              key={shirts[currentIndex].id} // Clave constante basada en ID único
               src={shirts[currentIndex].image}
               alt={shirts[currentIndex].name}
               className="w-full h-full lg:object-cover md:object-cover sm:object-cover object-cover lg:max-w-3xl cursor-pointer"
