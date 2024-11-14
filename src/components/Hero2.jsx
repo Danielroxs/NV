@@ -1,105 +1,93 @@
 import { useEffect, useState } from "react";
-import { FiArrowRight } from "react-icons/fi";
+import { FaArrowRight } from "react-icons/fa";
+import { TypeAnimation } from "react-type-animation";
 
 const HeroSection = () => {
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const yOffset = window.pageYOffset;
-      setOffset(yOffset);
-
-      if (yOffset === 0) {
-        // Forzar ajuste inmediato al top al volver
-        document.querySelector(".bg-cover").style.transform = "translateY(0px)";
-      }
+      setOffset(window.pageYOffset);
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
-    <div
-      className="relative min-h-screen overflow-hidden"
-      role="banner"
-      aria-label="Hero Section"
-    >
+    <div className="relative h-screen w-full overflow-hidden bg-gradient-to-r from-purple-900 via-indigo-900 to-blue-900">
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 w-full h-full"
         style={{
+          transform: `translateY(${offset * 0.5}px)`,
           backgroundImage:
             "url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')",
-          transform: `translateY(${offset * 0.5}px)`,
-          transition: "transform 0.3s ease-out",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          opacity: 0.4,
         }}
-        aria-hidden="true"
-      >
-        <div className="absolute inset-0 bg-black/60" />
-      </div>
+        role="img"
+        aria-label="Dynamic mountain landscape with aurora borealis"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/70" />
 
-      <div className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto w-full">
-          <div
-            className="animate-fade-in text-center sm:text-left"
-            style={{
-              opacity: Math.max(1 - offset / 500, 0),
-              transform: `translateY(${offset * 0.2}px)`,
-            }}
-          >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight transition-all duration-300 ease-in-out hover:scale-105">
-              Innovate. Create.
-              <br />
-              <span className="text-blue-400">Transform.</span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto sm:mx-0">
-              Empowering your digital journey with cutting-edge solutions and
-              unparalleled expertise.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
-              <button
-                className="px-8 py-4 bg-blue-500 text-white rounded-lg font-semibold transition-all duration-300 hover:bg-blue-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 inline-flex items-center justify-center group"
-                aria-label="Get Started"
-              >
-                Get Started
-                <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
-              <button
-                className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-semibold transition-all duration-300 hover:bg-white hover:text-gray-900 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900"
-                aria-label="Learn More"
-              >
-                Learn More
-              </button>
-            </div>
-          </div>
-
-          <div className="absolute bottom-8 left-0 right-0 flex justify-center animate-bounce">
-            <div
-              className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center cursor-pointer hover:bg-white/10 transition-colors duration-300"
-              onClick={() =>
-                window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
-              }
-              role="button"
-              aria-label="Scroll down"
-              tabIndex={0}
+      <div className="relative h-full flex flex-col justify-center items-center text-white px-4 sm:px-6 lg:px-8">
+        <div
+          className={`transform transition-all duration-1000 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
+        >
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+            <TypeAnimation
+              sequence={[
+                "Discover Your Next Adventure",
+                2000,
+                "Create Unforgettable Memories",
+                2000,
+                "Explore The Unknown",
+                2000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl text-center mb-8 max-w-3xl mx-auto text-blue-200">
+            Embark on a journey of discovery and innovation. Let us guide you
+            through an extraordinary experience that will transform your
+            perspective.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button
+              className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full font-semibold hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-800 shadow-lg shadow-purple-500/30"
+              onFocus={(e) => e.target.classList.add("ring-2")}
+              onBlur={(e) => e.target.classList.remove("ring-2")}
             >
-              <svg
-                className="w-6 h-6 text-white"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </div>
+              Get Started
+            </button>
+            <button
+              className="group px-8 py-3 bg-transparent border-2 border-purple-400 rounded-full font-semibold hover:bg-purple-500 hover:border-purple-500 text-purple-400 hover:text-white transform hover:scale-105 transition-all duration-300 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-gray-800 shadow-lg shadow-purple-500/20"
+              onFocus={(e) => e.target.classList.add("ring-2")}
+              onBlur={(e) => e.target.classList.remove("ring-2")}
+            >
+              Learn More
+              <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
+            </button>
           </div>
         </div>
       </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black via-black/50 to-transparent" />
     </div>
   );
 };
