@@ -161,27 +161,27 @@ const TestimonialCarousel = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      role: "Marketing Director",
+      name: "Luis H.",
+      role: "Entrenador Personal",
       content:
-        "Working with this team has been an absolute game-changer for our business. Their innovative approach and dedication to excellence have exceeded our expectations.",
-      avatar: "images.unsplash.com/photo-1494790108377-be9c29b29330",
+        "El entrenamiento con Neri ha sido transformador. Su plan personalizado y enfoque en la nutrición me ayudaron a alcanzar mis metas físicas más rápido de lo que imaginé.",
+      avatar: "images.unsplash.com/photo-1516822039940-74805584cf51",
     },
     {
       id: 2,
-      name: "Michael Chen",
-      role: "Tech Lead",
+      name: "Alberto G.",
+      role: "Contador",
       content:
-        "The level of professionalism and technical expertise demonstrated by this company is outstanding. They've helped us transform our digital presence.",
-      avatar: "images.unsplash.com/photo-1472099645785-5658abf4ff4e",
+        "La dedicación de Neri a mi progreso físico fue excepcional. Su combinación de entrenamiento y planes alimenticios me llevó a mejorar mi energía y salud en general.",
+      avatar: "images.unsplash.com/photo-1492562080023-ab3db95bfbce",
     },
     {
       id: 3,
-      name: "Emma Thompson",
-      role: "CEO",
+      name: "Sarah R.",
+      role: "Atleta",
       content:
-        "I couldn't be happier with the results. Their attention to detail and customer-focused approach has made all the difference in our project's success.",
-      avatar: "images.unsplash.com/photo-1438761681033-6461ffad8d80",
+        "Gracias a Neri, he mejorado mi rendimiento deportivo. Su guía en nutrición y sus rutinas de entrenamiento me han permitido superar mis límites y lograr mejores resultados.",
+      avatar: "images.unsplash.com/photo-1529626455594-4ff0802cfb7e",
     },
   ];
 
