@@ -7,7 +7,7 @@ import Tienda from "./components/Tienda";
 import WhatsappButton from "./components/WhatsappButton";
 import SocialMedia from "./components/SocialMedia";
 import BeforeAfterComponent from "./components/AfterBefore";
-import Hero2 from "./components/Hero2";
+import Hero1 from "./components/Hero1";
 import AboutUs from "./sections/AboutUs";
 import { useState } from "react";
 import Curtain from "./sections/Curtain";
@@ -27,7 +27,7 @@ const App = () => {
 
           <main className="relative bg-city-lights ">
             <section id="home">
-              <Hero2 />
+              <Hero1 />
             </section>
 
             <section id="about" className="pb-10 pt-4">

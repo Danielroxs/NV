@@ -103,9 +103,7 @@ const DynamicHero = () => {
           backgroundSize: "cover",
           backgroundPosition: backgroundPosition,
         }}
-      >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-      </div>
+      ></div>
 
       <div className="relative z-10 text-center text-white px-4">
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold md:mb-8 mb-4">
