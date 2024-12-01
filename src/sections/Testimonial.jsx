@@ -195,7 +195,7 @@ const TestimonialCarousel = () => {
   }, [testimonials.length]);
 
   return (
-    <div className="w-full min-h-[400px]  py-16 px-4">
+    <div className="w-full min-h-[400px] px-4">
       <div className="max-w-6xl mx-auto relative overflow-hidden rounded-2xl bg-anti-flash-white shadow-xl">
         <div
           className="transition-transform duration-1000 ease-in-out"

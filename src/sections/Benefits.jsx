@@ -29,7 +29,7 @@ const CombinedBenefits = () => {
   const whatsappNumber = "+525561706548";
 
   return (
-    <div className="container mx-auto px-4 py-16 lg:text-left text-center">
+    <div className="container mx-auto px-4 lg:text-left text-center">
       <FadeInText
         text="Beneficios Combinados con Neri Villeda"
         tagName="h2"

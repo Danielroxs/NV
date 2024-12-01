@@ -262,14 +262,17 @@ const ShirtGallery = () => {
   };
 
   return (
-    <div className="min-h-screen bg- py-12 px-4 sm:px-6 lg:px-8">
+    <div
+      className="container mx-auto px-6 py-12 max-w-7xl"
+      style={{ minHeight: "auto" }}
+    >
       <FadeInText
         text="T-Shirt NV"
         tagName="h2"
         className="font-roboto text-4xl font-bold text-gray-700 md:mb-6 mb-4 text-center"
       />
-      <div className="max-w-7xl mx-auto">
-        <div className="relative h-[500px] w-full overflow-hidden rounded-lg shadow-xl">
+      <div className="md:max-w-5xl mx-auto">
+        <div className="relative md:h-[650px] h-[400px] w-full overflow-hidden rounded-lg shadow-xl">
           <div className="absolute inset-0 flex items-center justify-center ">
             <button
               onClick={handlePrevious}

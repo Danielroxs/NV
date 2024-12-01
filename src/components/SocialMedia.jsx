@@ -44,7 +44,7 @@ const SocialMediaSection = () => {
   return (
     <section className="bg-gradient-to-r from-pink-500 via-orange-400 to-purple-600 py-12">
       <div className="container mx-auto px-4">
-        <h2 className="font-roboto text-3xl font-bold text-white mb-8 text-center">
+        <h2 className="font-roboto text-3xl font-bold text-white mb-6 text-center">
           Conoce a Neri Villeda
         </h2>
         <div className="flex justify-center space-x-6">

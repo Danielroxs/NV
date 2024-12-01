@@ -25,46 +25,48 @@ const App = () => {
         <>
           <Navbar />
 
-          <main className="relative bg-city-lights ">
-            <section id="home">
+          <main className="relative bg-city-lights">
+            <section id="home" className="py-0 sm:py-0 lg:py-0">
               <Hero1 />
             </section>
 
-            <section id="about" className="pb-10 pt-4">
+            <section id="about" className="py-8 sm:py-10 lg:py-12">
               <AboutUs />
             </section>
 
-            <section className="py-10">
+            <section className="py-8 sm:py-10 lg:py-12">
               <SocialMedia />
             </section>
 
-            <section className="py-10">
+            <section className="py-8 sm:py-10 lg:py-12">
               <BeforeAfterComponent />
             </section>
 
-            <section id="benefits" className="md:py-12 py-8">
+            <section id="benefits" className="py-8 sm:py-10 lg:py-12">
               <Benefits />
             </section>
 
             <WhatsappButton />
 
-            <section id="services" className="md:py-12 py-8">
+            <section id="services" className="py-8 sm:py-10 lg:py-12">
               <ProgramasCombinados />
             </section>
 
-            <section id="products" className="md:py-12 py-8">
+            {/* Tienda Section */}
+            <section id="products" className="py-8 sm:py-10 lg:py-12">
               <Tienda />
             </section>
 
-            <section className="md:py-12 py-8">
+            {/* Testimonial Section */}
+            <section className="py-8 sm:py-10 lg:py-12">
               <Testimonial />
             </section>
 
-            <section className="md:py-12 py-8">
+            <section className="py-8 sm:py-10 lg:py-12">
               <Maps />
             </section>
 
-            <section id="contact" className="md:py-12 py-8">
+            <section id="contact" className="py-8 sm:py-12 lg:py-12">
               <Contact />
             </section>
 

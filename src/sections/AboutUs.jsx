@@ -69,7 +69,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <div className="px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Bloque que contiene el texto a la izquierda y la imagen a la derecha */}
         <div className="flex flex-col lg:flex-row items-center justify-between md:text-start text-center">
@@ -87,7 +87,7 @@ const AboutUs = () => {
 
           <div className="lg:w-1/2 w-full lg:pr-12 mb-8 lg:mb-0 order-3 lg:order-2 md:text-start text-center">
             <p className="md:text-2xl text-xl text-gray-700 mb-6">
-              <em class="md:italic md:text-gray-800 md:font-bold md:text-3xl">
+              <em className="md:italic md:text-gray-800 md:font-bold md:text-3xl">
                 Neri Villeda
               </em>{" "}
               es nutricionista y entrenador personal especializado en optimizar
@@ -102,7 +102,7 @@ const AboutUs = () => {
             </p>
             <div className="flex justify-center lg:justify-start space-x-4">
               <a
-                href=""
+                href="https://www.facebook.com/share/uG6KzuhtfF5o4jZD/?mibextid=LQQJ4d"
                 target="_blank"
                 className="text-blue-600 hover:text-blue-800 transition-colors duration-300"
                 rel="noopener noreferrer"
@@ -110,7 +110,7 @@ const AboutUs = () => {
                 <FaFacebook size={24} />
               </a>
               <a
-                href=""
+                href="https://www.instagram.com/nerii_villeda.fit/"
                 className="text-pink-600 hover:text-pink-800 transition-colors duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -118,7 +118,7 @@ const AboutUs = () => {
                 <FaInstagram size={24} />
               </a>
               <a
-                href=""
+                href="https://www.youtube.com/@NeriPrideMusicOficial/videos"
                 className="text-red-600 hover:text-red-800 transition-colors duration-300"
                 target="_blank"
                 rel="noopener noreferrer"

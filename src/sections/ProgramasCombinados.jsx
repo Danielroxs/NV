@@ -192,7 +192,7 @@ const ProgramasCombinados = () => {
   };
 
   return (
-    <section className="py-16">
+    <section className="">
       <div className="container mx-auto px-4 ">
         <FadeInText
           text="Nuestros programas combinados"
