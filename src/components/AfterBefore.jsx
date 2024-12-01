@@ -31,65 +31,65 @@ const TransformationGallery = () => {
     {
       beforeImage: B1,
       afterImage: A1,
-      patientName: "John Doe",
+      patientName: "Neri Villeda",
       description:
-        "Lost 30 pounds in 3 months through a combination of diet and exercise.",
+        "Gane 13 kilos de masa muscular combinando una dieta balanceada y ejercicio constante. Me siento con más energía y en mejor forma que nunca.",
     },
     {
       beforeImage: B2,
       afterImage: A2,
-      patientName: "Jane Smith",
+      patientName: "Sandra V.",
       description:
-        "Gained 15 pounds of muscle mass in 6 months with strength training.",
+        "Hice un cambio total en mi alimentación, dejando atrás los alimentos procesados y optando por comidas completas, frescas y llenas de nutrientes. ¡Me siento mucho mejor y con más vitalidad!",
     },
     {
       beforeImage: B3,
       afterImage: A3,
-      patientName: "Alice Johnson",
+      patientName: "Dulce H.",
       description:
-        "Transformed her diet from processed foods to whole, nutrient-rich meals.",
+        "Aumenté masa muscular en piernas, definí mi cintura y mi calidad de vida mejoró. Ahora me siento más fuerte y con más energía.",
     },
     {
       beforeImage: B4,
       afterImage: A4,
       patientName: "Mary Mercado",
       description:
-        "Transformed her diet from processed foods to whole, nutrient-rich meals.",
+        "Aumenté masa muscular y ahora estoy en mi mejor versión física. Me siento más fuerte, saludable y segura de mí misma.",
     },
     {
       beforeImage: B5,
       afterImage: A5,
       patientName: "Antonio Villegas",
       description:
-        "Transformed her diet from processed foods to whole, nutrient-rich meals.",
+        "Mi alimentación dio un giro de 180 grados. Dejé atrás los productos procesados y comencé a disfrutar de comidas completas y nutritivas. Mi salud ha mejorado mucho desde entonces.",
     },
     {
       beforeImage: B6,
       afterImage: A6,
-      patientName: "Alfredo villegas",
+      patientName: "Alfredo Villegas",
       description:
-        "Transformed her diet from processed foods to whole, nutrient-rich meals.",
+        "Hice un cambio total en mi estilo de vida. No solo mejoré mi alimentación con alimentos frescos, sino que también comencé a entrenar de manera constante. Mi energía aumentó y mi cuerpo se siente más fuerte y saludable.",
     },
     {
       beforeImage: B7,
       afterImage: A7,
       patientName: "Alejandro Zavala",
       description:
-        "Transformed her diet from processed foods to whole, nutrient-rich meals.",
+        "El entrenamiento físico fue esencial para mi transformación. Aumenté la intensidad de mis rutinas y cambié mi dieta, eliminando productos procesados. Ahora tengo más fuerza, resistencia y una salud envidiable.",
     },
     {
       beforeImage: B8,
       afterImage: A8,
       patientName: "Carlos Villa",
       description:
-        "Transformed her diet from processed foods to whole, nutrient-rich meals.",
+        "Combiné un entrenamiento físico regular con una alimentación más natural y nutritiva. Gracias a esto, mi cuerpo se volvió más tonificado, me siento más vital y he ganado mucha más energía para mis actividades diarias.",
     },
     {
       beforeImage: B9,
       afterImage: A9,
       patientName: "Ernesto Villa",
       description:
-        "Transformed her diet from processed foods to whole, nutrient-rich meals.",
+        "Me enfoqué en un programa de entrenamiento físico que complementé con una dieta saludable. Los resultados fueron increíbles: mi cuerpo está más fuerte, mi salud mejoró y tengo mucha más vitalidad.",
     },
   ];
 
@@ -170,14 +170,16 @@ const TransformationGallery = () => {
       />
       <div className="flex justify-center">
         <div
-          className="relative overflow-hidden rounded-lg shadow-lg w-full md:w-1/2 lg:w-6/12"
+          className="relative overflow-hidden rounded-lg shadow-lg w-full md:w-2/3 lg:w-1/2 xl:w-2/3"
           ref={containerRef}
         >
-          <div className="relative w-full h-full">
+          <div className="relative w-full md:h-[600px]">
+            {" "}
+            {/* Aseguramos que el contenedor tenga una altura fija (h-96) */}
             <img
               src={currentTransformation.afterImage}
               alt="Before"
-              className=" w-full h-full object-cover"
+              className="w-full h-full object-cover" // Se asegura que la imagen cubra todo el contenedor
             />
             <div
               className="absolute top-0 right-0 w-full h-full overflow-hidden"
@@ -186,7 +188,7 @@ const TransformationGallery = () => {
               <img
                 src={currentTransformation.beforeImage}
                 alt="After"
-                className="absolute top-0 left-0 w-full h-full object-cover"
+                className="absolute top-0 left-0 w-full h-full object-cover" // Asegura la misma escala para ambas imágenes
               />
             </div>
             <div
