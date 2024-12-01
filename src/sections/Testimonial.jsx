@@ -162,7 +162,7 @@ const TestimonialCarousel = () => {
     {
       id: 1,
       name: "Luis H.",
-      role: "Entrenador Personal",
+      role: "Ing. Sistemas",
       content:
         "El entrenamiento con Neri ha sido transformador. Su plan personalizado y enfoque en la nutrición me ayudaron a alcanzar mis metas físicas más rápido de lo que imaginé.",
       avatar: "images.unsplash.com/photo-1516822039940-74805584cf51",
@@ -170,7 +170,7 @@ const TestimonialCarousel = () => {
     {
       id: 2,
       name: "Alberto G.",
-      role: "Contador",
+      role: "Lic. Contaduria",
       content:
         "La dedicación de Neri a mi progreso físico fue excepcional. Su combinación de entrenamiento y planes alimenticios me llevó a mejorar mi energía y salud en general.",
       avatar: "images.unsplash.com/photo-1492562080023-ab3db95bfbce",
