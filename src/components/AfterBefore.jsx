@@ -6,15 +6,18 @@ import A1 from "../assets/images/A1.webp";
 import B2 from "../assets/images/B2.webp";
 import A2 from "../assets/images/A2.webp";
 import A3 from "../assets/images/A3.webp";
+import test3 from "../assets/images/test3.webp";
 import B3 from "../assets/images/B3.webp";
 import B4 from "../assets/images/B4.webp";
 import A4 from "../assets/images/A4.webp";
+import test1 from "../assets/images/test1.webp";
 import B5 from "../assets/images/B5.webp";
 import A5 from "../assets/images/A5.webp";
 import B6 from "../assets/images/B6.webp";
 import A6 from "../assets/images/A6.webp";
 import B7 from "../assets/images/B7.webp";
 import A7 from "../assets/images/A7.webp";
+import test2 from "../assets/images/test2.webp";
 import B8 from "../assets/images/B8.webp";
 import A8 from "../assets/images/A8.webp";
 import B9 from "../assets/images/B9.webp";
@@ -44,14 +47,14 @@ const TransformationGallery = () => {
     },
     {
       beforeImage: B3,
-      afterImage: A3,
+      afterImage: test3,
       patientName: "Dulce H.",
       description:
         "Aumenté masa muscular en piernas, definí mi cintura y mi calidad de vida mejoró. Ahora me siento más fuerte y con más energía.",
     },
     {
       beforeImage: B4,
-      afterImage: A4,
+      afterImage: test1,
       patientName: "Mary Mercado",
       description:
         "Aumenté masa muscular y ahora estoy en mi mejor versión física. Me siento más fuerte, saludable y segura de mí misma.",
@@ -72,7 +75,7 @@ const TransformationGallery = () => {
     },
     {
       beforeImage: B7,
-      afterImage: A7,
+      afterImage: test2,
       patientName: "Alejandro Zavala",
       description:
         "El entrenamiento físico fue esencial para mi transformación. Aumenté la intensidad de mis rutinas y cambié mi dieta, eliminando productos procesados. Ahora tengo más fuerza, resistencia y una salud envidiable.",
@@ -173,7 +176,7 @@ const TransformationGallery = () => {
           className="relative overflow-hidden rounded-lg shadow-lg w-full md:w-2/3 lg:w-1/2 xl:w-2/3"
           ref={containerRef}
         >
-          <div className="relative w-full md:h-[600px]">
+          <div className="relative w-full h-[400px] md:h-[600px]">
             {" "}
             {/* Aseguramos que el contenedor tenga una altura fija (h-96) */}
             <img
