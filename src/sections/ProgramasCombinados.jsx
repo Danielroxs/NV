@@ -47,7 +47,7 @@ const ProgramCard = ({
         <Icon className="text-4xl text-blue-500 mr-4" />
         <h3 className="text-xl font-semibold">{name}</h3>
       </div>
-      <p className="text-gray-600 mb-4 flex-grow">{description}</p>
+      {/* <p className="text-gray-600 mb-4 flex-grow">{description}</p>
       <ul className="space-y-2 mb-4">
         {benefits.map((benefit, index) => (
           <li key={index} className="flex items-center">
@@ -55,10 +55,10 @@ const ProgramCard = ({
             <span>{benefit}</span>
           </li>
         ))}
-      </ul>
+      </ul> */}
       <button
         onClick={onClick}
-        className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300 md:self-start self-center mt-auto"
+        className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300 md:self-start self-end mt-auto"
       >
         Detalles
       </button>

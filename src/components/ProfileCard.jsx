@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaGraduationCap, FaBriefcase, FaTimes } from "react-icons/fa";
 import { PiCertificateFill } from "react-icons/pi";
 import { motion, AnimatePresence } from "framer-motion";
-import neri from "../assets/images/neri.webp";
+import neriProfile from "../assets/images/neriProfile.webp";
 
 const ProfileCard = () => {
   const [showDetails, setShowDetails] = useState(false);
@@ -15,7 +15,7 @@ const ProfileCard = () => {
     education: [
       {
         degree: "Licenciado en Nutrición",
-        institution: "Universidad de XYZ",
+        institution: "UIN Universidad Insurgentes",
         year: "2018",
       },
       {
@@ -60,7 +60,7 @@ const ProfileCard = () => {
         <div className="w-full h-full rounded-full bg-white">
           <img
             className="object-cover w-full h-full rounded-full"
-            src={neri}
+            src={neriProfile}
             alt="Neri fotografia"
           />
           {/* Texto de "Ver más..." que aparece en hover */}
