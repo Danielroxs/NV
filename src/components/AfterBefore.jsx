@@ -222,7 +222,7 @@ const TransformationGallery = () => {
           </div>
         </div>
       </div>
-      <div className="mt-6 bg-white rounded-lg shadow-md p-4 max-w-md mx-auto">
+      <div className="mt-6 bg-anti-flash-white rounded-lg shadow-md p-4 max-w-md mx-auto">
         <h3 className="text-2xl font-semibold mb-2">
           {currentTransformation.patientName}
         </h3>

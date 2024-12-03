@@ -35,9 +35,9 @@ const CombinedBenefits = () => {
         tagName="h2"
         className="font-roboto text-3xl md:text-4xl font-bold text-gray-700 md:mb-6 mb-4 text-center"
       />
-      <div className="flex flex-col-reverse md:flex-row items-center justify-between">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between mt-2">
         {/* Texto y beneficios */}
-        <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
+        <div className="w-full md:w-1/2 md:mb-0 md:pr-8">
           <p className="text-base md:text-lg mb-6 text-gray-600">
             Experimenta el poder de combinar planes de nutrición personalizados
             con entrenamiento físico experto. Descubre cómo mejorar tu salud y
@@ -84,13 +84,13 @@ const CombinedBenefits = () => {
           initial={{ opacity: 0 }}
           animate={controls}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="w-full md:w-1/2 mb-8 md:mb-0"
+          className="w-full md:w-1/2 mb-4 mt-2 md:mb-0"
         >
           <img
             loading="lazy"
             src={benefits}
             alt="Neri Villeda en acción"
-            className="rounded-xl shadow-xl w-full h-auto object-cover"
+            className="rounded-t-[5.5rem] rounded-b-[5.5rem] shadow-xl w-auto h-auto mx-auto lg:w-[500px] lg:h-[350px] md:w-[600px] md:h-[400px] object-cover"
           />
         </motion.div>
       </div>

@@ -32,7 +32,7 @@ const ProgramCard = ({
       initial={{ opacity: 0 }}
       animate={controls}
       transition={{ duration: 0.8, delay: index * 0.2 }}
-      className="bg-white rounded-lg shadow-md p-6 relative h-full flex flex-col"
+      className="bg-anti-flash-white rounded-tr-[4.5rem] rounded-bl-[3.5rem] shadow-md p-[1.5rem] relative h-full flex flex-col"
       tabIndex={0}
       onKeyDown={(e) => e.key === "Enter" && onClick()}
       aria-label={`View details for ${name} program`}
@@ -41,7 +41,7 @@ const ProgramCard = ({
         loading="lazy"
         src={image}
         alt={name}
-        className="w-full h-48 object-cover mb-4 rounded"
+        className="w-full h-48 object-cover mb-4 rounded-tr-[3.5rem] rounded-bl-[3.5rem]"
       />
       <div className="flex items-center mb-4">
         <Icon className="text-4xl text-blue-500 mr-4" />
