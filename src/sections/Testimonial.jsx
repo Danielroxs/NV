@@ -3,6 +3,8 @@ import { FaQuoteLeft } from "react-icons/fa";
 import test1 from "../assets/images/test1.webp";
 import test2 from "../assets/images/test2.webp";
 import test3 from "../assets/images/test3.webp";
+import test4 from "../assets/images/test4.webp";
+import FadeInText from "../components/Motion";
 
 const TestimonialCarousel = () => {
   const testimonials = [
@@ -30,6 +32,14 @@ const TestimonialCarousel = () => {
         "Gracias a Neri, he mejorado mucho mi rendimiento deportivo. Su guía en nutrición y sus rutinas personalizadas no solo me han ayudado a superar mis límites físicos, sino también a alcanzar metas que antes creía imposibles.",
       avatar: test3,
     },
+    {
+      id: 4,
+      name: "Fernando Vega",
+      role: "Atleta NV",
+      content:
+        "Desde el primer día, Neri Villeda me recibió con amabilidad y me ayudó a superar mis límites. Siempre me motivó a dar lo mejor de mí, cuidando que no me lastimara, y vio en mí un potencial que yo mismo no reconocía. Después de un año y medio, puedo decir que gracias a él he transformado mi físico, mi mentalidad y mi actitud. ¡Orgullosamente atleta NV!",
+      avatar: test4,
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -42,53 +52,56 @@ const TestimonialCarousel = () => {
   }, [testimonials.length]);
 
   return (
-    <div className="w-full min-h-[400px] px-4">
-      <div className="max-w-6xl mx-auto relative overflow-hidden rounded-2xl bg-anti-flash-white shadow-xl">
-        <div
-          className="transition-transform duration-1000 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
-          <div className="flex">
-            {testimonials.map((testimonial) => (
-              <div
-                key={testimonial.id}
-                className="w-full flex-shrink-0"
-                role="article"
-                aria-label={`Testimonial by ${testimonial.name}`}
-              >
-                <div className="md:p-12 lg:p-14 p-10 flex flex-col items-center text-center">
-                  <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mb-8">
-                    <div className="absolute inset-0 bg-blue-100 rounded-full transform rotate-6"></div>
-                    <img
-                      src={testimonial.avatar}
-                      alt={testimonial.name}
-                      className="relative w-full h-full rounded-full object-cover border-6 border-white shadow-xl"
-                      onError={(e) => {
-                        e.target.src = test1;
-                      }}
-                    />
-                  </div>
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-1">
-                      {testimonial.name}
-                    </h3>
-                    <p className="text-blue-600 font-medium">
-                      {testimonial.role}
-                    </p>
-                  </div>
-                  <div className="relative max-w-2xl mx-auto">
-                    <FaQuoteLeft className="text-5xl text-blue-100 absolute -top-8 -left-8" />
-                    <p className="text-xl text-gray-600 leading-relaxed italic pl-8">
-                      {testimonial.content}
-                    </p>
+    <>
+      <FadeInText text="Testimonios" tagName="h2" />
+      <div className="w-full min-h-[400px] px-4">
+        <div className="max-w-6xl mx-auto relative overflow-hidden rounded-2xl bg-anti-flash-white shadow-xl">
+          <div
+            className="transition-transform duration-1000 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            <div className="flex">
+              {testimonials.map((testimonial) => (
+                <div
+                  key={testimonial.id}
+                  className="w-full flex-shrink-0"
+                  role="article"
+                  aria-label={`Testimonial by ${testimonial.name}`}
+                >
+                  <div className="md:p-12 lg:p-14 p-10 flex flex-col items-center text-center">
+                    <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mb-8">
+                      <div className="absolute inset-0 bg-blue-100 rounded-full transform rotate-6"></div>
+                      <img
+                        src={testimonial.avatar}
+                        alt={testimonial.name}
+                        className="relative w-full h-full rounded-full object-cover border-6 border-white shadow-xl"
+                        onError={(e) => {
+                          e.target.src = test1;
+                        }}
+                      />
+                    </div>
+                    <div className="mb-6">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-1">
+                        {testimonial.name}
+                      </h3>
+                      <p className="text-blue-600 font-medium">
+                        {testimonial.role}
+                      </p>
+                    </div>
+                    <div className="relative max-w-2xl mx-auto">
+                      <FaQuoteLeft className="text-5xl text-blue-100 absolute -top-8 -left-8" />
+                      <p className="text-xl text-gray-600 leading-relaxed italic pl-8">
+                        {testimonial.content}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

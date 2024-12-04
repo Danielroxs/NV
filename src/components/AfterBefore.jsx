@@ -22,6 +22,7 @@ import B8 from "../assets/images/B8.webp";
 import A8 from "../assets/images/A8.webp";
 import B9 from "../assets/images/B9.webp";
 import A9 from "../assets/images/A9.webp";
+import test4 from "../assets/images/test4.webp";
 import FadeInText from "./Motion";
 
 const TransformationGallery = () => {
@@ -89,10 +90,10 @@ const TransformationGallery = () => {
     },
     {
       beforeImage: B9,
-      afterImage: A9,
-      patientName: "Ernesto Villa",
+      afterImage: test4,
+      patientName: "Fernando Vega",
       description:
-        "Me enfoqué en un programa de entrenamiento físico que complementé con una dieta saludable. Los resultados fueron increíbles: mi cuerpo está más fuerte, mi salud mejoró y tengo mucha más vitalidad.",
+        "Desde el primer día, Neri Villeda me recibió con amabilidad y me ayudó a superar mis límites. Después de un año y medio, gracias a él he transformado mi físico, mi mentalidad y mi actitud. ¡Orgullosamente atleta NV!",
     },
   ];
 
