@@ -14,7 +14,7 @@ import test1 from "../assets/images/test1.webp";
 import B5 from "../assets/images/B5.webp";
 import A5 from "../assets/images/A5.webp";
 import B6 from "../assets/images/B6.webp";
-import A6 from "../assets/images/A6.webp";
+import test5 from "../assets/images/test5.webp";
 import B7 from "../assets/images/B7.webp";
 import A7 from "../assets/images/A7.webp";
 import test2 from "../assets/images/test2.webp";
@@ -65,11 +65,11 @@ const TransformationGallery = () => {
       afterImage: A5,
       patientName: "Antonio Villegas",
       description:
-        "Mi alimentación dio un giro de 180 grados. Dejé atrás los productos procesados y comencé a disfrutar de comidas completas y nutritivas. Mi salud ha mejorado mucho desde entonces.",
+        "Unirme al team NV transformó mi vida. Encontré disciplina, motivación y un lugar para crecer física y mentalmente. ¡Orgullosamente NV!",
     },
     {
       beforeImage: B6,
-      afterImage: A6,
+      afterImage: test5,
       patientName: "Alfredo Villegas",
       description:
         "Hice un cambio total en mi estilo de vida. No solo mejoré mi alimentación con alimentos frescos, sino que también comencé a entrenar de manera constante. Mi energía aumentó y mi cuerpo se siente más fuerte y saludable.",
@@ -91,7 +91,7 @@ const TransformationGallery = () => {
     {
       beforeImage: B9,
       afterImage: test4,
-      patientName: "Fernando Vega",
+      patientName: "José p.",
       description:
         "Desde el primer día, Neri Villeda me recibió con amabilidad y me ayudó a superar mis límites. Después de un año y medio, gracias a él he transformado mi físico, mi mentalidad y mi actitud. ¡Orgullosamente atleta NV!",
     },

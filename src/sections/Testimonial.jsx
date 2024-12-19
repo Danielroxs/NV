@@ -4,6 +4,7 @@ import test1 from "../assets/images/test1.webp";
 import test2 from "../assets/images/test2.webp";
 import test3 from "../assets/images/test3.webp";
 import test4 from "../assets/images/test4.webp";
+import test5 from "../assets/images/test5.webp";
 import FadeInText from "../components/Motion";
 
 const TestimonialCarousel = () => {
@@ -34,11 +35,19 @@ const TestimonialCarousel = () => {
     },
     {
       id: 4,
-      name: "Fernando Vega",
+      name: "José p.",
       role: "Atleta NV",
       content:
-        "Desde el primer día, Neri Villeda me recibió con amabilidad y me ayudó a superar mis límites. Siempre me motivó a dar lo mejor de mí, cuidando que no me lastimara, y vio en mí un potencial que yo mismo no reconocía. Después de un año y medio, puedo decir que gracias a él he transformado mi físico, mi mentalidad y mi actitud. ¡Orgullosamente atleta NV!",
+        "Desde el primer día, Neri Villeda me recibió con amabilidad y me ayudó a superar mis límites. Siempre me motivó a dar lo mejor de mí y vio en mí un potencial inmenso. Después de un año y medio, gracias a él he transformado mi físico, mi mentalidad y mi actitud. ¡Orgullosamente atleta NV!",
       avatar: test4,
+    },
+    {
+      id: 5,
+      name: "Alfredo V.",
+      role: "Marketing",
+      content:
+        "Ser parte del team NV en Muscle Machine cambió mi vida. Encontré disciplina, motivación y un lugar donde mejorar física y mentalmente. Gracias al gym, construí una versión de mí que nunca imaginé. ¡Orgullosamente atleta NV!",
+      avatar: test5,
     },
   ];
 
