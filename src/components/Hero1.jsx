@@ -116,9 +116,9 @@ const CombinedHero = () => {
         <button
           onClick={scrollToAbout}
           aria-label="Scroll to About section"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white animate-bounce hover:text-blue-400 transition-colors duration-300"
+          className="absolute bottom-12  -translate-x-1/2 text-white animate-bounce hover:text-blue-400 transition-colors duration-300"
         >
-          <FaChevronDown size={32} />
+          <FaChevronDown size={40} />
         </button>
       </div>
     </div>
