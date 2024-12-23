@@ -125,49 +125,63 @@ const ProgramasCombinados = () => {
 
   const programs = [
     {
-      name: "Plan de Nutrición Personalizada",
+      name: "Plan Online Básico",
       description:
-        "Guía de nutrición adaptada para alcanzar objetivos óptimos de salud y condición física.",
+        "Inicia tu camino hacia el bienestar con un plan simple y efectivo.",
       benefits: [
-        "Planes de comidas personalizados",
-        "Optimización de macro y micronutrientes",
-        "Adaptación a preferencias dietéticas",
+        "Acceso ilimitado a nuestra biblioteca de ejercicios",
+        "Rutinas iniciales diseñadas por expertos",
+        "Asesoría inicial en fitness y/ó nutrición",
       ],
-      icon: MdRestaurant,
+      icon: MdFitnessCenter,
       additionalInfo:
-        "Nuestros expertos en nutrición crean un plan que se adapta a tu estilo de vida, preferencias y objetivos de salud. Ajustamos tu plan a medida que avanzas para garantizar el éxito continuo.",
+        "Ideal para quienes desean mantenerse activos a distancia con una solución accesible y flexible.",
       image:
         "https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
     },
     {
-      name: "Programa de Entrenamiento Individualizado",
-      description:
-        "Rutinas de ejercicio personalizadas para alcanzar tus metas de forma eficiente.",
+      name: "Plan Online Personalizado",
+      description: "Tu rutina, tus reglas. Diseñado exclusivamente para ti.",
       benefits: [
-        "Rutinas de ejercicio personalizadas",
-        "Seguimiento de progreso y ajustes",
-        "Demostraciones en video de ejercicios",
+        "Rutinas de entrenamiento adaptadas a tus objetivos",
+        "Plan de nutrición diseñado para tu estilo de vida",
+        "Seguimiento mensual para garantizar tu progreso",
       ],
       icon: MdFitnessCenter,
       additionalInfo:
-        "Nuestros entrenadores certificados diseñan un programa ajustado a tu nivel de condición física, objetivos y equipo disponible. Proporcionamos apoyo continuo y modificaciones para mantenerte desafiado y motivado.",
+        "Perfecto para quienes buscan resultados específicos con apoyo continuo de nuestros expertos.",
       image:
-        "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "https://images.unsplash.com/photo-1649789261044-0c6a9fb528ff?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-      name: "Coaching Integral de Bienestar",
+      name: "Plan Online Premium",
       description:
-        "Enfoque holístico que combina nutrición, ejercicio y coaching de estilo de vida.",
+        "Obtén resultados excepcionales con atención 100% personalizada.",
       benefits: [
-        "Evaluación integral de salud",
-        "Técnicas de manejo del estrés",
-        "Estrategias para optimizar el sueño",
+        "Sesiones privadas con un coach certificado",
+        "Modificaciones y ajustes en tiempo real",
+        "Acceso exclusivo a contenidos avanzados y prioridad en consultas",
+      ],
+      icon: MdFitnessCenter,
+      additionalInfo:
+        "Nuestro plan más avanzado para quienes buscan maximizar su potencial con supervisión constante.",
+      image:
+        "https://images.unsplash.com/photo-1554284126-aa88f22d8b74?q=80&w=1988&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      name: "Plan Presencial",
+      description:
+        "Lleva tu entrenamiento al siguiente nivel con un enfoque presencial.",
+      benefits: [
+        "Entrena en nuestro gimnasio profesional Muscle Machine",
+        "Supervisión directa de un entrenador certificado",
+        "Elige entre modalidades de 2, 3 o más sesiones por semana",
       ],
       icon: MdPeople,
       additionalInfo:
-        "Nuestros coaches de bienestar toman un enfoque de 360 grados en tu salud, abordando la nutrición, el ejercicio, el estrés, el sueño y otros factores del estilo de vida. Te ayudamos a crear hábitos sostenibles para un bienestar a largo plazo.",
+        "El plan ideal para quienes prefieren la interacción en persona y un ambiente profesional para maximizar su rendimiento.",
       image:
-        "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1520&q=80",
+        "https://images.unsplash.com/photo-1519859660545-3dea8ddf683c?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Nueva imagen para plan presencial
     },
   ];
 
@@ -183,10 +197,14 @@ const ProgramasCombinados = () => {
     <section>
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeInText
-          text="Nuestros programas combinados"
+          text="Planes y Servicios"
           tagName="h2"
           className="font-roboto text-4xl font-bold text-gray-700 md:mb-6 mb-4 text-center"
         />
+        <p className="text-center text-gray-600 mb-12">
+          Elige el plan que mejor se adapte a tus necesidades, ya sea online o
+          presencial.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {programs.map((program, index) => (
             <ProgramCard

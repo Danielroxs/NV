@@ -77,7 +77,7 @@ const TestimonialCarousel = () => {
                   role="article"
                   aria-label={`Testimonial by ${testimonial.name}`}
                 >
-                  <div className="md:p-12 lg:p-14 p-10 flex flex-col items-center text-center">
+                  <div className="md:p-12 lg:p-14 p-4 flex flex-col items-center text-center">
                     <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mb-8">
                       <div className="absolute inset-0 bg-blue-100 rounded-full transform rotate-6"></div>
                       <img

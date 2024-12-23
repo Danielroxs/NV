@@ -77,7 +77,7 @@ const AboutUs = () => {
 
           <div className="lg:w-1/2 w-full lg:pr-12 mb-8 lg:mb-0 order-1 lg:hidden sm:text-center">
             <h2 className="font-roboto text-4xl font-bold text-gray-700 md:mb-6">
-              Conoce a Neri Villeda
+              Neri Villeda
             </h2>
           </div>
 
