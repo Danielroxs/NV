@@ -73,7 +73,7 @@ const ContactForm = () => {
   return (
     <>
       <FadeInText text="Contacto" tagName="h2" />
-      <div className="flex items-center justify-center p-1 md:p-1 lg:p-2">
+      <div className="flex items-center justify-center p-1 md:p-1 lg:p-2 md:max-w-screen-lg sm:max-w-screen-sm mx-auto px-4">
         <div className="bg-white rounded-xl shadow-2xl overflow-hidden max-w-6xl w-full flex flex-col lg:flex-row">
           <div className="relative lg:w-1/2 h-64 lg:h-auto overflow-hidden">
             <img

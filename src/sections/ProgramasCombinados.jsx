@@ -1,26 +1,30 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import { MdFitnessCenter, MdRestaurant, MdPeople } from "react-icons/md";
 import FadeInText from "../components/Motion";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const ProgramCard = ({
-  name,
-  description,
-  benefits,
-  icon: Icon,
-  onClick,
-  image,
-  index,
-}) => {
+// Componente para listar beneficios
+const BenefitsList = ({ benefits }) => (
+  <ul className="space-y-2">
+    {benefits.map((benefit, index) => (
+      <li key={index} className="flex items-center">
+        <FaCheck className="text-green-500 mr-2" />
+        <span>{benefit}</span>
+      </li>
+    ))}
+  </ul>
+);
+
+const ProgramCard = ({ name, icon: Icon, onClick, image, index }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (inView) {
       controls.start({ opacity: 1 });
     }
@@ -47,15 +51,6 @@ const ProgramCard = ({
         <Icon className="text-4xl text-blue-500 mr-4" />
         <h3 className="text-xl font-semibold">{name}</h3>
       </div>
-      {/* <p className="text-gray-600 mb-4 flex-grow">{description}</p>
-      <ul className="space-y-2 mb-4">
-        {benefits.map((benefit, index) => (
-          <li key={index} className="flex items-center">
-            <FaCheck className="text-green-500 mr-2" />
-            <span>{benefit}</span>
-          </li>
-        ))}
-      </ul> */}
       <button
         onClick={onClick}
         className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors duration-300 md:self-start self-end mt-auto"
@@ -67,7 +62,7 @@ const ProgramCard = ({
 };
 
 const ProgramModal = ({ program, onClose }) => {
-  const modalRef = useRef(null); // Usamos una referencia para el contenido del modal
+  const modalRef = useRef(null);
 
   const handleClickOutside = (e) => {
     if (modalRef.current && !modalRef.current.contains(e.target)) {
@@ -106,14 +101,7 @@ const ProgramModal = ({ program, onClose }) => {
         </div>
         <div className="mb-6">
           <h3 className="text-xl font-semibold mb-2">Beneficios</h3>
-          <ul className="space-y-2">
-            {program.benefits.map((benefit, index) => (
-              <li key={index} className="flex items-center">
-                <FaCheck className="text-green-500 mr-2" />
-                <span>{benefit}</span>
-              </li>
-            ))}
-          </ul>
+          <BenefitsList benefits={program.benefits} />
         </div>
         <div className="mb-6">
           <h3 className="text-xl font-semibold mb-2">Información adicional</h3>
@@ -192,8 +180,8 @@ const ProgramasCombinados = () => {
   };
 
   return (
-    <section className="">
-      <div className="container mx-auto px-4 ">
+    <section>
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeInText
           text="Nuestros programas combinados"
           tagName="h2"

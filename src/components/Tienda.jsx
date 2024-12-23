@@ -123,7 +123,7 @@ const ShirtGallery = () => {
         tagName="h2"
         className="font-roboto text-4xl font-bold text-gray-700 md:mb-6 mb-4 text-center"
       />
-      <div className="md:max-w-5xl mx-auto bg-anti-flash-white rounded-3xl">
+      <div className="relative md:h-[600px] h-[400px] md:max-w-screen-lg sm:max-w-screen-sm lg:max-w-screen-lg mx-auto overflow-hidden bg-anti-flash-white rounded-3xl shadow-xl flex items-center justify-center">
         <div className="relative md:h-[650px] h-[400px] w-full overflow-hidden bg-anti-flash-white rounded-3xl shadow-xl">
           <div className="absolute inset-0 flex items-center justify-center ">
             <button
@@ -135,17 +135,17 @@ const ShirtGallery = () => {
             </button>
 
             <motion.img
-              key={shirts[currentIndex].id} // Clave constante basada en ID único
+              key={shirts[currentIndex].id}
               src={shirts[currentIndex].image}
               alt={shirts[currentIndex].name}
-              className="w-full h-full lg:object-cover md:object-cover sm:object-cover object-cover lg:max-w-3xl cursor-pointer"
+              className="w-full h-full object-cover rounded-3xl"
               onClick={() => handleShirtClick(shirts[currentIndex])}
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{
-                duration: 0.8, // Aumenta la duración para una animación más lenta
-                ease: [0.25, 0.8, 0.25, 1], // Easing para suavizar el movimiento
+                duration: 0.8,
+                ease: [0.25, 0.8, 0.25, 1],
               }}
             />
 

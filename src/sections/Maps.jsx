@@ -11,7 +11,7 @@ const Maps = () => {
     <>
       <FadeInText text="Visitanos" tagName="h2" />
 
-      <div className="bg-anti-flash-white shadow-lg rounded-lg p-6 text-center md:max-w-screen-lg max-w-fit mx-auto">
+      <div className="bg-anti-flash-white shadow-lg rounded-lg p-6 text-center md:max-w-screen-lg sm:max-w-screen-sm max-w-fit mx-auto">
         <h2 className="text-2xl font-bold mb-4 text-gray-800 flex items-center justify-center">
           <FaMapMarkerAlt className="mr-2 text-red-500" />
           Google Maps

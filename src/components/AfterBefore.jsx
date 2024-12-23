@@ -166,7 +166,7 @@ const TransformationGallery = () => {
   const currentTransformation = transformations[currentIndex];
 
   return (
-    <div className="max-w-4xl text-center mx-auto p-4">
+    <div className="max-w-4xl text-center container mx-auto px-4">
       <FadeInText
         text="Transformaciones NV"
         tagName="h2"

@@ -63,7 +63,7 @@ const TestimonialCarousel = () => {
   return (
     <>
       <FadeInText text="Testimonios" tagName="h2" />
-      <div className="w-full min-h-[400px] px-4">
+      <div className="container md:max-w-screen-lg sm:max-w-screen-sm lg:max-w-screen-lg mx-auto px-4">
         <div className="max-w-6xl mx-auto relative overflow-hidden rounded-2xl bg-anti-flash-white shadow-xl">
           <div
             className="transition-transform duration-1000 ease-in-out"
