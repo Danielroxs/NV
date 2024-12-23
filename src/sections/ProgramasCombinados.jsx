@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FaCheck, FaTimes } from "react-icons/fa";
-import { MdFitnessCenter, MdRestaurant, MdPeople } from "react-icons/md";
+import { MdFitnessCenter, MdPeople } from "react-icons/md";
 import FadeInText from "../components/Motion";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -181,7 +181,7 @@ const ProgramasCombinados = () => {
       additionalInfo:
         "El plan ideal para quienes prefieren la interacción en persona y un ambiente profesional para maximizar su rendimiento.",
       image:
-        "https://images.unsplash.com/photo-1519859660545-3dea8ddf683c?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Nueva imagen para plan presencial
+        "https://images.unsplash.com/photo-1519859660545-3dea8ddf683c?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
 
@@ -205,7 +205,7 @@ const ProgramasCombinados = () => {
           Elige el plan que mejor se adapte a tus necesidades, ya sea online o
           presencial.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {programs.map((program, index) => (
             <ProgramCard
               key={index}
