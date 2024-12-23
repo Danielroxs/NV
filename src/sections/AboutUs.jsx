@@ -69,8 +69,8 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8">
-      <div className="md:max-w-7xl w-auto mx-auto">
+    <div id="about" className="px-4 sm:px-6 lg:px-8">
+      <div className="md:max-w-screen-lg sm:max-w-screen-sm lg:max-w-screen-lg mx-auto">
         {/* Bloque que contiene el texto a la izquierda y la imagen a la derecha */}
         <div className="flex flex-col lg:flex-row items-center justify-between md:text-start text-center">
           {/* Componente de la tarjeta de perfil (ProfileCard) que estará antes en dispositivos móviles */}

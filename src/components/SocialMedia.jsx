@@ -2,6 +2,7 @@ import React from "react";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import banner from "../assets/images/banner.webp";
 
 const SocialMediaSection = () => {
   const iconVariants = (i) => ({
@@ -42,8 +43,17 @@ const SocialMediaSection = () => {
   const youtubeAnimation = useSetupAnimation(2);
 
   return (
-    <section className="bg-gradient-to-r from-pink-500 via-orange-400 to-purple-600 py-12">
-      <div className="container mx-auto px-4">
+    <section
+      className="relative bg-bottom bg-cover py-12"
+      style={{
+        backgroundImage: `url(${banner})`,
+      }}
+    >
+      {/* Overlay semitransparente */}
+      <div className="absolute inset-0 bg-black bg-opacity-25"></div>
+
+      {/* Contenido */}
+      <div className="relative container mx-auto px-4">
         <h2 className="font-roboto text-3xl font-bold text-white mb-6 text-center">
           Conoce a Neri Villeda
         </h2>

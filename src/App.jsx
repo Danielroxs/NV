@@ -26,7 +26,7 @@ const App = () => {
           <Navbar />
 
           <main className="relative bg-city-lights">
-            <section id="home" className="py-0 sm:py-0 lg:py-0">
+            <section id="home" className="h-screen">
               <Hero1 />
             </section>
 
