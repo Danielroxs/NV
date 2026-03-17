@@ -24,7 +24,7 @@ const CombinedHero = () => {
       setText(
         isDeleting
           ? fullText.substring(0, text.length - 1)
-          : fullText.substring(0, text.length + 1)
+          : fullText.substring(0, text.length + 1),
       );
 
       setTypingSpeed(isDeleting ? 35 : 150);
@@ -51,7 +51,7 @@ const CombinedHero = () => {
   const sendMessage = (message) => {
     const whatsappLink = `https://wa.me/${whatsappNumber.replace(
       /[^0-9]/g,
-      ""
+      "",
     )}?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, "_blank");
   };
@@ -67,7 +67,7 @@ const CombinedHero = () => {
       >
         <div className="absolute inset-0 bg-black/35"></div>
         {/* Logo */}
-        <div className="absolute mt-6 top-12 left-1/2 transform -translate-x-1/2 z-20 md:mb-8">
+        <div className="absolute top-10 left-1/2 z-20 mt-6 -translate-x-1/2 transform md:mb-8">
           <img
             src={Logo}
             alt="Logotipo"
@@ -76,24 +76,24 @@ const CombinedHero = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold md:mb-8 mb-4">
+        <div className="relative z-10 mx-auto w-full max-w-4xl px-4 text-center text-white sm:px-6">
+          <h1 className="mb-4 text-3xl font-bold leading-tight md:mb-8 md:text-5xl lg:text-6xl">
             Nutrición y Entrenamiento Personalizado
           </h1>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6">
+          <h2 className="mb-6 text-2xl font-semibold md:text-3xl lg:text-4xl">
             <span className="mr-2">{text}</span>
             <span className="animate-blink">|</span>
           </h2>
 
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+          <div className="flex w-full flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
             <button
               aria-label="Boton Whatsapp"
               onClick={() =>
                 sendMessage(
-                  "Me gustaría solicitar informes acerca de sus planes de entrenamiento personal"
+                  "Me gustaría solicitar informes acerca de sus planes de entrenamiento personal",
                 )
               }
-              className="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white font-bold py-3 px-8 rounded-full flex items-center justify-center transition-all duration-500 ease-in-out w-full sm:w-auto max-w-xs shadow-md hover:shadow-lg"
+              className="flex w-full items-center justify-center rounded-full border-2 border-white bg-transparent px-8 py-3 font-bold text-white shadow-md transition-all duration-500 ease-in-out hover:bg-white hover:text-black hover:shadow-lg sm:w-auto sm:min-w-[240px]"
             >
               <FaDumbbell className="mr-2" /> Comienza a Entrenar
             </button>
@@ -102,10 +102,10 @@ const CombinedHero = () => {
               aria-label="Boton Whatsapp"
               onClick={() =>
                 sendMessage(
-                  "Me gustaría obtener más información sobre los planes de nutrición"
+                  "Me gustaría obtener más información sobre los planes de nutrición",
                 )
               }
-              className="bg-transparent border-2 border-white hover:bg-white hover:text-black text-white font-bold py-3 px-8 rounded-full flex items-center justify-center transition-all duration-500 ease-in-out w-full sm:w-auto max-w-xs shadow-md hover:shadow-lg"
+              className="flex w-full items-center justify-center rounded-full border-2 border-white bg-transparent px-8 py-3 font-bold text-white shadow-md transition-all duration-500 ease-in-out hover:bg-white hover:text-black hover:shadow-lg sm:w-auto sm:min-w-[240px]"
             >
               <FaAppleAlt className="mr-2" /> Planes de Nutrición
             </button>
@@ -116,7 +116,7 @@ const CombinedHero = () => {
         <button
           onClick={scrollToAbout}
           aria-label="Scroll to About section"
-          className="absolute bottom-12  -translate-x-1/2 text-white animate-bounce hover:text-blue-400 transition-colors duration-300"
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white transition-colors duration-300 hover:text-blue-400 animate-bounce"
         >
           <FaChevronDown size={40} />
         </button>

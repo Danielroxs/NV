@@ -25,14 +25,14 @@ const App = () => {
         <>
           <Navbar />
 
-          <main className="relative bg-city-lights">
-            <section id="home" className="h-screen">
+          <main className="relative overflow-x-hidden bg-city-lights">
+            <section id="home" className="min-h-screen">
               <Hero1 />
             </section>
 
             <section
               id="about"
-              className="py-12 sm:py-16 md:py-20 lg:py-24 max-w-screen-xl mx-auto"
+              className="section-shell py-12 sm:py-16 md:py-20 lg:py-24"
             >
               <AboutUs />
             </section>
@@ -41,13 +41,13 @@ const App = () => {
               <SocialMedia />
             </section>
 
-            <section className="py-12 sm:py-16 md:py-20 lg:py-24 max-w-screen-xl mx-auto">
+            <section className="section-shell py-12 sm:py-16 md:py-20 lg:py-24">
               <BeforeAfterComponent />
             </section>
 
             <section
               id="benefits"
-              className="py-12 sm:py-16 md:py-20 lg:py-24 max-w-screen-xl mx-auto"
+              className="section-shell py-12 sm:py-16 md:py-20 lg:py-24"
             >
               <Benefits />
             </section>
@@ -56,29 +56,29 @@ const App = () => {
 
             <section
               id="services"
-              className="py-12 sm:py-16 md:py-20 lg:py-24 max-w-screen-xl mx-auto"
+              className="section-shell py-12 sm:py-16 md:py-20 lg:py-24"
             >
               <ProgramasCombinados />
             </section>
 
             <section
               id="products"
-              className="py-12 sm:py-16 md:py-20 lg:py-24 max-w-screen-xl mx-auto"
+              className="section-shell py-12 sm:py-16 md:py-20 lg:py-24"
             >
               <Tienda />
             </section>
 
-            <section className="py-12 sm:py-16 md:py-20 lg:py-24 max-w-screen-xl mx-auto">
+            <section className="section-shell py-12 sm:py-16 md:py-20 lg:py-24">
               <Testimonial />
             </section>
 
-            <section className="py-12 sm:py-16 md:py-20 lg:py-24 max-w-screen-xl mx-auto">
+            <section className="section-shell py-12 sm:py-16 md:py-20 lg:py-24">
               <Maps />
             </section>
 
             <section
               id="contact"
-              className="py-12 sm:py-16 md:py-20 lg:py-24 max-w-screen-xl mx-auto"
+              className="section-shell py-12 sm:py-16 md:py-20 lg:py-24"
             >
               <Contact />
             </section>

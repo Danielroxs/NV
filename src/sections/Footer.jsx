@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-5 text-white py-8">
-      <div className="container mx-auto px-4">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <a href="#" onClick={scrollToTop} className="mb-4 md:mb-0">
             <img
@@ -20,7 +20,7 @@ const Footer = () => {
               className="h-12 cursor-pointer"
             />
           </a>
-          <nav className="flex flex-wrap justify-center md:justify-end space-x-4 md:space-x-6">
+          <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-end md:gap-x-6">
             <ScrollLink
               to="home" // Cambia el nombre por el de tu sección
               smooth={true}

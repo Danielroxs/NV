@@ -63,8 +63,8 @@ const TestimonialCarousel = () => {
   return (
     <>
       <FadeInText text="Testimonios" tagName="h2" />
-      <div className="container md:max-w-screen-lg sm:max-w-screen-sm lg:max-w-screen-lg mx-auto px-4">
-        <div className="max-w-6xl mx-auto relative overflow-hidden rounded-2xl bg-anti-flash-white shadow-xl">
+      <div className="mx-auto w-full sm:max-w-5xl  px-0">
+        <div className="relative mx-auto w-full overflow-hidden rounded-2xl bg-anti-flash-white shadow-xl">
           <div
             className="transition-transform duration-1000 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -77,8 +77,8 @@ const TestimonialCarousel = () => {
                   role="article"
                   aria-label={`Testimonial by ${testimonial.name}`}
                 >
-                  <div className="md:p-12 lg:p-14 p-4 flex flex-col items-center text-center">
-                    <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mb-8">
+                  <div className="flex flex-col items-center p-4 text-center sm:p-6 md:p-12 lg:p-14">
+                    <div className="relative mb-6 h-24 w-24 sm:h-32 sm:w-32 md:mb-8 md:h-40 md:w-40 lg:h-48 lg:w-48">
                       <div className="absolute inset-0 bg-blue-100 rounded-full transform rotate-6"></div>
                       <img
                         src={testimonial.avatar}
@@ -97,9 +97,9 @@ const TestimonialCarousel = () => {
                         {testimonial.role}
                       </p>
                     </div>
-                    <div className="relative max-w-2xl mx-auto">
-                      <FaQuoteLeft className="text-5xl text-blue-100 absolute -top-8 -left-8" />
-                      <p className="text-xl text-gray-600 leading-relaxed italic pl-8">
+                    <div className="relative mx-auto w-full max-w-2xl">
+                      <FaQuoteLeft className="absolute -top-4 left-0 hidden text-4xl text-blue-100 sm:block md:-top-8 md:-left-8 md:text-5xl" />
+                      <p className="pl-0 text-base italic leading-relaxed text-gray-600 sm:pl-6 sm:text-lg md:pl-8 md:text-xl">
                         {testimonial.content}
                       </p>
                     </div>

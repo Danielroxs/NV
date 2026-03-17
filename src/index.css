@@ -2,13 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-scroll-behavior: smooth;
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-html,
-body {
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch; /* Para iOS Safari */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:px-8;
+  }
 }

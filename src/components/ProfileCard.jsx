@@ -10,8 +10,6 @@ const ProfileCard = () => {
   const person = {
     name: "Neri Villeda",
     title: "Nutricionista y Entrenador Personal",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
     education: [
       {
         degree: "Licenciado en Nutrición",
@@ -25,14 +23,11 @@ const ProfileCard = () => {
       },
     ],
     certifications: [
-      {
-        certificate1:
-          " Suplementacion y Complementacion aplicada en el Deporte y Culturismo",
-        certificate3: " Dieta Cetogenica aplicada en el Deporte y Culturismo",
-        certificate2: " Farmacología Deportiva",
-        certificate4: " Terapia Posciclo",
-        certificate5: " Especialización en Fuerza",
-      },
+      "Suplementación y complementación aplicada en el deporte y culturismo",
+      "Dieta cetogénica aplicada en el deporte y culturismo",
+      "Farmacología deportiva",
+      "Terapia posciclo",
+      "Especialización en fuerza",
     ],
     experience: [
       {
@@ -44,7 +39,7 @@ const ProfileCard = () => {
   };
 
   const toggleDetails = () => {
-    setShowDetails(!showDetails);
+    setShowDetails((prev) => !prev);
   };
 
   const closeModal = () => {
@@ -52,134 +47,173 @@ const ProfileCard = () => {
   };
 
   return (
-    <div className="w-64 h-64 lg:w-80 lg:h-80 relative cursor-pointer">
-      <div
-        className="relative w-full h-full rounded-full overflow-hidden border-4 border-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-500 p-1 shadow-lg transition-transform duration-300 transform hover:scale-105"
+    <>
+      {/* Card principal de imagen */}
+      <button
+        type="button"
         onClick={toggleDetails}
+        className="group relative block h-full w-full overflow-hidden rounded-[26px] bg-white text-left shadow-[0_18px_40px_rgba(0,0,0,0.10)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_rgba(0,0,0,0.14)]"
+        aria-label="Ver educación y experiencia de Neri Villeda"
       >
-        <div className="w-full h-full rounded-full bg-white">
+        <div className="relative aspect-square w-full overflow-hidden rounded-[26px]">
           <img
-            className="object-cover w-full h-full rounded-full"
             src={neriProfile}
-            alt="Neri fotografia"
+            alt="Fotografía de Neri Villeda"
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
           />
-          {/* Texto de "Ver más..." que aparece en hover */}
-          <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-            <span className="text-white text-lg font-semibold">
-              Ver Educación
-            </span>
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+
+          <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
+            <div className="rounded-2xl border border-white/15 bg-black/20 px-4 py-3 text-white backdrop-blur-[2px]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/75 sm:text-xs">
+                Perfil profesional
+              </p>
+              <p className="mt-1 text-sm font-semibold sm:text-base">
+                Ver educación y experiencia
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </button>
 
-      {/* Contenido Modal */}
+      {/* Modal */}
       <AnimatePresence>
         {showDetails && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
-            onClick={closeModal} // Cierra el modal si se hace clic en el fondo oscuro
+            className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 p-0 sm:items-center sm:p-4"
+            onClick={closeModal}
           >
             <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 50, opacity: 0 }}
-              className="bg-white rounded-lg shadow-xl overflow-hidden w-full max-w-4xl"
-              onClick={(e) => e.stopPropagation()} // Evita que el clic en el modal lo cierre
+              initial={{ opacity: 0, y: 30, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.98 }}
+              transition={{ duration: 0.28, ease: "easeOut" }}
+              className="max-h-[92vh] w-full overflow-hidden rounded-t-[28px] bg-white shadow-2xl sm:max-w-4xl sm:rounded-[32px]"
+              onClick={(e) => e.stopPropagation()}
             >
-              <div className="p-6">
-                <div className="flex justify-between items-start">
-                  <h2 className="text-2xl font-bold">{person.name}</h2>
+              <div className="max-h-[92vh] overflow-y-auto">
+                <div className="sticky top-0 z-10 flex items-center justify-between border-b border-gray-100 bg-white/95 px-5 py-4 backdrop-blur sm:px-7">
+                  <div className="pr-4">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-400">
+                      Perfil profesional
+                    </p>
+                    <h2 className="mt-1 text-xl font-bold text-gray-900 sm:text-3xl">
+                      {person.name}
+                    </h2>
+                    <p className="mt-1 text-sm font-medium text-blue-600 sm:text-base">
+                      {person.title}
+                    </p>
+                  </div>
+
                   <button
-                    onClick={toggleDetails}
-                    className="text-gray-400 hover:text-gray-500"
+                    onClick={closeModal}
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition hover:bg-gray-200 hover:text-gray-800"
+                    aria-label="Cerrar modal"
                   >
-                    <FaTimes className="h-6 w-6" />
+                    <FaTimes />
                   </button>
                 </div>
-                <p className="text-lg mt-2">{person.title}</p>
-                <div className="mt-6 space-y-4">
-                  <section>
-                    <h3 className="text-xl font-semibold flex items-center">
-                      <FaGraduationCap className="mr-2" />
-                      Educación
-                    </h3>
-                    <div className="mt-3 space-y-3">
-                      {person.education.map((edu, index) => (
-                        <div
-                          key={index}
-                          className="border-l-4 border-indigo-500 pl-4 py-2"
-                        >
-                          <p className="text-base font-medium text-gray-900">
-                            {edu.degree}
-                          </p>
-                          <p className="text-sm text-gray-600">
-                            {edu.institution}, {edu.year}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </section>
 
-                  <section>
-                    <h3 className="text-xl font-semibold flex items-center">
-                      <FaBriefcase className="mr-2" />
-                      Experiencia Profesional
-                    </h3>
-                    <div className="mt-3 space-y-3">
-                      {person.experience.map((exp, index) => (
-                        <div
-                          key={index}
-                          className="border-l-4 border-indigo-500 pl-4 py-2"
-                        >
-                          <p className="text-base font-medium text-gray-900">
-                            {exp.position}
-                          </p>
-                          <p className="text-sm text-gray-600">{exp.company}</p>
-                          <p className="text-xs text-gray-500">
-                            {exp.duration}
-                          </p>
-                        </div>
-                      ))}
+                <div className="p-5 sm:p-7">
+                  <div className="grid grid-cols-1 gap-6 lg:grid-cols-[280px_1fr] lg:gap-8">
+                    {/* Imagen */}
+                    <div>
+                      <div className="overflow-hidden rounded-[24px] bg-[#f4f6fa] shadow-sm">
+                        <img
+                          src={neriProfile}
+                          alt="Neri Villeda"
+                          className="h-[260px] w-full object-cover sm:h-[320px] lg:h-full"
+                        />
+                      </div>
                     </div>
-                  </section>
 
-                  <section>
-                    <h3 className="text-xl font-semibold flex items-center">
-                      <PiCertificateFill className="mr-2" />
-                      Certificaciones
-                    </h3>
-                    <div className="mt-3 space-y-3">
-                      {person.certifications.map((exp, index) => (
-                        <div
-                          key={index}
-                          className="border-l-4 border-indigo-500 pl-4 py-2"
-                        >
-                          <p className="text-base font-medium text-gray-900">
-                            {exp.company}
-                          </p>
-                          <p className="text-sm text-gray-600">
-                            •{exp.certificate1}
-                          </p>
-                          <p className="text-sm text-gray-600">
-                            •{exp.certificate2}
-                          </p>
-                          <p className="text-sm text-gray-600">
-                            •{exp.certificate3}
-                          </p>
+                    {/* Contenido */}
+                    <div className="space-y-6">
+                      <section>
+                        <h3 className="flex items-center gap-2 text-lg font-bold text-gray-900 sm:text-xl">
+                          <FaGraduationCap className="text-blue-600" />
+                          Educación
+                        </h3>
+
+                        <div className="mt-4 space-y-3">
+                          {person.education.map((edu, index) => (
+                            <div
+                              key={index}
+                              className="rounded-2xl bg-gray-50 px-4 py-4 ring-1 ring-gray-100"
+                            >
+                              <p className="text-base font-semibold text-gray-900">
+                                {edu.degree}
+                              </p>
+                              <p className="mt-1 text-sm text-gray-600 sm:text-base">
+                                {edu.institution}
+                              </p>
+                              <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-gray-400">
+                                {edu.year}
+                              </p>
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      </section>
+
+                      <section>
+                        <h3 className="flex items-center gap-2 text-lg font-bold text-gray-900 sm:text-xl">
+                          <FaBriefcase className="text-blue-600" />
+                          Experiencia profesional
+                        </h3>
+
+                        <div className="mt-4 space-y-3">
+                          {person.experience.map((exp, index) => (
+                            <div
+                              key={index}
+                              className="rounded-2xl bg-gray-50 px-4 py-4 ring-1 ring-gray-100"
+                            >
+                              <p className="text-base font-semibold text-gray-900">
+                                {exp.position}
+                              </p>
+                              <p className="mt-1 text-sm text-gray-600 sm:text-base">
+                                {exp.company}
+                              </p>
+                              <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-gray-400">
+                                {exp.duration}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </section>
+
+                      <section>
+                        <h3 className="flex items-center gap-2 text-lg font-bold text-gray-900 sm:text-xl">
+                          <PiCertificateFill className="text-blue-600" />
+                          Certificaciones
+                        </h3>
+
+                        <div className="mt-4 rounded-2xl bg-gray-50 px-4 py-4 ring-1 ring-gray-100">
+                          <ul className="space-y-2 text-sm leading-7 text-gray-700 sm:text-base">
+                            {person.certifications.map((certificate, index) => (
+                              <li
+                                key={index}
+                                className="flex items-start gap-3"
+                              >
+                                <span className="mt-1 text-green-600">✓</span>
+                                <span>{certificate}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </section>
                     </div>
-                  </section>
+                  </div>
                 </div>
               </div>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </>
   );
 };
 

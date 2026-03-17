@@ -4,137 +4,233 @@ import ProfileCard from "../components/ProfileCard";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const AboutUs = () => {
-  const ServiceCard = ({ title, description, icon, index }) => {
-    const controls = useAnimation();
-    const [ref, inView] = useInView({
-      triggerOnce: true,
-      threshold: 0.5,
-    });
+const ServiceCard = ({ title, description, icon, index }) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
 
-    useEffect(() => {
-      if (inView) {
-        controls.start("visible");
-      }
-    }, [controls, inView]);
+  useEffect(() => {
+    if (inView) controls.start("visible");
+  }, [controls, inView]);
 
-    const variants = {
-      hidden: { y: 50, opacity: 0 },
-      visible: {
-        y: 0,
-        opacity: 1,
-        transition: {
-          type: "spring",
-          bounce: 0.4,
-          duration: 0.8,
-          delay: index * 0.2,
-        },
+  const variants = {
+    hidden: { y: 24, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.2,
+        duration: 0.6,
+        delay: index * 0.08,
       },
-    };
-
-    return (
-      <motion.div
-        ref={ref}
-        initial="hidden"
-        animate={controls}
-        variants={variants}
-        className="bg-anti-flash-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-      >
-        <div className="text-4xl mb-4">{icon}</div>
-        <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
-        <p className="text-gray-700">{description}</p>
-      </motion.div>
-    );
+    },
   };
 
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={variants}
+      className="group h-full rounded-2xl border border-gray-200 bg-white p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-6 sm:text-left"
+    >
+      <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-100 to-violet-100 text-2xl sm:h-14 sm:w-14 sm:text-3xl">
+        {icon}
+      </div>
+
+      <h3 className="mb-2 text-lg font-semibold text-gray-900 sm:text-xl">
+        {title}
+      </h3>
+
+      <p className="text-sm leading-6 text-gray-600 sm:text-base sm:leading-7">
+        {description}
+      </p>
+    </motion.div>
+  );
+};
+
+const AboutUs = () => {
   const services = [
     {
       title: "Planes de nutrición personalizados",
       description:
-        "Planes de comidas personalizados diseñados para satisfacer sus objetivos de salud y preferencias dietéticas específicos.",
+        "Estrategias de alimentación adaptadas a tus objetivos, hábitos y estilo de vida.",
       icon: "🥗",
     },
     {
-      title: "Formación individual",
+      title: "Entrenamiento individual",
       description:
-        "Sesiones de entrenamiento individualizadas centradas en su nivel de forma física y sus objetivos",
+        "Rutinas diseñadas según tu nivel, condición física y metas de rendimiento.",
       icon: "💪",
     },
     {
-      title: "Talleres de bienestar",
+      title: "Educación y bienestar",
       description:
-        "Seminarios educativos sobre diversos temas de salud para que adquiera conocimientos.",
+        "Acompañamiento para que entiendas tu proceso y construyas hábitos sostenibles.",
       icon: "📚",
     },
   ];
 
   return (
-    <div id="about" className="px-4 sm:px-6 lg:px-8">
-      <div className="md:max-w-screen-lg sm:max-w-screen-sm lg:max-w-screen-lg mx-auto">
-        {/* Bloque que contiene el texto a la izquierda y la imagen a la derecha */}
-        <div className="flex flex-col lg:flex-row items-center justify-between md:text-start text-center">
-          {/* Componente de la tarjeta de perfil (ProfileCard) que estará antes en dispositivos móviles */}
+    <section
+      id="about"
+      className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12"
+    >
+      <div className="overflow-hidden rounded-2xl border border-white/50 bg-anti-flash-white p-4 shadow-lg sm:rounded-3xl sm:p-6 lg:p-10">
+        <div className="grid grid-cols-1 items-center gap-4 sm:gap-6 lg:grid-cols-2 lg:gap-12">
+          {/* Imagen */}
+          <div className="order-1 flex justify-center lg:order-2">
+            <div className="relative">
+              <div className="absolute inset-0 scale-105 rounded-full bg-gradient-to-r from-pink-400 via-orange-300 to-violet-500 opacity-25 blur-2xl"></div>
+              <ProfileCard />
+            </div>
+          </div>
 
-          <div className="lg:w-1/2 w-full lg:pr-12 mb-8 lg:mb-0 order-1 lg:hidden sm:text-center">
-            <h2 className="font-roboto text-4xl font-bold text-gray-700 md:mb-6">
+          {/* Texto */}
+          <div className="order-2 min-w-0 text-center lg:text-left">
+            <span className="inline-flex rounded-full bg-white px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm sm:px-4 sm:py-2 sm:text-sm">
+              Sobre mí
+            </span>
+
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
               Neri Villeda
             </h2>
-          </div>
 
-          <div className="lg:w-1/2 w-full flex justify-center items-center order-2 lg:order-3 mb-2">
-            <ProfileCard />
-          </div>
+            <div className="mt-2">
+              <p className="text-sm font-medium leading-6 text-transparent bg-gradient-to-r from-pink-500 via-orange-400 to-violet-600 bg-clip-text md:hidden">
+                Nutrición y entrenamiento
+              </p>
 
-          <div className="lg:w-1/2 w-full lg:pr-12 mb-8 lg:mb-0 order-3 lg:order-2 md:text-start text-center">
-            <p className="md:text-2xl text-xl text-gray-700 mb-6">
-              <em className="md:italic md:text-gray-800 md:font-bold md:text-3xl">
-                Neri Villeda
-              </em>{" "}
-              es nutricionista y entrenador personal especializado en optimizar
-              la salud y el rendimiento físico. Con una sólida experiencia,
-              combina ciencia y práctica para diseñar planes de nutrición y
-              rutinas de ejercicio personalizadas.
-            </p>
-            <p className="md:text-2xl text-xl text-gray-700 mb-6">
-              En nuestro consultorio, promovemos un enfoque integral de salud,
-              combinando nutrición y ejercicio adaptado a las necesidades de
-              cada persona. ¡Te acompañamos en cada etapa de tu transformación!
-            </p>
-            <div className="flex justify-center lg:justify-start space-x-4">
+              <p className="hidden text-base font-medium leading-6 text-transparent bg-gradient-to-r from-pink-500 via-orange-400 to-violet-600 bg-clip-text md:block lg:text-lg">
+                Nutrición y entrenamiento personalizado
+              </p>
+            </div>
+
+            {/* Texto corto solo en mobile */}
+            <div className="md:hidden">
+              <p className="mx-auto mt-5 max-w-xs text-sm leading-7 text-gray-700">
+                Soy Neri Villeda, especialista en nutrición y entrenamiento
+                personalizado. Te ayudo a mejorar tu salud y tu rendimiento con
+                un enfoque práctico y adaptado a ti.
+              </p>
+
+              <ul className="mx-auto mt-5 max-w-xs space-y-3 text-left text-sm text-gray-700">
+                <li className="flex items-start gap-3">
+                  <span className="mt-0.5 text-green-600">✓</span>
+                  <span>Plan personalizado</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-0.5 text-green-600">✓</span>
+                  <span>Seguimiento cercano</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-0.5 text-green-600">✓</span>
+                  <span>Nutrición + ejercicio</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Texto completo solo en tablet/desktop */}
+            <div className="hidden md:block">
+              <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 lg:mx-0 lg:text-lg">
+                Soy Neri Villeda, especialista en nutrición y entrenamiento
+                personalizado. Te ayudo a mejorar tu salud, tu composición
+                corporal y tu rendimiento físico con un enfoque práctico,
+                realista y adaptado a tu estilo de vida.
+              </p>
+
+              <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-gray-600 sm:text-base sm:leading-8 lg:mx-0 lg:text-lg">
+                Cada proceso se diseña de forma individual para que avances con
+                estructura, acompañamiento y resultados sostenibles.
+              </p>
+
+              <ul className="mx-auto mt-6 max-w-xl space-y-3 text-left text-sm text-gray-700 sm:text-base lg:mx-0">
+                <li className="flex items-start gap-3">
+                  <span className="mt-0.5 text-green-600">✓</span>
+                  <span>Plan 100% personalizado</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-0.5 text-green-600">✓</span>
+                  <span>Seguimiento cercano y enfoque realista</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-0.5 text-green-600">✓</span>
+                  <span>Nutrición y ejercicio en un mismo proceso</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
+              <a
+                href="#contact"
+                className="inline-flex w-full items-center justify-center rounded-xl bg-gray-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-gray-800 sm:w-auto"
+              >
+                Agenda tu valoración
+              </a>
+
+              <a
+                href="#services"
+                className="inline-flex w-full items-center justify-center rounded-xl border border-gray-300 bg-white px-5 py-3 text-sm font-semibold text-gray-800 transition hover:bg-gray-50 sm:w-auto"
+              >
+                Ver servicios
+              </a>
+            </div>
+
+            <div className="mt-8 flex items-center justify-center gap-4 lg:justify-start">
               <a
                 href="https://www.facebook.com/share/uG6KzuhtfF5o4jZD/?mibextid=LQQJ4d"
                 target="_blank"
-                className="text-blue-600 hover:text-blue-800 transition-colors duration-300"
                 rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="rounded-full bg-white p-3 text-blue-600 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
-                <FaFacebook size={24} />
+                <FaFacebook size={18} />
               </a>
+
               <a
                 href="https://www.instagram.com/nerii_villeda.fit/"
-                className="text-pink-600 hover:text-pink-800 transition-colors duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="rounded-full bg-white p-3 text-pink-600 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
-                <FaInstagram size={24} />
+                <FaInstagram size={18} />
               </a>
+
               <a
                 href="https://www.youtube.com/@NeriPrideMusicOficial/videos"
-                className="text-red-600 hover:text-red-800 transition-colors duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="rounded-full bg-white p-3 text-red-600 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
-                <FaYoutube size={24} />
+                <FaYoutube size={18} />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Sección de nuestros servicios */}
-        <div className="mt-12">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4 md:text-start text-center">
-            Nuestros servicios
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:text-start text-center">
+        {/* Servicios */}
+        <div id="services" className="mt-12 sm:mt-14 lg:mt-16">
+          <div className="mb-8 text-center lg:text-left">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 sm:text-sm">
+              Servicios
+            </span>
+
+            <h3 className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl">
+              Acompañamiento pensado para ti
+            </h3>
+
+            <p className="mx-auto mt-2 max-w-2xl text-sm leading-7 text-gray-600 sm:text-base lg:mx-0">
+              Un enfoque integral para ayudarte a verte mejor, sentirte mejor y
+              rendir mejor.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
             {services.map((service, index) => (
               <ServiceCard
                 key={index}
@@ -147,7 +243,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

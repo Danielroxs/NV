@@ -1,116 +1,103 @@
 import React from "react";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 import banner from "../assets/images/banner.webp";
 
+const socials = [
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/nerii_villeda.fit/",
+    icon: FaInstagram,
+    color: "text-pink-600",
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/share/uG6KzuhtfF5o4jZD/?mibextid=LQQJ4d",
+    icon: FaFacebook,
+    color: "text-blue-600",
+  },
+  {
+    name: "YouTube",
+    href: "https://www.youtube.com/@NeriPrideMusicOficial/videos",
+    icon: FaYoutube,
+    color: "text-red-600",
+  },
+];
+
 const SocialMediaSection = () => {
-  const iconVariants = (i) => ({
-    hidden: { rotateY: 0 },
-    visible: {
-      rotateY: [0, 720, 720], // Completes three full rotations
-      transition: {
-        rotateY: {
-          delay: i * 0.3,
-          type: "tween",
-          duration: 2.5,
-          ease: "easeOut",
-        },
-      },
-    },
-  });
-
-  // Create a custom hook to initialize animation controls and inView detection
-  const useSetupAnimation = (index) => {
-    const controls = useAnimation();
-    const [ref, inView] = useInView({
-      triggerOnce: true,
-      threshold: 0.3,
-    });
-
-    React.useEffect(() => {
-      if (inView) {
-        controls.start("visible");
-      }
-    }, [controls, inView]);
-
-    return { controls, ref };
-  };
-
-  // Setup animations for each social link
-  const instagramAnimation = useSetupAnimation(0);
-  const facebookAnimation = useSetupAnimation(1);
-  const youtubeAnimation = useSetupAnimation(2);
-
   return (
-    <section
-      className="relative bg-bottom bg-cover py-12"
-      style={{
-        backgroundImage: `url(${banner})`,
-      }}
-    >
-      {/* Overlay semitransparente */}
-      <div className="absolute inset-0 bg-black bg-opacity-25"></div>
+    <section className="w-full px-4 py-10 sm:px-6 lg:px-8">
+      <div
+        className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl shadow-xl"
+        style={{
+          backgroundImage: `url(${banner})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* overlay */}
+        <div className="absolute inset-0 bg-black/45" />
 
-      {/* Contenido */}
-      <div className="relative container mx-auto px-4">
-        <h2 className="font-roboto text-3xl font-bold text-white mb-6 text-center">
-          Conoce a Neri Villeda
-        </h2>
-        <div className="flex justify-center space-x-6">
-          {/* Instagram */}
-          <motion.a
-            href="https://www.instagram.com/nerii_villeda.fit/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative"
-            aria-label="Visit Neri Villeda's Instagram profile"
-            ref={instagramAnimation.ref}
-            initial="hidden"
-            animate={instagramAnimation.controls}
-            variants={iconVariants(0)}
-            style={{ perspective: "1000px" }}
-          >
-            <div className="relative bg-white p-4 rounded-full">
-              <FaInstagram className="w-8 h-8 text-[#E1306C] group-hover:text-[#FD1D1D] transition-colors duration-300" />
-            </div>
-          </motion.a>
+        {/* brillo decorativo */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-black/50" />
 
-          {/* Facebook */}
-          <motion.a
-            href="https://www.facebook.com/share/uG6KzuhtfF5o4jZD/?mibextid=LQQJ4d"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative"
-            aria-label="Visit Neri Villeda's Facebook profile"
-            ref={facebookAnimation.ref}
-            initial="hidden"
-            animate={facebookAnimation.controls}
-            variants={iconVariants(1)}
-            style={{ perspective: "1000px" }}
+        {/* contenido */}
+        <div className="relative z-10 flex min-h-[220px] flex-col items-center justify-center px-6 py-12 text-center sm:px-10">
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.5 }}
+            className="mb-2 text-sm font-semibold uppercase tracking-[0.25em] text-white/80"
           >
-            <div className="relative bg-white p-4 rounded-full">
-              <FaFacebook className="w-8 h-8 text-[#1877F2] group-hover:text-[#3b5998] transition-colors duration-300" />
-            </div>
-          </motion.a>
+            Sígueme en redes
+          </motion.p>
 
-          {/* YouTube */}
-          <motion.a
-            href="https://www.youtube.com/@NeriPrideMusicOficial/videos"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative"
-            aria-label="Visit Neri Villeda's YouTube profile"
-            ref={youtubeAnimation.ref}
-            initial="hidden"
-            animate={youtubeAnimation.controls}
-            variants={iconVariants(2)}
-            style={{ perspective: "1000px" }}
+          <motion.h2
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mb-4 text-3xl font-extrabold text-white sm:text-4xl"
           >
-            <div className="relative bg-white p-4 rounded-full">
-              <FaYoutube className="w-8 h-8 text-[#FF0000] group-hover:text-[#cc0000] transition-colors duration-300" />
-            </div>
-          </motion.a>
+            Conoce más de mi trabajo
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-8 max-w-2xl text-sm leading-7 text-white/90 sm:text-base"
+          >
+            Tips, contenido de entrenamiento, nutrición y motivación para
+            ayudarte a mejorar tu salud y rendimiento.
+          </motion.p>
+
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {socials.map((social, index) => {
+              const Icon = social.icon;
+
+              return (
+                <motion.a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Ir a ${social.name}`}
+                  initial={{ opacity: 0, y: 18, scale: 0.95 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.45, delay: 0.25 + index * 0.1 }}
+                  className="group flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <Icon
+                    className={`h-6 w-6 ${social.color} transition duration-300 group-hover:scale-110`}
+                  />
+                </motion.a>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
