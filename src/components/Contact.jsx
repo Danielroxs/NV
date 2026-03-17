@@ -106,10 +106,13 @@ const ContactForm = () => {
               className="h-full w-full object-cover"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-br from-pink-500/75 via-orange-400/65 to-violet-600/75" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a]/80 via-[#1e3a8a]/70 to-[#0ea5e9]/65" />
 
             <div className="absolute inset-0 flex items-center justify-center p-6 sm:p-8">
               <div className="max-w-md text-center text-white">
+                <span className="inline-flex mb-2 rounded-full bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-gray-600 shadow-sm sm:text-sm">
+                  Contacto
+                </span>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80 sm:text-xs">
                   Asesoría personalizada
                 </p>

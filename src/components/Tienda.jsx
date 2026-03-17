@@ -161,7 +161,7 @@ const ShirtModal = ({
                           className={`rounded-xl px-4 py-2 text-sm font-semibold transition ${
                             selectedSize === size
                               ? "bg-[#2563eb] text-white shadow-md"
-                              : "bg-black text-gray-800 hover:bg-gray-200"
+                              : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                           }`}
                         >
                           {size}

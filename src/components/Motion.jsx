@@ -34,7 +34,7 @@ const SectionTitle = ({
       aria-label="Section Title"
     >
       <h2
-        className={`${fontSize} font-extrabold uppercase tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-orange-400 to-purple-600 select-none whitespace-normal break-words overflow-wrap break-word hyphens-none`} // Evitar el corte de palabras
+        className={`${fontSize} font-extrabold uppercase tracking-wide text-anti-flash-white select-none whitespace-normal break-words overflow-wrap break-word hyphens-none`} // Evitar el corte de palabras
       >
         {children}
       </h2>

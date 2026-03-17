@@ -101,7 +101,7 @@ const Navbar = () => {
         isMobile
           ? "bg-transparent"
           : isScrolled
-            ? "bg-gradient-to-r from-pink-500 via-orange-400 to-purple-600"
+            ? "bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0b1220]"
             : "bg-transparent"
       } `}
       initial={{ y: -80, opacity: 0 }} // Inicialmente oculto
@@ -138,8 +138,8 @@ const Navbar = () => {
               onClick={toggleMenu}
               type="button"
               className={`inline-flex items-center justify-center p-2 rounded-md ${
-                isScrolled ? "text-gray-700" : "text-white"
-              } hover:bg-gray-100 hover:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white`}
+                isScrolled ? "text-anti-flash-white" : "text-white"
+              } hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white`}
               aria-controls="mobile-menu"
               aria-expanded="false"
               aria-label="Abrir menu"
@@ -162,7 +162,7 @@ const Navbar = () => {
         variants={menuVariants}
         id="mobile-menu"
       >
-        <div className="w-full rounded-2xl bg-anti-flash-white px-3 pt-2 pb-3 text-center shadow-lg">
+        <div className="w-full rounded-2xl border border-white/10 bg-[#0f172a]/95 px-3 pt-2 pb-3 text-center shadow-lg backdrop-blur-sm">
           {navLinks.map((link) => (
             <ScrollLink
               key={link.to}
@@ -171,7 +171,7 @@ const Navbar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className="block w-full rounded-md px-3 py-3 text-base font-medium text-gray-700 transition-all duration-300 cursor-pointer hover:bg-gray-100"
+              className="block w-full rounded-md px-3 py-3 text-base font-medium text-anti-flash-white transition-all duration-300 cursor-pointer hover:bg-white/10"
               aria-label={link.label}
               onClick={() => setIsOpen(false)}
             >

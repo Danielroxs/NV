@@ -212,9 +212,14 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
+      </div>
 
+      <div
+        id="services"
+        className="mt-8 overflow-hidden rounded-2xl border border-white/50 bg-anti-flash-white p-4 shadow-lg sm:mt-10 sm:rounded-3xl sm:p-6 lg:mt-12 lg:p-10"
+      >
         {/* Servicios */}
-        <div id="services" className="mt-12 sm:mt-14 lg:mt-16">
+        <div>
           <div className="mb-8 text-center lg:text-left">
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 sm:text-sm">
               Servicios

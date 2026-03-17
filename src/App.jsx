@@ -22,10 +22,10 @@ const App = () => {
         setIsCurtainOpen={setIsCurtainOpen}
       />
       {!isCurtainOpen && (
-        <>
+        <div className="min-h-screen w-full aurora-background">
           <Navbar />
 
-          <main className="relative overflow-x-hidden bg-city-lights">
+          <main className="relative overflow-x-hidden">
             <section id="home" className="min-h-screen">
               <Hero1 />
             </section>
@@ -87,7 +87,7 @@ const App = () => {
               <Footer />
             </section>
           </main>
-        </>
+        </div>
       )}
     </>
   );
