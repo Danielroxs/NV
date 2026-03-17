@@ -157,7 +157,7 @@ const TransformationGallery = () => {
   }, []);
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 py-12 text-center sm:px-6 lg:px-8">
+    <section className="mx-auto w-full max-w-6xl px-4 py-12 text-center select-none sm:px-6 lg:px-8">
       <FadeInText
         text="Transformaciones NV"
         tagName="h2"
@@ -176,24 +176,37 @@ const TransformationGallery = () => {
       <div className="mx-auto max-w-5xl">
         <div
           ref={cardRef}
-          onPointerEnter={(e) => {
-            if (e.pointerType === "mouse") reveal(e);
-          }}
-          onPointerMove={(e) => {
-            if (e.pointerType === "mouse") setRipplePoint(e);
-          }}
-          onPointerDown={reveal}
-          onPointerUp={() => hide(1200)}
-          onPointerLeave={() => hide(500)}
-          className="relative overflow-hidden rounded-[30px] border border-white/60 bg-white shadow-[0_22px_60px_rgba(0,0,0,0.12)]"
+          onContextMenu={(e) => e.preventDefault()}
+          className="relative overflow-hidden rounded-[30px] border border-white/60 bg-white shadow-[0_22px_60px_rgba(0,0,0,0.12)] select-none touch-manipulation"
           style={{
-            ["--ripple-x"]: "50%",
-            ["--ripple-y"]: "55%",
+            "--ripple-x": "50%",
+            "--ripple-y": "55%",
+            WebkitUserSelect: "none",
+            userSelect: "none",
+            WebkitTouchCallout: "none",
+            WebkitTapHighlightColor: "transparent",
           }}
         >
-          <div className="relative h-[520px] w-full bg-[#eef2f6] sm:h-[620px] md:h-[720px] lg:h-[820px]">
+          <div
+            className="relative h-[520px] w-full bg-[#eef2f6] sm:h-[620px] md:h-[720px] lg:h-[820px]"
+            onPointerEnter={(e) => {
+              if (e.pointerType === "mouse") reveal(e);
+            }}
+            onPointerMove={(e) => {
+              if (e.pointerType === "mouse") setRipplePoint(e);
+            }}
+            onPointerDown={(e) => {
+              if (e.target.closest("[data-nav-button='true']")) return;
+              reveal(e);
+            }}
+            onPointerUp={() => hide(1200)}
+            onPointerLeave={() => hide(3500)}
+            onPointerCancel={() => hide(500)}
+          >
             {/* ANTES */}
             <img
+              draggable={false}
+              onDragStart={(e) => e.preventDefault()}
               src={currentTransformation.beforeImage}
               alt={`Antes de ${currentTransformation.name}`}
               className="absolute inset-0 h-full w-full object-contain object-center transition-all duration-700 ease-out"
@@ -205,6 +218,8 @@ const TransformationGallery = () => {
 
             {/* DESPUÉS */}
             <img
+              draggable={false}
+              onDragStart={(e) => e.preventDefault()}
               src={currentTransformation.afterImage}
               alt={`Después de ${currentTransformation.name}`}
               className="absolute inset-0 h-full w-full object-contain object-center transition-all duration-700 ease-out"
@@ -243,7 +258,7 @@ const TransformationGallery = () => {
             </div>
 
             {/* Texto dentro */}
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-center p-4 sm:p-6">
+            <div className="pointer-events-none absolute inset-0 flex select-none items-center justify-center p-4 sm:p-6">
               <div className="w-full max-w-[92%] px-4 py-4 text-center text-white sm:max-w-[80%] sm:px-6 sm:py-6 lg:max-w-[68%]">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-white/70 sm:text-xs">
                   Caso de éxito
@@ -282,16 +297,26 @@ const TransformationGallery = () => {
 
             {/* Navegación */}
             <button
+              data-nav-button="true"
               aria-label="Anterior"
-              onClick={prevTransformation}
+              onPointerDown={(e) => e.stopPropagation()}
+              onClick={(e) => {
+                e.stopPropagation();
+                prevTransformation();
+              }}
               className="absolute bottom-4 left-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-gray-800 shadow-md transition duration-300 hover:scale-105 hover:bg-white sm:bottom-auto sm:left-5 sm:top-1/2 sm:-translate-y-1/2"
             >
               <MdOutlineSkipPrevious className="text-2xl" />
             </button>
 
             <button
+              data-nav-button="true"
               aria-label="Siguiente"
-              onClick={nextTransformation}
+              onPointerDown={(e) => e.stopPropagation()}
+              onClick={(e) => {
+                e.stopPropagation();
+                nextTransformation();
+              }}
               className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-gray-800 shadow-md transition duration-300 hover:scale-105 hover:bg-white sm:bottom-auto sm:right-5 sm:top-1/2 sm:-translate-y-1/2"
             >
               <MdOutlineSkipNext className="text-2xl" />

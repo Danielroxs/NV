@@ -95,7 +95,7 @@ const Footer = () => {
           </a>
         </div>
         <div className="text-center text-sm">
-          <p>© 2024 Muscle Machine - All rights reserved.</p>
+          <p>© 2026 Luis Daniel R. - All rights reserved.</p>
         </div>
       </div>
     </footer>
