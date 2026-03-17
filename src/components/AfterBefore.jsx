@@ -249,11 +249,23 @@ const TransformationGallery = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10" />
 
             {/* Labels */}
-            <div className="absolute left-3 top-3 rounded-full bg-black/35 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-white sm:left-4 sm:top-4 sm:text-xs">
+            <div
+              className={`absolute left-3 top-3 rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 sm:left-4 sm:top-4 sm:text-xs ${
+                isRevealed
+                  ? "bg-white/15 text-white/70"
+                  : "bg-white text-gray-900 shadow-md"
+              }`}
+            >
               Antes
             </div>
 
-            <div className="absolute right-3 top-3 rounded-full bg-white/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-white sm:right-4 sm:top-4 sm:text-xs">
+            <div
+              className={`absolute right-3 top-3 rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 sm:right-4 sm:top-4 sm:text-xs ${
+                isRevealed
+                  ? "bg-white text-gray-900 shadow-md shadow-white/30"
+                  : "bg-white/15 text-white/70"
+              }`}
+            >
               Después
             </div>
 
