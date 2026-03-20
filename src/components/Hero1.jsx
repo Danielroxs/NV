@@ -62,7 +62,7 @@ const MinimalistHero = () => {
           ))}
         </div>
 
-        <motion.button
+        {/*  <motion.button
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
@@ -72,7 +72,7 @@ const MinimalistHero = () => {
           <span className="block h-0.5 w-6 bg-anti-flash-white"></span>
           <span className="block h-0.5 w-6 bg-anti-flash-white"></span>
           <span className="block h-0.5 w-5 bg-anti-flash-white"></span>
-        </motion.button>
+        </motion.button> */}
       </header>
 
       {/* Main Content Area */}
@@ -90,7 +90,7 @@ const MinimalistHero = () => {
           </p>
           <a
             href="#about"
-            className="mt-4 sm:block hidden inline-block text-sm font-medium text-anti-flash-white underline decoration-from-font hover:text-anti-flash-white/80 transition-colors"
+            className="mt-4 sm:block hidden  text-sm font-medium text-anti-flash-white underline decoration-from-font hover:text-anti-flash-white/80 transition-colors"
           >
             Leer más
           </a>
