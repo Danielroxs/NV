@@ -114,14 +114,14 @@ const ProgramCard = ({ program, index, onClick }) => {
   return (
     <motion.article
       variants={cardItem}
-      className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-white/60 bg-white shadow-[0_18px_40px_rgba(0,0,0,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_rgba(0,0,0,0.12)]"
+      className="group flex h-full flex-col overflow-hidden rounded-[26px] border border-white/50 bg-anti-flash-white shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_rgba(0,0,0,0.12)]"
     >
       <div className="relative overflow-hidden">
         <img
           loading="lazy"
           src={program.image}
           alt={program.name}
-          className="h-[210px] w-full object-cover transition duration-500 group-hover:scale-[1.03] sm:h-[230px]"
+          className="h-[220px] w-full object-cover transition duration-500 group-hover:scale-[1.03] sm:h-[240px] xl:h-[250px]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent" />
 
@@ -132,20 +132,20 @@ const ProgramCard = ({ program, index, onClick }) => {
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col p-5 sm:p-6">
+      <div className="flex flex-1 flex-col p-5 sm:p-6 xl:p-7">
         <div className="mb-4 flex items-start gap-4">
           <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-pink-100 to-violet-100">
             <Icon className="text-2xl text-blue-600" />
           </div>
 
           <div className="min-w-0">
-            <h3 className="text-xl font-bold leading-snug text-gray-900">
+            <h3 className="text-xl font-bold leading-snug text-gray-900 xl:text-[1.35rem]">
               {program.name}
             </h3>
           </div>
         </div>
 
-        <p className="mb-5 text-sm leading-7 text-gray-600 sm:text-base">
+        <p className="mb-5 text-sm leading-7 text-gray-600 sm:text-base xl:text-[1.02rem]">
           {program.description}
         </p>
 
@@ -303,7 +303,7 @@ const ProgramasCombinados = () => {
   const [selectedProgram, setSelectedProgram] = useState(null);
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 py-10 text-center sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+    <div className="mx-auto w-full max-w-[1600px] px-3 py-10 text-center sm:px-4 sm:py-12 md:px-6 lg:px-8 lg:py-16 xl:px-10">
       <div className="mb-8 sm:mb-10">
         <FadeInText
           text="Planes y servicios"
@@ -321,7 +321,7 @@ const ProgramasCombinados = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.15 }}
-        className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4"
+        className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:gap-6 xl:grid-cols-4 xl:gap-7"
       >
         {programs.map((program, index) => (
           <ProgramCard
@@ -341,7 +341,7 @@ const ProgramasCombinados = () => {
           />
         )}
       </AnimatePresence>
-    </section>
+    </div>
   );
 };
 

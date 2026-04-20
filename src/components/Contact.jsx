@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com";
-import { FaUser, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkerAlt, FaPhone, FaUser } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
+import FadeInText from "../components/Motion";
 import "react-toastify/dist/ReactToastify.css";
-import FadeInText from "./Motion";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -17,18 +17,29 @@ const ContactForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    setErrors((prev) => ({
+      ...prev,
+      [name]: "",
+    }));
   };
 
   const validateForm = () => {
     const tempErrors = {};
 
-    if (!formData.name.trim()) tempErrors.name = "Nombre es requerido";
+    if (!formData.name.trim()) {
+      tempErrors.name = "Nombre es requerido";
+    }
 
     if (!formData.email.trim()) {
-      tempErrors.email = "Email es requerido";
+      tempErrors.email = "Correo electrónico es requerido";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      tempErrors.email = "Formato de email inválido";
+      tempErrors.email = "Formato de correo inválido";
     }
 
     if (!formData.phone.trim()) {
@@ -37,7 +48,9 @@ const ContactForm = () => {
       tempErrors.phone = "Formato de teléfono inválido (10 dígitos requeridos)";
     }
 
-    if (!formData.address.trim()) tempErrors.address = "Mensaje es requerido";
+    if (!formData.address.trim()) {
+      tempErrors.address = "Mensaje es requerido";
+    }
 
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
@@ -75,8 +88,8 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 py-10 text-center sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-      {/* Encabezado afuera */}
+    <section className="mx-auto w-full max-w-[1600px] px-3 py-10 text-center sm:px-4 sm:py-12 md:px-6 lg:px-8 lg:py-16 xl:px-10">
+      {/* Encabezado */}
       <div className="mb-8 sm:mb-10">
         <span className="inline-flex rounded-full bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-gray-600 shadow-sm sm:text-sm">
           Contacto
@@ -95,10 +108,10 @@ const ContactForm = () => {
       </div>
 
       {/* Card principal */}
-      <div className="overflow-hidden rounded-[30px] border border-white/60 bg-white shadow-[0_22px_60px_rgba(0,0,0,0.08)]">
+      <div className="mx-auto w-full max-w-[1350px] overflow-hidden rounded-[30px] border border-white/60 bg-white shadow-[0_22px_60px_rgba(0,0,0,0.08)]">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Imagen / bloque visual */}
-          <div className="relative h-[240px] sm:h-[300px] lg:h-full">
+          <div className="relative h-[260px] sm:h-[320px] md:h-[380px] lg:h-full">
             <img
               loading="lazy"
               src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80"
@@ -108,18 +121,21 @@ const ContactForm = () => {
 
             <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a]/80 via-[#1e3a8a]/70 to-[#0ea5e9]/65" />
 
-            <div className="absolute inset-0 flex items-center justify-center p-6 sm:p-8">
+            <div className="absolute inset-0 flex items-center justify-center p-6 sm:p-8 lg:p-10">
               <div className="max-w-md text-center text-white">
-                <span className="inline-flex mb-2 rounded-full bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-gray-600 shadow-sm sm:text-sm">
+                <span className="mb-2 inline-flex rounded-full bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-gray-600 shadow-sm sm:text-sm">
                   Contacto
                 </span>
+
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80 sm:text-xs">
                   Asesoría personalizada
                 </p>
-                <h3 className="mt-3 text-2xl font-extrabold leading-tight sm:text-3xl lg:text-4xl">
+
+                <h3 className="mt-3 text-2xl font-extrabold leading-tight sm:text-3xl lg:text-4xl xl:text-5xl">
                   ¡Envíanos tu consulta!
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-white/90 sm:text-base">
+
+                <p className="mt-3 text-sm leading-7 text-white/90 sm:text-base sm:leading-8">
                   Estamos listos para ayudarte a comenzar tu proceso con una
                   atención cercana y clara.
                 </p>
@@ -128,8 +144,8 @@ const ContactForm = () => {
           </div>
 
           {/* Formulario */}
-          <div className="p-5 text-left sm:p-7 lg:p-10">
-            <h3 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+          <div className="p-5 text-left sm:p-7 lg:p-8 xl:p-10 2xl:p-12">
+            <h3 className="text-2xl font-bold text-gray-900 sm:text-3xl xl:text-4xl">
               Formulario de contacto
             </h3>
 

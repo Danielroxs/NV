@@ -64,7 +64,7 @@ const CombinedBenefits = () => {
   };
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 py-10 text-center sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+    <div className="mx-auto w-full max-w-[1600px] px-3 py-10 text-center sm:px-4 sm:py-12 md:px-6 lg:px-8 lg:py-16 xl:px-10">
       {/* Encabezado fuera del componente blanco */}
       <div className="mb-8 sm:mb-10">
         <FadeInText
@@ -81,7 +81,7 @@ const CombinedBenefits = () => {
       </div>
 
       {/* Componente blanco */}
-      <div className="overflow-hidden rounded-[28px] border border-white/50 bg-anti-flash-white p-4 shadow-[0_20px_50px_rgba(0,0,0,0.08)] sm:p-6 lg:p-10">
+      <div className="overflow-hidden rounded-[28px] border border-white/50 bg-anti-flash-white p-4 shadow-[0_20px_50px_rgba(0,0,0,0.08)] sm:p-5 lg:p-6 xl:p-8 2xl:p-10">
         <span className="inline-flex rounded-full mb-4 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-gray-600 shadow-sm sm:text-sm">
           Beneficios combinados
         </span>
@@ -90,11 +90,11 @@ const CombinedBenefits = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12"
+          className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-14"
         >
           {/* Imagen */}
           <motion.div variants={itemVariants} className="order-1 lg:order-2">
-            <div className="relative mx-auto w-full max-w-md lg:max-w-[520px]">
+            <div className="relative mx-auto w-full max-w-md lg:max-w-[560px] xl:max-w-[620px]">
               <div className="absolute inset-0 rounded-[30px] bg-gradient-to-r from-pink-400/15 via-orange-300/15 to-violet-400/15 blur-2xl" />
 
               <div className="relative overflow-hidden rounded-[30px] bg-white shadow-xl">
@@ -102,7 +102,7 @@ const CombinedBenefits = () => {
                   loading="lazy"
                   src={benefits}
                   alt="Neri Villeda en acción"
-                  className="h-[260px] w-full object-cover sm:h-[340px] md:h-[420px] lg:h-[460px]"
+                  className="h-[260px] w-full object-cover sm:h-[340px] md:h-[420px] lg:h-[460px] xl:h-[500px]"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/5 to-transparent" />
@@ -121,10 +121,10 @@ const CombinedBenefits = () => {
           </motion.div>
 
           {/* Beneficios */}
-          <div className="order-2">
+          <div className="order-2 w-full">
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1"
+              className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:gap-5"
             >
               {benefitItems.map((benefit, index) => {
                 const Icon = benefit.icon;
@@ -155,7 +155,7 @@ const CombinedBenefits = () => {
 
             <motion.div
               variants={itemVariants}
-              className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start"
+              className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start"
             >
               <button
                 aria-label="Botón WhatsApp"
@@ -180,7 +180,7 @@ const CombinedBenefits = () => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </div>
   );
 };
 

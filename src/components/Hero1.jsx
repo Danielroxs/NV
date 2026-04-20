@@ -1,185 +1,145 @@
 import React from "react";
-import { motion } from "framer-motion";
 import {
-  FaFacebook,
+  FaFacebookF,
   FaInstagram,
   FaYoutube,
   FaChevronDown,
 } from "react-icons/fa";
-import Logo from "../assets/images/Logo.webp";
-import HeroImage from "../assets/images/nerii.webp";
+import heroImage from "../assets/images/nerii.webp";
 
-const MinimalistHero = () => {
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById("about");
-    aboutSection?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
-  const navLinks = [
-    { label: "HOME", href: "#home" },
-    { label: "PRODUCT", href: "#products" },
-    { label: "STORE", href: "#store" },
-    { label: "ABOUT US", href: "#about" },
-  ];
-
-  const socialLinks = [
-    {
-      icon: FaFacebook,
-      href: "https://www.facebook.com/share/uG6KzuhtfF5o4jZD/?mibextid=LQQJ4d",
-    },
-    {
-      icon: FaInstagram,
-      href: "https://www.instagram.com/nerii_villeda.fit/",
-    },
-    {
-      icon: FaYoutube,
-      href: "https://www.youtube.com/@NeriPrideMusicOficial/videos",
-    },
-  ];
-
+const Hero1 = () => {
   return (
-    <div className="relative flex h-screen w-full flex-col items-center justify-between overflow-hidden p-6 font-sans md:p-8">
-      {/* Header */}
-      <header className="z-30 flex w-full max-w-7xl items-center justify-between">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-xl font-bold tracking-wider text-anti-flash-white"
-        >
-          <img src={Logo} alt="NV" className="h-10 w-auto" />
-        </motion.div>
-
-        <div className="hidden items-center space-x-8 md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-xs font-medium tracking-widest text-anti-flash-white/70 transition-colors hover:text-anti-flash-white"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-
-        {/*  <motion.button
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col space-y-1.5 md:hidden"
-          aria-label="Open menu"
-        >
-          <span className="block h-0.5 w-6 bg-anti-flash-white"></span>
-          <span className="block h-0.5 w-6 bg-anti-flash-white"></span>
-          <span className="block h-0.5 w-5 bg-anti-flash-white"></span>
-        </motion.button> */}
-      </header>
-
-      {/* Main Content Area */}
-      <div className="relative grid w-full max-w-7xl flex-grow grid-cols-1 items-center md:grid-cols-3 gap-6">
-        {/* Left Text Content */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="z-20 order-2 md:order-1 text-center md:text-left"
-        >
-          <p className="mx-auto max-w-xs text-sm leading-relaxed text-anti-flash-white/80 md:mx-0">
-            Nutrición y entrenamiento personalizado diseñado para transformar tu
-            cuerpo y tu mentalidad. Comienza hoy.
-          </p>
-          <a
-            href="#about"
-            className="mt-4 sm:block hidden  text-sm font-medium text-anti-flash-white underline decoration-from-font hover:text-anti-flash-white/80 transition-colors"
-          >
-            Leer más
-          </a>
-        </motion.div>
-
-        {/* Center Image with Circle */}
-        <div className="relative order-1 md:order-2 flex justify-center items-center h-[340px] md:h-full">
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{
-              duration: 0.8,
-              ease: [0.22, 1, 0.36, 1],
-              delay: 0.1,
-            }}
-            className="relative md:absolute z-0 h-[320px] w-[320px] rounded-full bg-yellow-400/95 md:h-[420px] md:w-[420px] lg:h-[520px] lg:w-[520px] overflow-hidden flex items-center justify-center"
-          >
-            <motion.img
-              src={HeroImage}
-              alt="Neri Villeda"
-              className="h-full w-full object-cover"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 1,
-                ease: [0.22, 1, 0.36, 1],
-                delay: 0.2,
-              }}
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src =
-                  "https://placehold.co/400x600/eab308/ffffff?text=Image+Not+Found";
-              }}
-            />
-          </motion.div>
-        </div>
-
-        {/* Right Text */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="z-20 order-3 flex items-center justify-center text-center md:justify-start"
-        >
-          <h1 className="text-5xl font-extrabold text-anti-flash-white text-center sm:text-left md:text-7xl lg:text-8xl leading-tight">
-            Neri
-            <br />
-            Villeda
-          </h1>
-        </motion.div>
+    <section className="relative min-h-screen overflow-hidden bg-[#071226] text-white">
+      {/* glow central */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#2b4f9c]/30 blur-3xl sm:h-[800px] sm:w-[800px] xl:h-[950px] xl:w-[950px]" />
       </div>
 
-      {/* Footer Elements */}
-      <footer className="z-30 flex w-full max-w-7xl items-center justify-between">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex items-center space-x-4"
-        >
-          {socialLinks.map((link, index) => {
-            const Icon = link.icon;
-            return (
-              <a
-                key={index}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-anti-flash-white/60 transition-colors hover:text-anti-flash-white"
-              >
-                <Icon className="h-5 w-5" />
-              </a>
-            );
-          })}
-        </motion.div>
+      {/* navbar */}
+      <header className="relative z-20">
+        <div className="mx-auto flex w-full max-w-[1800px] items-center justify-between px-4 py-7 sm:px-6 sm:py-8 lg:px-8 xl:px-12 2xl:px-16">
+          <a
+            href="#home"
+            className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
+          >
+            NV
+          </a>
 
-        <motion.button
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          onClick={scrollToAbout}
-          className="text-sm font-medium text-anti-flash-white/80 hover:text-anti-flash-white transition-colors"
-          aria-label="Scroll to About section"
+          <nav className="hidden items-center gap-8 xl:flex 2xl:gap-10">
+            <a
+              href="#home"
+              className="text-sm font-semibold uppercase tracking-[0.22em] text-white/80 transition hover:text-white"
+            >
+              Home
+            </a>
+            <a
+              href="#services"
+              className="text-sm font-semibold uppercase tracking-[0.22em] text-white/80 transition hover:text-white"
+            >
+              Product
+            </a>
+            <a
+              href="#store"
+              className="text-sm font-semibold uppercase tracking-[0.22em] text-white/80 transition hover:text-white"
+            >
+              Store
+            </a>
+            <a
+              href="#about"
+              className="text-sm font-semibold uppercase tracking-[0.22em] text-white/80 transition hover:text-white"
+            >
+              About us
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      {/* hero content */}
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-108px)] w-full max-w-[1800px] items-center px-4 pb-8 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+        <div className="grid w-full items-center gap-8 lg:grid-cols-[1fr_1.25fr_1fr] xl:gap-10 2xl:gap-14">
+          {/* texto izquierdo */}
+          <div className="order-2 flex flex-col items-center text-center lg:order-1 lg:items-start lg:text-left">
+            <div className="w-full max-w-[360px] sm:max-w-[420px] xl:max-w-[470px]">
+              <p className="text-lg font-medium leading-10 text-white/88 sm:text-xl sm:leading-[2.4rem] xl:text-[1.5rem] xl:leading-[2.8rem]">
+                Nutrición y entrenamiento personalizado diseñado para
+                transformar tu cuerpo y tu mentalidad. Comienza hoy.
+              </p>
+
+              <a
+                href="#about"
+                className="mt-6 inline-flex items-center text-base font-bold text-white underline underline-offset-4 transition hover:text-white/80 sm:text-lg"
+              >
+                Leer más
+              </a>
+            </div>
+          </div>
+
+          {/* imagen central */}
+          <div className="order-1 flex justify-center lg:order-2">
+            <div className="relative flex h-[300px] w-[300px] items-center justify-center overflow-hidden rounded-full bg-[#f2ca14] sm:h-[380px] sm:w-[380px] md:h-[470px] md:w-[470px] lg:h-[560px] lg:w-[560px] xl:h-[650px] xl:w-[650px] 2xl:h-[720px] 2xl:w-[720px]">
+              <img
+                src={heroImage}
+                alt="Neri Villeda"
+                className="h-[127%] w-[127%] object-contain object-center drop-shadow-[0_20px_45px_rgba(0,0,0,0.35)] sm:h-[129%] sm:w-[129%] md:h-[131%] md:w-[131%] lg:h-[133%] lg:w-[133%] xl:h-[135%] xl:w-[135%]"
+              />
+            </div>
+          </div>
+
+          {/* nombre derecho */}
+          <div className="order-3 flex justify-center lg:justify-start">
+            <h1 className="text-center text-5xl font-extrabold leading-[0.9] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-left lg:text-[5.2rem] xl:text-[6.2rem] 2xl:text-[7rem]">
+              Neri
+              <br />
+              Villeda
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      {/* footer hero */}
+      <div className="relative z-20 mx-auto flex w-full max-w-[1800px] items-end justify-between px-4 pb-6 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+        <div className="flex items-center gap-4">
+          <a
+            href="https://www.facebook.com/share/uG6KzuhtfF5o4jZD/?mibextid=LQQJ4d"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="text-white/75 transition hover:text-white"
+          >
+            <FaFacebookF className="h-4 w-4" />
+          </a>
+
+          <a
+            href="https://www.instagram.com/nerii_villeda.fit/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="text-white/75 transition hover:text-white"
+          >
+            <FaInstagram className="h-4 w-4" />
+          </a>
+
+          <a
+            href="https://www.youtube.com/@NeriPrideMusicOficial/videos"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            className="text-white/75 transition hover:text-white"
+          >
+            <FaYoutube className="h-4 w-4" />
+          </a>
+        </div>
+
+        <a
+          href="#about"
+          aria-label="Ir a la siguiente sección"
+          className="inline-flex items-center justify-center text-white/80 transition hover:text-white"
         >
-          <FaChevronDown size={24} className="animate-bounce" />
-        </motion.button>
-      </footer>
-    </div>
+          <FaChevronDown className="h-5 w-5" />
+        </a>
+      </div>
+    </section>
   );
 };
 
-export default MinimalistHero;
+export default Hero1;

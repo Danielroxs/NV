@@ -1,47 +1,50 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { FaWhatsapp } from "react-icons/fa";
-import { IoMdClose } from "react-icons/io";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import { motion, AnimatePresence } from "framer-motion";
-import T1 from "../assets/images/T1.webp";
-import T2 from "../assets/images/T2.webp";
-import T3 from "../assets/images/T3.webp";
-import FadeInText from "./Motion";
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaTimes,
+  FaWhatsapp,
+} from "react-icons/fa";
+import FadeInText from "../components/Motion";
 
 const whatsappNumber = "+525561706548";
 
 const shirts = [
   {
     id: 1,
-    name: "Camiseta Blanca Clásica",
+    name: "Camiseta Negra Minimal",
     price: "$19.99",
-    image: T1,
+    image:
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1000&q=80",
     sizes: ["S", "M", "L", "XL"],
-    colors: ["Blanco"],
+    colors: ["Negro", "Gris oscuro"],
     description:
-      "Una camiseta blanca atemporal que nunca pasa de moda. Perfecta para cualquier ocasión casual.",
+      "Una camiseta versátil y cómoda con un estilo limpio y moderno. Ideal para el día a día o para complementar un look deportivo.",
     availability: true,
   },
   {
     id: 2,
-    name: "Camiseta Negra Vintage",
-    price: "$22.99",
-    image: T2,
-    sizes: ["S", "M", "L"],
-    colors: ["Negro"],
+    name: "Camiseta Blanca Essential",
+    price: "$20.99",
+    image:
+      "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1000&q=80",
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["Blanco", "Beige"],
     description:
-      "Una camiseta negra clásica con un toque vintage. Ideal para llevar en capas o usar sola.",
+      "Diseño fresco y ligero para un estilo casual. Una pieza básica que combina con todo y se adapta a cualquier temporada.",
     availability: true,
   },
   {
     id: 3,
-    name: "Camiseta con Estampado Gráfico",
+    name: "Camiseta Oversize NV",
     price: "$24.99",
-    image: T3,
+    image:
+      "https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1000&q=80",
     sizes: ["M", "L", "XL"],
-    colors: ["Multicolor"],
+    colors: ["Negro", "Blanco", "Azul"],
     description:
-      "Exprésate con esta camiseta de estampado gráfico llamativo. Destácate entre la multitud.",
+      "Corte relajado y urbano con una caída cómoda. Perfecta para quienes buscan un look más moderno y con personalidad.",
     availability: true,
   },
   {
@@ -49,7 +52,7 @@ const shirts = [
     name: "Camiseta Rayada",
     price: "$21.99",
     image:
-      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80",
     sizes: ["S", "M", "L"],
     colors: ["Blanco y Azul"],
     description:
@@ -113,55 +116,45 @@ const ShirtModal = ({
               <button
                 onClick={onClose}
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition hover:bg-gray-200 hover:text-gray-800"
-                aria-label="Cerrar"
+                aria-label="Cerrar modal"
               >
-                <IoMdClose className="text-xl" />
+                <FaTimes />
               </button>
             </div>
 
             <div className="p-5 sm:p-7">
               <div className="overflow-hidden rounded-[24px] bg-[#f4f6fa]">
                 <img
-                  loading="lazy"
                   src={shirt.image}
                   alt={shirt.name}
-                  className="h-[260px] w-full object-contain p-4 sm:h-[360px] md:h-[420px]"
+                  className="h-[260px] w-full object-contain p-4 sm:h-[360px] sm:p-6 md:h-[420px]"
                 />
               </div>
 
               <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_0.9fr]">
                 <div>
-                  <div className="mb-5">
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gray-400">
+                  <div className="mb-6">
+                    <h4 className="text-lg font-bold text-gray-900 sm:text-xl">
                       Descripción
-                    </p>
+                    </h4>
                     <p className="mt-2 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
                       {shirt.description}
                     </p>
                   </div>
 
-                  <div className="mb-5">
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gray-400">
-                      Precio
-                    </p>
-                    <p className="mt-2 text-2xl font-bold text-gray-900">
-                      {shirt.price}
-                    </p>
-                  </div>
-
-                  <div className="mb-5">
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gray-400">
+                  <div className="mb-6">
+                    <h4 className="text-lg font-bold text-gray-900 sm:text-xl">
                       Talla
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-2">
+                    </h4>
+                    <div className="mt-3 flex flex-wrap gap-3">
                       {shirt.sizes.map((size) => (
                         <button
                           key={size}
                           onClick={() => setSelectedSize(size)}
-                          className={`rounded-xl px-4 py-2 text-sm font-semibold transition ${
+                          className={`rounded-2xl px-4 py-2 text-sm font-semibold transition ${
                             selectedSize === size
-                              ? "bg-[#2563eb] text-white shadow-md"
-                              : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                              ? "bg-blue-600 text-white shadow-md"
+                              : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                           }`}
                         >
                           {size}
@@ -171,18 +164,18 @@ const ShirtModal = ({
                   </div>
 
                   <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gray-400">
+                    <h4 className="text-lg font-bold text-gray-900 sm:text-xl">
                       Color
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-2">
+                    </h4>
+                    <div className="mt-3 flex flex-wrap gap-3">
                       {shirt.colors.map((color) => (
                         <button
                           key={color}
                           onClick={() => setSelectedColor(color)}
-                          className={`rounded-xl px-4 py-2 text-sm font-semibold transition ${
+                          className={`rounded-2xl px-4 py-2 text-sm font-semibold transition ${
                             selectedColor === color
-                              ? "bg-[#2563eb] text-white shadow-md"
-                              : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                              ? "bg-blue-600 text-white shadow-md"
+                              : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                           }`}
                         >
                           {color}
@@ -193,42 +186,22 @@ const ShirtModal = ({
                 </div>
 
                 <div className="rounded-[24px] bg-gray-50 p-5 ring-1 ring-gray-100">
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-gray-400">
-                    Pedido
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-400">
+                    Precio
+                  </p>
+                  <p className="mt-2 text-3xl font-extrabold text-gray-900">
+                    {shirt.price}
                   </p>
 
-                  <div className="mt-4 space-y-3 text-sm text-gray-700">
-                    <div className="flex items-center justify-between gap-4">
-                      <span>Producto</span>
-                      <span className="font-semibold text-gray-900">
-                        {shirt.name}
-                      </span>
-                    </div>
-                    <div className="flex items-center justify-between gap-4">
-                      <span>Talla</span>
-                      <span className="font-semibold text-gray-900">
-                        {selectedSize || "Selecciona una"}
-                      </span>
-                    </div>
-                    <div className="flex items-center justify-between gap-4">
-                      <span>Color</span>
-                      <span className="font-semibold text-gray-900">
-                        {selectedColor || "Selecciona uno"}
-                      </span>
-                    </div>
-                    <div className="flex items-center justify-between gap-4">
-                      <span>Precio</span>
-                      <span className="font-semibold text-gray-900">
-                        {shirt.price}
-                      </span>
-                    </div>
-                  </div>
+                  <p className="mt-4 text-sm leading-7 text-gray-600 sm:text-base">
+                    Selecciona talla y color para enviar tu pedido por WhatsApp.
+                  </p>
 
-                  {error && (
-                    <p className="mt-4 rounded-xl bg-red-50 px-3 py-2 text-sm text-red-600">
+                  {error ? (
+                    <p className="mt-4 rounded-2xl bg-red-50 px-4 py-3 text-sm font-medium text-red-600">
                       {error}
                     </p>
-                  )}
+                  ) : null}
 
                   <div className="mt-6 flex flex-col gap-3">
                     <button
@@ -323,8 +296,7 @@ const ShirtGallery = () => {
   };
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 py-10 text-center sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-      {/* Encabezado */}
+    <section className="mx-auto w-full max-w-[1600px] px-3 py-10 text-center sm:px-4 sm:py-12 md:px-6 lg:px-8 lg:py-16 xl:px-10">
       <div className="mb-8 sm:mb-10">
         <FadeInText
           text="T-Shirt NV"
@@ -337,38 +309,19 @@ const ShirtGallery = () => {
         </p>
       </div>
 
-      {/* Galería */}
-      <div className="overflow-hidden rounded-[30px] border border-white/60 bg-white p-3 shadow-[0_22px_60px_rgba(0,0,0,0.08)] sm:p-5 lg:p-6">
-        <div className="relative overflow-hidden rounded-[26px] bg-[#f4f6fa]">
-          <button
-            onClick={handlePrevious}
-            className="absolute left-2 top-[42%] z-20 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-md transition hover:bg-white sm:left-4 sm:top-1/2 sm:p-2.5"
-            aria-label="Anterior"
-          >
-            <MdKeyboardArrowLeft className="h-5 w-5 text-gray-800 sm:h-6 sm:w-6" />
-          </button>
-
-          <button
-            onClick={handleNext}
-            className="absolute right-2 top-[42%] z-20 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow-md transition hover:bg-white sm:right-4 sm:top-1/2 sm:p-2.5"
-            aria-label="Siguiente"
-          >
-            <MdKeyboardArrowRight className="h-5 w-5 text-gray-800 sm:h-6 sm:w-6" />
-          </button>
-
+      <div className="overflow-hidden rounded-[30px] border border-white/60 bg-white p-3 shadow-[0_22px_60px_rgba(0,0,0,0.08)] sm:p-4 lg:p-5 xl:p-6">
+        <div className="relative overflow-hidden rounded-[28px] bg-white">
           <AnimatePresence mode="wait">
             <motion.button
               key={currentShirt.id}
-              type="button"
               onClick={() => handleShirtClick(currentShirt)}
-              className="block w-full text-left"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              className="relative block w-full overflow-hidden rounded-[28px] text-left"
+              initial={{ opacity: 0.72, scale: 0.99 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0.72, scale: 0.99 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
             >
-              {/* IMAGEN */}
-              <div className="flex h-[320px] w-full items-center justify-center bg-[#f4f6fa] px-6 pt-4 sm:h-[420px] sm:px-8 md:h-[520px] lg:h-[620px]">
+              <div className="flex h-[320px] w-full items-center justify-center bg-[#f4f6fa] px-4 pt-4 sm:h-[420px] sm:px-6 md:h-[520px] lg:h-[620px] xl:h-[680px]">
                 <img
                   src={currentShirt.image}
                   alt={currentShirt.name}
@@ -376,10 +329,9 @@ const ShirtGallery = () => {
                 />
               </div>
 
-              {/* OVERLAY SOLO EN DESKTOP/TABLET */}
               <div className="absolute inset-0 hidden bg-gradient-to-t from-black/35 via-black/5 to-transparent sm:block" />
 
-              <div className="absolute bottom-5 left-5 right-5 hidden rounded-2xl border border-white/15 bg-black/25 px-5 py-4 text-white backdrop-blur-[2px] sm:block">
+              <div className="absolute bottom-5 left-5 right-5 hidden rounded-2xl border border-white/15 bg-black/25 px-5 py-4 text-white backdrop-blur-[2px] sm:block lg:left-6 lg:right-6 lg:px-6">
                 <div className="flex items-end justify-between gap-3">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/75">
@@ -400,9 +352,24 @@ const ShirtGallery = () => {
               </div>
             </motion.button>
           </AnimatePresence>
+
+          <button
+            onClick={handlePrevious}
+            aria-label="Imagen anterior"
+            className="absolute left-3 top-1/2 z-10 hidden -translate-y-1/2 items-center justify-center rounded-full bg-white/90 p-3 text-gray-700 shadow-md transition hover:bg-white sm:inline-flex"
+          >
+            <FaChevronLeft />
+          </button>
+
+          <button
+            onClick={handleNext}
+            aria-label="Imagen siguiente"
+            className="absolute right-3 top-1/2 z-10 hidden -translate-y-1/2 items-center justify-center rounded-full bg-white/90 p-3 text-gray-700 shadow-md transition hover:bg-white sm:inline-flex"
+          >
+            <FaChevronRight />
+          </button>
         </div>
 
-        {/* INFO MOBILE CON ALTURA ESTABLE */}
         <div className="block px-2 pb-1 pt-4 sm:hidden">
           <p className="text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-gray-400">
             Colección NV
@@ -427,7 +394,6 @@ const ShirtGallery = () => {
             Ver detalles
           </button>
 
-          {/* DOTS MOBILE EN LUGAR DE MINIATURAS */}
           <div className="mt-5 flex items-center justify-center gap-2">
             {shirts.map((shirt, index) => (
               <button
@@ -448,8 +414,7 @@ const ShirtGallery = () => {
           </p>
         </div>
 
-        {/* MINIATURAS SOLO DESKTOP/TABLET */}
-        <div className="mt-4 hidden grid-cols-4 gap-3 sm:grid sm:mt-5">
+        <div className="mt-4 hidden grid-cols-4 gap-3 sm:grid sm:mt-5 lg:gap-4 xl:gap-5">
           {shirts.map((shirt, index) => (
             <button
               key={shirt.id}
@@ -461,7 +426,7 @@ const ShirtGallery = () => {
               }`}
               aria-label={`Ver ${shirt.name}`}
             >
-              <div className="h-[96px] bg-[#f4f6fa]">
+              <div className="h-[96px] bg-[#f4f6fa] lg:h-[104px] xl:h-[112px]">
                 <img
                   src={shirt.image}
                   alt={shirt.name}
@@ -473,7 +438,6 @@ const ShirtGallery = () => {
         </div>
       </div>
 
-      {/* Modal */}
       <AnimatePresence>
         {showModal && selectedShirt && (
           <ShirtModal

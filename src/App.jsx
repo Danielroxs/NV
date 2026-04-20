@@ -42,41 +42,29 @@ const App = () => {
               <BeforeAfterComponent />
             </section>
 
-            <section
-              id="benefits"
-              className="section-shell py-12 sm:py-16 md:py-20 lg:py-24"
-            >
+            <section id="benefits" className="py-12 sm:py-16 md:py-20 lg:py-24">
               <Benefits />
             </section>
 
             <WhatsappButton />
 
-            <section
-              id="services"
-              className="section-shell py-12 sm:py-16 md:py-20 lg:py-24"
-            >
+            <section id="services" className="py-12 sm:py-16 md:py-20 lg:py-24">
               <ProgramasCombinados />
             </section>
 
-            <section
-              id="products"
-              className="section-shell py-12 sm:py-16 md:py-20 lg:py-24"
-            >
+            <section id="products" className="py-12 sm:py-16 md:py-20 lg:py-24">
               <Tienda />
             </section>
 
-            <section className="section-shell py-12 sm:py-16 md:py-20 lg:py-24">
+            <section className="py-12 sm:py-16 md:py-20 lg:py-24">
               <Testimonial />
             </section>
 
-            <section className="section-shell py-12 sm:py-16 md:py-20 lg:py-24">
+            <section className="py-12 sm:py-16 md:py-20 lg:py-24">
               <Maps />
             </section>
 
-            <section
-              id="contact"
-              className="section-shell py-12 sm:py-16 md:py-20 lg:py-24"
-            >
+            <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24">
               <Contact />
             </section>
 
