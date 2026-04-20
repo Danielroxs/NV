@@ -4,11 +4,6 @@ Landing page moderna y responsive para NV, desarrollada con React, Vite y Tailwi
 
 ## Capturas de pantalla
 
-> Agrega aquí imágenes de la SLP (Single Landing Page)  
-> Ejemplo:  
-> ![Vista principal](assets/screenshots/main.png)  
-> ![Sección Hero](assets/screenshots/hero.png)
-
 ## Características
 
 - Diseño atractivo y modular

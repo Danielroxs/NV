@@ -26,9 +26,9 @@ const socials = [
 
 const SocialMediaSection = () => {
   return (
-    <section className="w-full px-4 py-10 sm:px-6 lg:px-8">
+    <section className="w-full px-3 py-10 sm:px-4 md:px-6 lg:px-8 xl:px-10">
       <div
-        className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl shadow-xl"
+        className="relative mx-auto w-full max-w-[1500px] overflow-hidden rounded-3xl shadow-xl"
         style={{
           backgroundImage: `url(${banner})`,
           backgroundSize: "cover",
@@ -42,7 +42,7 @@ const SocialMediaSection = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-black/50" />
 
         {/* contenido */}
-        <div className="relative z-10 flex min-h-[220px] flex-col items-center justify-center px-6 py-12 text-center sm:px-10">
+        <div className="relative z-10 flex min-h-[240px] flex-col items-center justify-center px-6 py-12 text-center sm:min-h-[280px] sm:px-10 lg:min-h-[300px] lg:px-12">
           <motion.p
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}

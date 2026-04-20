@@ -30,10 +30,7 @@ const App = () => {
               <Hero1 />
             </section>
 
-            <section
-              id="about"
-              className="section-shell py-12 sm:py-16 md:py-20 lg:py-24"
-            >
+            <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-24">
               <AboutUs />
             </section>
 
@@ -41,7 +38,7 @@ const App = () => {
               <SocialMedia />
             </section>
 
-            <section className="section-shell py-12 sm:py-16 md:py-20 lg:py-24">
+            <section className="py-12 sm:py-16 md:py-20 lg:py-24">
               <BeforeAfterComponent />
             </section>
 

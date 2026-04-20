@@ -157,7 +157,7 @@ const TransformationGallery = () => {
   }, []);
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 py-12 text-center select-none sm:px-6 lg:px-8">
+    <div className="mx-auto w-full max-w-[1600px] px-3 py-12 text-center select-none sm:px-4 md:px-6 lg:px-8 xl:px-10">
       <FadeInText
         text="Transformaciones NV"
         tagName="h2"
@@ -173,7 +173,7 @@ const TransformationGallery = () => {
         Toca la imagen para descubrir el después
       </p>
 
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto w-full max-w-[1400px]">
         <div
           ref={cardRef}
           onContextMenu={(e) => e.preventDefault()}
@@ -188,7 +188,7 @@ const TransformationGallery = () => {
           }}
         >
           <div
-            className="relative h-[520px] w-full bg-[#eef2f6] sm:h-[620px] md:h-[720px] lg:h-[820px]"
+            className="relative h-[440px] w-full bg-[#eef2f6] sm:h-[540px] md:h-[640px] lg:h-[720px] xl:h-[760px]"
             onPointerEnter={(e) => {
               if (e.pointerType === "mouse") reveal(e);
             }}
@@ -271,7 +271,7 @@ const TransformationGallery = () => {
 
             {/* Texto dentro */}
             <div className="pointer-events-none absolute inset-0 flex select-none items-center justify-center p-4 sm:p-6">
-              <div className="w-full max-w-[92%] px-4 py-4 text-center text-white sm:max-w-[80%] sm:px-6 sm:py-6 lg:max-w-[68%]">
+              <div className="w-full max-w-[92%] px-4 py-4 text-center text-white sm:max-w-[82%] sm:px-6 sm:py-6 lg:max-w-[72%] xl:max-w-[68%]">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-white/70 sm:text-xs">
                   Caso de éxito
                 </p>
@@ -336,7 +336,7 @@ const TransformationGallery = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

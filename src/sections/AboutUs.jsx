@@ -75,15 +75,12 @@ const AboutUs = () => {
   ];
 
   return (
-    <section
-      id="about"
-      className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12"
-    >
-      <div className="overflow-hidden rounded-2xl border border-white/50 bg-anti-flash-white p-4 shadow-lg sm:rounded-3xl sm:p-6 lg:p-10">
-        <div className="grid grid-cols-1 items-center gap-4 sm:gap-6 lg:grid-cols-2 lg:gap-12">
+    <div className="mx-auto w-full max-w-[1400px] px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12 xl:px-12 2xl:px-16">
+      <div className="overflow-hidden rounded-2xl border border-white/50 bg-anti-flash-white p-5 shadow-lg sm:rounded-3xl sm:p-6 lg:p-8 xl:p-10 2xl:p-12">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16">
           {/* Imagen */}
           <div className="order-1 flex justify-center lg:order-2">
-            <div className="relative">
+            <div className="relative w-full max-w-sm sm:max-w-md xl:max-w-lg 2xl:max-w-xl">
               <div className="absolute inset-0 scale-105 rounded-full bg-gradient-to-r from-pink-400 via-orange-300 to-violet-500 opacity-25 blur-2xl"></div>
               <ProfileCard />
             </div>
@@ -95,7 +92,7 @@ const AboutUs = () => {
               Sobre mí
             </span>
 
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl xl:text-6xl">
               Neri Villeda
             </h2>
 
@@ -104,7 +101,7 @@ const AboutUs = () => {
                 Nutrición y entrenamiento
               </p>
 
-              <p className="hidden text-base font-medium leading-6 text-transparent bg-gradient-to-r from-pink-500 via-orange-400 to-violet-600 bg-clip-text md:block lg:text-lg">
+              <p className="hidden text-base font-medium leading-6 text-transparent bg-gradient-to-r from-pink-500 via-orange-400 to-violet-600 bg-clip-text md:block lg:text-lg xl:text-xl">
                 Nutrición y entrenamiento personalizado
               </p>
             </div>
@@ -135,19 +132,19 @@ const AboutUs = () => {
 
             {/* Texto completo solo en tablet/desktop */}
             <div className="hidden md:block">
-              <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 lg:mx-0 lg:text-lg">
+              <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-gray-700 sm:text-base sm:leading-8 lg:mx-0 lg:text-lg xl:max-w-2xl">
                 Soy Neri Villeda, especialista en nutrición y entrenamiento
                 personalizado. Te ayudo a mejorar tu salud, tu composición
                 corporal y tu rendimiento físico con un enfoque práctico,
                 realista y adaptado a tu estilo de vida.
               </p>
 
-              <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-gray-600 sm:text-base sm:leading-8 lg:mx-0 lg:text-lg">
+              <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-gray-600 sm:text-base sm:leading-8 lg:mx-0 lg:text-lg xl:max-w-2xl">
                 Cada proceso se diseña de forma individual para que avances con
                 estructura, acompañamiento y resultados sostenibles.
               </p>
 
-              <ul className="mx-auto mt-6 max-w-xl space-y-3 text-left text-sm text-gray-700 sm:text-base lg:mx-0">
+              <ul className="mx-auto mt-6 max-w-xl space-y-3 text-left text-sm text-gray-700 sm:text-base lg:mx-0 xl:max-w-2xl">
                 <li className="flex items-start gap-3">
                   <span className="mt-0.5 text-green-600">✓</span>
                   <span>Plan 100% personalizado</span>
@@ -163,7 +160,7 @@ const AboutUs = () => {
               </ul>
             </div>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
               <a
                 href="#contact"
                 className="inline-flex w-full items-center justify-center rounded-xl bg-gray-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-gray-800 sm:w-auto"
@@ -216,7 +213,7 @@ const AboutUs = () => {
 
       <div
         id="services"
-        className="mt-8 overflow-hidden rounded-2xl border border-white/50 bg-anti-flash-white p-4 shadow-lg sm:mt-10 sm:rounded-3xl sm:p-6 lg:mt-12 lg:p-10"
+        className="mt-8 overflow-hidden rounded-2xl border border-white/50 bg-anti-flash-white p-5 shadow-lg sm:mt-10 sm:rounded-3xl sm:p-6 lg:mt-12 lg:p-8 xl:p-10"
       >
         {/* Servicios */}
         <div>
@@ -235,7 +232,7 @@ const AboutUs = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6 xl:gap-8">
             {services.map((service, index) => (
               <ServiceCard
                 key={index}
@@ -248,7 +245,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
